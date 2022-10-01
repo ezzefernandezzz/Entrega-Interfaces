@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono');
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	/*text-decoration: none;
+	border: none;
+	outline: none;*/
+    font-family: 'JetBrains Mono', monospace;
+}
+
+button{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 30px;
+    border: none;
+}
+
+.btn-header{
+    display: flex;
+}
+
+.btn-hamburguesa{
+    background-color: transparent;
+}
+
+.btn-creditos{
+    
+    background-color: #FFC700;
+}
+
+.btn-perfil{
+    background-color: #D6D6D6;
+    margin-left: 5%;
+}
+
+.iconPerfil{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.contenedorImg{
+    display: flex;
+    width: 50px;
+    height: 50px;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+/* .hambMenu{
+    width: 70%;
+}
+
+.iconMoneda{
+    width: 25%;
+}
+
+.iconPerfil{
+    width: 40%;
+} */
+
+
+header{
+    display: grid;
+    background-color: #FC3939;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1.61% 1.6%;
+}
+
+.btn-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+
+main {
+    margin: 25px 5.5%;
+    height: 100vh;
+}
+
+.titulo-categoria {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 42px;
+}
+
+footer{
+    height: 270px;
+    background-color: #FC3939;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 3fr;
+    grid-template-rows: 5fr 1fr;
+    grid-template-areas: 
+        "link soporte contacto busqueda"
+        "copyright copyright copyright copyright";
+    padding: 1.55% 1.6% 1.55% 1.6%;
+}
+
+footer .links h3{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    padding-bottom: 20px;
+}
+
+footer .links li {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    padding-bottom: 8px;
+}
+
+.buscador-redes {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buscador {
+    font-size: 20px;
+    padding-left: 10px;
+    width: 330px;
+    height: 40px;
+    border-style: none;
+    border-radius: 10px;
+}
+
+.redes h4, .btn-creditos, .btn-perfil {
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.container-redes {
+    display: flex;
+}
+
+.container-redes img {
+    padding: 5px 20px;
+}
+
+.copyright {
+    padding-top: 20px;
+    grid-column: 1 / -1;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+}
