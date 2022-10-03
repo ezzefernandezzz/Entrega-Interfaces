@@ -4,59 +4,13 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	/*text-decoration: none;
+	text-decoration: none;
 	border: none;
-	outline: none;*/
+	outline: none;
     font-family: 'JetBrains Mono', monospace;
 }
 
-button{
-    display: flex;
-    flex-direction: row;
-    /* justify-content: center; */
-    align-items: center;
-    border-radius: 30px;
-    border: none;
-}
-
-.btn-header{
-    display: flex;
-}
-
-.btn-hamburguesa{
-    background-color: transparent;
-}
-
-.btn-creditos{
-    
-    background-color: #FFC700;
-}
-
-.btn-perfil{
-    background-color: #D6D6D6;
-    margin-left: 5%;
-}
-
-.iconPerfil{
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.contenedorImg{
-    display: flex;
-    width: 50px;
-    height: 50px;
-}
-
-.logo-container{
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}
-
-/* .hambMenu{
-    width: 70%;
-}
-
+/*
 .iconMoneda{
     width: 25%;
 }
@@ -64,7 +18,6 @@ button{
 .iconPerfil{
     width: 40%;
 } */
-
 
 header{
     display: grid;
@@ -79,9 +32,69 @@ header{
     justify-content: flex-end;
 }
 
+.btn-header button{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 30px;
+    border: none;
+}
+
+.btn-hamburguesa{
+    background-color: transparent;
+}
+
+.btn-creditos{
+    background-color: #FFC700;
+    width: 42%;
+}
+
+.btn-creditos text {
+    text-align: left;
+    padding-left: 7%;
+}
+
+.btn-creditos img {
+    padding-left: 20%
+}
+
+.btn-perfil{
+    background-color: #D6D6D6;
+    margin-left: 5%;
+    width: 35%;
+}
+
+.btn-perfil text{
+    padding-left: 10%
+}
+
+.iconPerfil{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding-left: 20%
+}
+
+.contenedorImg{
+    display: flex;
+    width: 50px;
+    height: 50px;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.hambMenu{
+    width: 55px;
+    height: 55px;
+    align-self: center;
+}
+
+
 main {
     margin: 25px 5.5%;
-    height: 100vh;
 }
 
 .titulo-categoria {
@@ -105,7 +118,7 @@ footer{
 
 footer .links h3{
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 24px;
     line-height: 32px;
     padding-bottom: 20px;
@@ -124,12 +137,13 @@ footer .links li {
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
+    margin-left: 20%
 }
 
 .buscador {
+    width: 100%;
     font-size: 20px;
     padding-left: 10px;
-    width: 330px;
     height: 40px;
     border-style: none;
     border-radius: 10px;
@@ -143,12 +157,18 @@ footer .links li {
 }
 
 .container-redes {
+    margin-top: 3%;
     display: flex;
+    justify-content: space-evenly;
 }
 
-.container-redes img {
-    padding: 5px 20px;
+.redes {
+    width: 100%
 }
+
+/*.container-redes img {
+    padding: 5px 20px;
+}*/
 
 .copyright {
     padding-top: 20px;
