@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500;600;700&display=swap');
 
 *{
 	margin: 0;
@@ -8,6 +8,10 @@
 	border: none;
 	outline: none;
     font-family: 'JetBrains Mono', monospace;
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }
 
 /*
@@ -104,6 +108,14 @@ main {
     line-height: 42px;
 }
 
+.juegos-recomendados {
+    margin-bottom: 2%;
+}
+
+.juegos-destacados {
+    margin-bottom: 2%;
+}
+
 .h-scrollable-container {
     display: flex;
     justify-content: space-between;
@@ -111,12 +123,13 @@ main {
 }
 
 .gamecard-big {
-    margin-right: 1.15%;
+    height: 100%;
+    margin-right: 1.171%;
     border-radius: 20px;
 }
 
 .gamecard-small {
-    margin-right: 1.15%;
+    margin-right: 1.171%;
     border-radius: 20px;
 }
 
@@ -184,10 +197,6 @@ footer .links li {
 .redes {
     width: 100%
 }
-
-/*.container-redes img {
-    padding: 5px 20px;
-}*/
 
 .copyright {
     padding-top: 20px;
