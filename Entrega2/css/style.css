@@ -23,66 +23,80 @@
     width: 40%;
 } */
 
-/* Header y elementos internos */
+/* ------------------------------------------------- Header y elementos internos -------------------------------------------------*/
 header{
     display: grid;
     background-color: #FC3939;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 1.61% 1.6%;
+    padding: 0.5% 1.6%;
 }
 
 .btn-header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .btn-header button{
     display: flex;
-    flex-direction: row;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     border-radius: 30px;
     border: none;
+    height: 80%;
 }
 
-.btn-hamburguesa{
-    background-color: transparent;
+.btn-header button div {
+    display: flex;
 }
+
 
 .btn-creditos{
     background-color: #FFC700;
-    width: 42%;
+    width: 13.19vw;
+}
+
+.btn-creditos div {
+    height: 65%;
 }
 
 .btn-creditos text {
     text-align: left;
-    padding-left: 7%;
 }
 
 .btn-creditos img {
-    padding-left: 20%
+    padding-left: 15%
 }
 
 .btn-perfil{
     background-color: #D6D6D6;
     margin-left: 5%;
-    width: 35%;
+    width: 12.5vw;
+}
+
+.btn-perfil div{
+    height: 85%;
 }
 
 .btn-perfil text{
-    padding-left: 10%
+    padding-left: 20%;
 }
 
-.iconPerfil{
+.btn-perfil img{
+    padding-left: 10%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    padding-left: 20%
 }
 
-.contenedorImg{
+
+.btn-hamburguesa{
+    background-color: transparent;
+}
+
+.btn-hamburguesa div {
     display: flex;
-    width: 50px;
-    height: 50px;
+    width: 50%;
+    height: 50%;
 }
 
 .logo-container{
@@ -97,7 +111,7 @@ header{
     align-self: center;
 }
 
-/* Body y elementos internos */
+/* -------------------------------------------------Body y elementos internos ------------------------------------------------- */
 main {
     margin: 25px 5.555555%;
 }
@@ -131,6 +145,70 @@ main {
 .gamecard-small {
     margin-right: 1.171%;
     border-radius: 20px;
+}
+
+.contenedores{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.contenedor-grande {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    
+    width: 705px;
+    height: 355px;
+    /* padding: 1%; */
+
+    /* secundario-base */
+    background: #FC3939;
+    border-radius: 20px;
+}
+
+.gamecard-wide-free {
+    width: 335px;
+    height: 160px;
+    left: 10px;
+    top: 55px;
+    border-radius: 20px;
+}
+
+.gamecard-small-premium, .gamecard-small-free {
+    width: 160px;
+    height: 160px;
+    /* left: 360px;
+    top: 55px; */
+    border-radius: 20px;
+}
+
+.contenedor-chico {
+    width: 36.80%;
+    background: #FC3939;
+    border-radius: 20px;
+}
+
+
+.contenedor-chico {
+    /*display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    width: 530px;
+    height: 355px;
+    width: 36.805%;
+    height: 24.652%;
+    left: calc(50% - 530px/2);
+    top: calc(50% - 355px/2 + 22.5px);
+    background: #FC3939;*/
+    border-radius: 20px;
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
 }
 
 

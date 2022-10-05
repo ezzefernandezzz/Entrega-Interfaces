@@ -11,23 +11,21 @@
 <body>
     <header>
         <button class="btn-hamburguesa">
-            <div class="contenedorImg"><img class="hambMenu" src="img/iconos//HambMenu.png" alt="Hamburger Menu"></div>
+            <div><img class="hambMenu" src="img/iconos//HambMenu.png" alt="Hamburger Menu"></div>
         </button>
         <div class="logo-container">
             <img class="logo" src="img/logo/Logo.png" alt="Logo">
         </div>
         <div class="btn-header">
             <button class="btn-creditos">
-                <div class="contenedorImg"><img class="iconMoneda" src="img/iconos/icono moneda.png" alt="Icono moneda"></div>
+                <div><img src="img/iconos/icono moneda.png" alt="Icono moneda"></div>
                 <text>Comprar Creditos</text>
             </button>
             <button class="btn-perfil">
                 <text>Perfil</text>
-                <div class="contenedorImg"><img class="iconPerfil" src="img/iconos/perfil.png" alt="Icono Perfil"></div>
+                <div><img src="img/iconos/perfil.png" alt="Icono Perfil"></div>
             </button>
         </div>
-        <!-- Los botones los ponemos como imagenes para chantear o los hacemos con
-             divs coloreando el fondo con css y redondeandolos con css tmb? -->
     </header>
     <main>
         <section class="juegos-recomendados">
@@ -57,24 +55,64 @@
                 <img class="gamecard-small" src="img/juegos/smallCard/LeftToSurvive.png" alt="Left to Survive">
             </div>
         </section>
-        <section class="contenedor-grande">
-            <h2 class="titulo-categoria">Multiplayer</h2>
-        </section>
-        <section class="contenedor-chico">
-            <h2 class="titulo-categoria">Carreras</h2>
-        </section>
-        <section class="contenedor-grande">
-            <h2 class="titulo-categoria">Shooters</h2>
-        </section>
-        <section class="contenedor-chico">
-            <h2 class="titulo-categoria">Acción</h2>
-        </section>
-        <section class="contenedor-grande">
-            <h2 class="titulo-categoria">Deportes</h2>
-        </section>
-        <section class="contenedor-chico">
-            <h2 class="titulo-categoria">Puzzle</h2>
-        </section>
+        <div class="contenedores">
+            <section class="contenedor-grande">
+                <!-- <h2 class="titulo-categoria">Multiplayer</h2> -->
+                <img class="gamecard-wide-free" src="img/juegos/Multiplayer/smash-karts.png" alt="Smash karts">
+                <img class="gamecard-small-premium" src="img/juegos/Multiplayer/zombs-royale.jpg" alt="Zombs Royale">
+                <img class="gamecard-small-free" src="img/juegos/Multiplayer/iron-order.jpg" alt="Iron Order">
+                <img class="gamecard-small-free" src="img/juegos/Multiplayer/bloxdhop-io-cover.jpg" alt="Bloxd">
+                <img class="gamecard-small-free" src="img/juegos/Multiplayer/hero-wars.jpg" alt="Hero Wars">
+                <img class="gamecard-small-free" src="img/juegos/Multiplayer/goodgame-empire.jpg" alt="Goodgame Empire">
+                <img class="gamecard-small-free" src="img/juegos/Multiplayer/minecraft.jpg" alt="Minecraft">
+                
+            </section>
+            <section class="contenedor-chico">
+                <!-- <h2 class="titulo-categoria">Carreras</h2> -->
+                <img class="gamecard-wide-free wide" src="img/juegos/Carreras/madalin.jpg" alt="">
+                <img class="gamecard-small-free small" src="img/juegos/Carreras/drift-hunter.jpg" alt="">
+                <img class="gamecard-small-free small" src="img/juegos/Carreras/burnin-rubber-5-xs-cover.jpg" alt="">
+                <img class="gamecard-small-free small" src="img/juegos/Carreras/higway-racer.jpg" alt="">
+                <img class="gamecard-small-free small" src="img/juegos/Carreras/moto-x3m.jpeg" alt="">
+            </section>
+            <section class="contenedor-chico">
+                <!-- <h2 class="titulo-categoria">Shooters</h2> -->
+                <img class="gamecard-wide-free" src="img/juegos/Shooters/force-bullet.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Shooters/downtown-1930s-mafia-cover.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Shooters/air-wars3.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Shooters/buildnow-gg-cover.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Shooters/fields-of-fury-cover.jpg" alt="">
+
+            </section>
+            <section class="contenedor-grande">
+                <!-- <h2 class="titulo-categoria">Acción</h2> -->
+                <img class="gamecard-wide-free" src="img/juegos/Accion/slash-royal.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Accion/ninja-hands-cover.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Accion/murderer.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Accion/magic-hands-cover.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Accion/amanzing.png" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Accion/1v1battle-build-fight-simulator-cover.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Accion/funny-shooter---destroy-all-cover.png" alt="">
+            </section>
+            <section class="contenedor-grande">
+                <!-- <h2 class="titulo-categoria">Deportes</h2> -->
+                <img class="gamecard-wide-free" src="img/juegos/Deportes/crazy-flips.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Deportes/8ball-billiards.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Deportes/boxing.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Deportes/basket-stars.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Deportes/mini-golf-club-cover.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Deportes/tap-shots.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Deportes/tennis-masters-cover.jpg" alt="">
+            </section>
+            <section class="contenedor-chico">
+                <!-- <h2 class="titulo-categoria">Puzzle</h2> -->
+                <img class="gamecard-wide-free" src="img/juegos/Puzzle/defuse-the-bomb-3d-cover.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Puzzle/oneline-cover.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Puzzle/escape-or-die-cover.jpg" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Puzzle/mahjong.png" alt="">
+                <img class="gamecard-small-free" src="img/juegos/Puzzle/cups---water-sort-puzzle-cover.jpg" alt="">
+            </section>
+        </div>
     </main>    
     <footer>
         <section class="links">
