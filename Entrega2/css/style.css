@@ -19,6 +19,7 @@
     width: 40%;
 } */
 
+/* Header y elementos internos */
 header{
     display: grid;
     background-color: #FC3939;
@@ -92,9 +93,9 @@ header{
     align-self: center;
 }
 
-
+/* Body y elementos internos */
 main {
-    margin: 25px 5.5%;
+    margin: 25px 5.555555%;
 }
 
 .titulo-categoria {
@@ -103,6 +104,24 @@ main {
     line-height: 42px;
 }
 
+.h-scrollable-container {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.gamecard-big {
+    margin-right: 1.15%;
+    border-radius: 20px;
+}
+
+.gamecard-small {
+    margin-right: 1.15%;
+    border-radius: 20px;
+}
+
+
+/* Footer y elementos internos */
 footer{
     height: 270px;
     background-color: #FC3939;
