@@ -138,11 +138,13 @@ main {
 
 .gamecard-big {
     height: 100%;
+    width: 18.75vw;
     margin-right: 1.171%;
     border-radius: 20px;
 }
 
 .gamecard-small {
+    width: 11.11vw;
     margin-right: 1.171%;
     border-radius: 20px;
 }
@@ -154,14 +156,14 @@ main {
 }
 
 .contenedor-grande {
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
-    
-    width: 705px;
-    height: 355px;
+
+    /*width: 705px;
+    height: 355px;*/
+    width: 48.958vw;
     /* padding: 1%; */
 
     /* secundario-base */
@@ -170,47 +172,34 @@ main {
 }
 
 .gamecard-wide-free {
-    width: 335px;
+    /* width: 47.517%; */
+    width: 23.263vw;
+    /* width: 335px; */
     height: 160px;
-    left: 10px;
-    top: 55px;
     border-radius: 20px;
 }
 
 .gamecard-small-premium, .gamecard-small-free {
-    width: 160px;
+    /* width: 22.695%; */
+    width: 11.1vw;
+    /* width: 160px; */
     height: 160px;
-    /* left: 360px;
-    top: 55px; */
     border-radius: 20px;
 }
 
 .contenedor-chico {
-    width: 36.80%;
-    background: #FC3939;
-    border-radius: 20px;
-}
-
-
-.contenedor-chico {
-    /*display: flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
     width: 530px;
     height: 355px;
-    width: 36.805%;
+    /* width: 36.805%; */
+    width: 36.805vw;
     height: 24.652%;
-    left: calc(50% - 530px/2);
-    top: calc(50% - 355px/2 + 22.5px);
-    background: #FC3939;*/
+    background: #FC3939;
     border-radius: 20px;
-    display: grid;
-    grid-column-gap: 15px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 2fr 1fr;
 }
-
 
 /* Footer y elementos internos */
 footer{
