@@ -123,7 +123,6 @@ main {
     font-weight: 400;
     font-size: 32px;
     line-height: 42px;
-    width: 100%;
 }
 
 .juegos-recomendados {
@@ -164,15 +163,17 @@ main {
 
 .titulo-boton{
     display: flex;
+    justify-content: space-between;
 }
 
 .titulo-boton button{
     width: 120px;
     height: 40px;
-
     background: #FC3939;
     border-radius: 10px;
 }
+
+
 
 /* .contenedor-grande {
     display: flex;
@@ -508,4 +509,35 @@ footer .links li{
 .comentario{
     border-top: 1px solid black;
     /* border-bottom: 1px solid black; */
+}
+
+/* ------------------------- Lanzamiento ----------------------------- */
+
+.header-lanzamiento {
+    background-color: #000000;
+}
+
+.main-lanzamiento {
+    margin: 0;
+}
+
+.inferno-trooper {
+    position: relative;
+    left: -6.666%;
+    top: 2px;
+    width: 46.805%;
+    object-fit: cover;
+}
+
+.background-space-fight {
+    position: absolute;
+    left: 0px;
+    z-index: -1;
+
+    width: 100%;
+    filter: blur(2.5px);
+}
+
+.footer-lanzamiento {
+    background-color: #000000;
 }
