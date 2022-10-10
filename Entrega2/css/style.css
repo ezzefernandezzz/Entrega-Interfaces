@@ -405,6 +405,12 @@ footer .links li{
     border-radius: 20px;
 }
 
+.creador{
+    position: absolute;
+    right: 10%;
+    bottom: -75%;
+}
+
 .contenedor-multimedia:first-child{
    /*  background: url(/Entrega2/img/juegos/4EnLinea/Icono\ Play.png);
     background-repeat: no-repeat;
