@@ -628,9 +628,7 @@ footer .links li{
     left: -10%;
     height: 100%;
     width: 111.80%;
-
     filter: blur(2.5px);
-
     object-fit: cover;
 }
 
@@ -638,11 +636,11 @@ footer .links li{
     position: absolute;
     /* top: 84.5%; */
     bottom: 2%;
-    left: -20px;
+    left: -20%;
     background: rgba(0, 0, 0, 0.85);
     filter: blur(20px);
     height: 110px;
-    width: 120%;
+    width: 150%;
     z-index: 2;
 }
 
@@ -650,11 +648,11 @@ footer .links li{
     position: absolute;
     /* top: 90%; */
     bottom: -2%;
-    left: -20px;
+    left: -20%;
     background: #000000;
     filter: blur(7.5px);
     height: 80px;
-    width: 120%;
+    width: 150%;
     z-index: 2;
 }
 
@@ -681,23 +679,38 @@ footer .links li{
 .game-features img {
     position: relative;
     width: 100vw;
+    filter: blur(1px);
+}
+
+.game-features .bg-overlay {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
+
+.game-features .fade.sup-fade {
+    top: -2%;
+}
+
+.game-features .barra-solida.sup-barra-solida {
+    top: -4%;
 }
 
 .game-features .fade {
-    bottom: -4%;
+    bottom: -2%;
 } 
 
 .game-features .barra-solida {
-    bottom: -6%;
+    bottom: -5%;
 }
 
-
-.fade.sup-fade {
-    top: 15%;
-}
-
-.barra-solida.sup-barra-solida {
-    top: 14%;
+.overlay-texto-f1 {
+    position: absolute;
+    left: 37.56%;
+    top: 10%;
+    width: 71.111%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    filter: blur(40px);
+    z-index: 2;
 }
     
 
