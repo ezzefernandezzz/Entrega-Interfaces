@@ -524,11 +524,7 @@ footer .links li{
     margin: 0;
 }
 
-.main-lanzamiento h1,
-.main-lanzamiento h2,
-.main-lanzamiento h3,
-.main-lanzamiento h4,
-.main-lanzamiento p {
+.main-lanzamiento * {
     font-family: "Star Jedi";
     font-weight: 500;
     color: #FFC700;
@@ -550,7 +546,7 @@ footer .links li{
     position: absolute;
     z-index: 2;
     left: 49%;
-    top: 37%;
+    top: 36.5%;
     width: 42%;
     font-weight: 400;
     font-size: 50px;
@@ -561,9 +557,14 @@ footer .links li{
 .texto-y-boton button {
     position: absolute;
     z-index: 2;
-    left: 49.791%;
-    top: 68.61%;
-    width: 40%;
+    top: 64.08%;
+    left: 56.527%;
+    width: 27.08%;
+    height: 13.50%;
+    background-color: #FFC700;
+    color: black;
+    border-radius: 10px;
+    font-size: 36px;
 }
 
 .inferno-trooper {
