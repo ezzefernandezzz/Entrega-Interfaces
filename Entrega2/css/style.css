@@ -517,6 +517,15 @@ footer .links li{
     position: relative;
 }
 
+.game-logo {
+    position: absolute;
+    left: 49.791%;
+    top: 13.23%;
+    width: 40.34%;
+    z-index: 1;
+
+}
+
 .inferno-trooper {
     position: relative;
     left: -6.666%;
@@ -532,7 +541,7 @@ footer .links li{
     position: absolute;
     top: 1px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     z-index: 0;
 
