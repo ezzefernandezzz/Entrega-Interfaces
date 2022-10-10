@@ -659,8 +659,6 @@ footer .links li{
 }
 
 .presentacion-juego {
-    display: flex;
-    flex-flow: column;
     background: url(/Entrega2/img/lanzamiento/starsbg.png);
     background-size: 500px 500px;
 }
@@ -672,17 +670,34 @@ footer .links li{
     font-size: 98px;
 }
 
+.historia {
+    position: relative;
+}
+
+.game-features {
+    position: relative;    
+}
+
 .game-features img {
     position: relative;
-    /* left: -17.333%; */
-    object-fit: none;
-    object-position: top;
-    height: 70%;
     width: 100vw;
 }
 
 .game-features .fade {
+    bottom: -4%;
+} 
 
+.game-features .barra-solida {
+    bottom: -6%;
+}
+
+
+.fade.sup-fade {
+    top: 15%;
+}
+
+.barra-solida.sup-barra-solida {
+    top: 14%;
 }
     
 
