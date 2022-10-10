@@ -684,7 +684,7 @@ footer .links li{
 }
 
 .features .barra-solida {
-    height: 15%;
+    height: 10%;
     filter: blur(15px);
 }
 
@@ -712,11 +712,13 @@ footer .links li{
 }
 
 .feature-game-modes .fade {
+    height: 30%;
     bottom: -16%;
 } 
 
 .feature-game-modes .barra-solida {
-    bottom: -10%;
+    height: 15%;
+    bottom: -9%;
 }
 
 .overlay-texto-f {
@@ -750,7 +752,36 @@ footer .links li{
 }
 
 .feature-vehiculos .fade {
-    bottom: -16%;
+    filter: blur(40px);
+    bottom: -13%;
+}
+
+.feature-personajes {
+    position: relative;
+    margin-bottom: 10%;
+}
+
+.feature-personajes img {
+    position: relative;
+    width: 100vw;
+    filter: blur(1px);
+}
+
+.feature-personajes .overlay-texto-f {
+    left: 47.152%;
+    width: 57.01%;
+}
+
+.feature-personajes .bg-overlay {
+    background: none;
+}
+
+.feature-personajes .fade {
+    bottom: -17%;
+}
+
+.feature-personajes .barra-solida {
+    bottom: -18%;
 }
 
 .footer-lanzamiento {
