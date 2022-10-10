@@ -54,6 +54,7 @@ header{
 
 .btn-header button div {
     display: flex;
+    justify-content: center;
 }
 
 
@@ -81,7 +82,10 @@ header{
 }
 
 .btn-perfil div{
-    /* height: 85%; */
+    height: 85%;
+}
+
+.btn-perfil-lanzamiento{
     height: 116.8%;
 }
 
