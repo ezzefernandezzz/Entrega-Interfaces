@@ -606,18 +606,20 @@ footer .links li{
 
 .fade {
     position: absolute;
-    top: 84.5%;
+    /* top: 84.5%; */
+    bottom: 2%;
     left: -20px;
     background: rgba(0, 0, 0, 0.85);
     filter: blur(20px);
-    height: 100px;
+    height: 110px;
     width: 120%;
     z-index: 2;
 }
 
 .barra-solida {
     position: absolute;
-    top: 90%;
+    /* top: 90%; */
+    bottom: -2%;
     left: -20px;
     background: #000000;
     filter: blur(7.5px);
@@ -639,6 +641,20 @@ footer .links li{
     text-align: center;
     font-size: 98px;
 }
+
+.game-features img {
+    position: relative;
+    /* left: -17.333%; */
+    object-fit: none;
+    object-position: top;
+    height: 70%;
+    width: 100vw;
+}
+
+.game-features .fade {
+
+}
+    
 
 .footer-lanzamiento {
     background-color: #000000;
