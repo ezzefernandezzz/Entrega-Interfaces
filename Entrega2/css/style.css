@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500;600;700&display=swap');
+@import url(/Entrega2/fonts/Starjedi.ttf);
+@import url(/Entrega2/fonts/STJEDISE.TTF);
 
 *{
 	margin: 0;
@@ -521,7 +523,7 @@ footer .links li{
     position: absolute;
     left: 49.791%;
     top: 13.23%;
-    width: 40.34%;
+    width: 40.416%;
     z-index: 1;
 
 }
