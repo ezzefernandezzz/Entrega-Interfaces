@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500;600;700&display=swap');
-@import url(/Entrega2/fonts/Starjedi.ttf);
-@import url(/Entrega2/fonts/STJEDISE.TTF);
+
+@font-face {
+    font-family: Star Jedi;
+    src: url(/Entrega2/fonts/Starjedi.ttf);
+}
+
+@font-face {
+    font-family: Star Jedi SE;
+    src: url(/Entrega2/fonts/STJEDISE.TTF);
+}
 
 *{
 	margin: 0;
@@ -512,7 +520,18 @@ footer .links li{
 }
 
 .main-lanzamiento {
+    overflow-x: hidden;
     margin: 0;
+}
+
+.main-lanzamiento h1,
+.main-lanzamiento h2,
+.main-lanzamiento h3,
+.main-lanzamiento h4,
+.main-lanzamiento p {
+    font-family: "Star Jedi";
+    font-weight: 500;
+    color: #FFC700;
 }
 
 .hero-section {
@@ -524,8 +543,27 @@ footer .links li{
     left: 49.791%;
     top: 13.23%;
     width: 40.416%;
-    z-index: 1;
+    z-index: 2;
+}
 
+.texto-y-boton h3{
+    position: absolute;
+    z-index: 2;
+    left: 49%;
+    top: 37%;
+    width: 42%;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 77px;
+    text-align: center;
+}
+
+.texto-y-boton button {
+    position: absolute;
+    z-index: 2;
+    left: 49.791%;
+    top: 68.61%;
+    width: 40%;
 }
 
 .inferno-trooper {
@@ -533,7 +571,7 @@ footer .links li{
     left: -6.666%;
     top: 4px;
     
-    z-index: 1;
+    z-index: 2;
     width: 46.75%;
 
     filter: blur(0.45px);
@@ -545,13 +583,13 @@ footer .links li{
     width: 100%;
     height: 100%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-    z-index: 0;
+    z-index: 1;
 
 }
 
 .background-space-fight {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     top: 1px;
     left: -10%;
     height: 100%;
@@ -582,6 +620,20 @@ footer .links li{
     height: 80px;
     width: 120%;
     z-index: 2;
+}
+
+.presentacion-juego {
+    display: flex;
+    flex-flow: column;
+    background: url(/Entrega2/img/lanzamiento/starsbg.png);
+    background-size: 500px 500px;
+}
+
+.titulo-seccion {
+    position: relative;
+    top: -30px;
+    text-align: center;
+    font-size: 98px;
 }
 
 .footer-lanzamiento {
