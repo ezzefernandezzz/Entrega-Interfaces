@@ -672,37 +672,48 @@ footer .links li{
     position: relative;
 }
 
-.game-features {
+.features .fade {
+    height: 27%;
+    filter: blur(20px);
+}
+
+.features .barra-solida {
+    height: 15%;
+    filter: blur(15px);
+}
+
+.feature-game-modes {
     position: relative;    
 }
 
-.game-features img {
+.feature-game-modes img {
     position: relative;
     width: 100vw;
     filter: blur(1px);
 }
 
-.game-features .bg-overlay {
+.feature-game-modes .bg-overlay {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 }
 
-.game-features .fade.sup-fade {
+.feature-game-modes .fade.sup-fade {
+    height: 14%;
     top: -2%;
 }
 
-.game-features .barra-solida.sup-barra-solida {
+.feature-game-modes .barra-solida.sup-barra-solida {
     top: -4%;
 }
 
-.game-features .fade {
-    bottom: -2%;
+.feature-game-modes .fade {
+    bottom: -16%;
 } 
 
-.game-features .barra-solida {
-    bottom: -5%;
+.feature-game-modes .barra-solida {
+    bottom: -10%;
 }
 
-.overlay-texto-f1 {
+.overlay-texto-f {
     position: absolute;
     left: 37.56%;
     top: 10%;
@@ -712,7 +723,29 @@ footer .links li{
     filter: blur(40px);
     z-index: 2;
 }
-    
+
+.feature-vehiculos {
+    margin-top: 4%;
+    position: relative;
+}
+
+.feature-vehiculos img {
+    width: 100%;
+    filter: blur(1px);
+}
+
+.feature-vehiculos .bg-overlay {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
+.feature-vehiculos .overlay-texto-f {
+    left: -4.09%;
+    width: 54.86%;
+}
+
+.feature-vehiculos .fade {
+    bottom: -16%;
+}
 
 .footer-lanzamiento {
     background-color: #000000;
