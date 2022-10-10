@@ -45,7 +45,7 @@ header{
 
 .btn-header button{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     border-radius: 30px;
     border: none;
@@ -63,7 +63,7 @@ header{
 }
 
 .btn-creditos div {
-    height: 65%;
+    height: 81%;
 }
 
 .btn-creditos text {
@@ -81,7 +81,8 @@ header{
 }
 
 .btn-perfil div{
-    height: 85%;
+    /* height: 85%; */
+    height: 116.8%;
 }
 
 .btn-perfil text{
@@ -517,6 +518,8 @@ footer .links li{
 
 .header-lanzamiento {
     background-color: #000000;
+    display: flex;
+    justify-content: space-between;
 }
 
 .main-lanzamiento {
