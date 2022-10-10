@@ -678,6 +678,24 @@ footer .links li{
     position: relative;
 }
 
+.features h3 {    
+    position: absolute;    
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 77px;    
+    z-index: 3;
+}
+
+.features p {
+    position: absolute;   
+    z-index: 3;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 55px; 
+    text-align: center;
+    color: #EAEAEA;
+}
+
 .features .fade {
     height: 27%;
     filter: blur(20px);
@@ -690,6 +708,18 @@ footer .links li{
 
 .feature-game-modes {
     position: relative;    
+}
+
+.feature-game-modes h3 {
+    left: 43.33%;
+    top: 23.86%;
+    width: 55.45%;
+}
+
+.feature-game-modes p {
+    left: 42.91%;
+    top: 43.81%;
+    width: 53.19%;
 }
 
 .feature-game-modes img {
@@ -708,17 +738,17 @@ footer .links li{
 }
 
 .feature-game-modes .barra-solida.sup-barra-solida {
-    top: -4%;
+    top: -10%;
 }
 
 .feature-game-modes .fade {
-    height: 30%;
+    height: 27%;
     bottom: -16%;
 } 
 
 .feature-game-modes .barra-solida {
     height: 15%;
-    bottom: -9%;
+    bottom: -13%;
 }
 
 .overlay-texto-f {
@@ -737,13 +767,25 @@ footer .links li{
     position: relative;
 }
 
+.feature-vehiculos h3 {
+    left: 4.51%;
+    top: 17.42%;
+    width: 41.25%;
+}
+
+.feature-vehiculos p {
+    left: 3.88%;
+    top: 36.7%;
+    width: 43.26%;
+}
+
 .feature-vehiculos img {
     width: 100%;
     filter: blur(1px);
 }
 
 .feature-vehiculos .bg-overlay {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 }
 
 .feature-vehiculos .overlay-texto-f {
@@ -759,6 +801,20 @@ footer .links li{
 .feature-personajes {
     position: relative;
     margin-bottom: 10%;
+}
+
+.feature-personajes h3 {
+    left: 57.56%;
+    top: 19.06%;
+    width: 35.69%;
+    text-align: center;
+}
+
+.feature-personajes p {
+    left: 53.75%;
+    top: 48.73%;
+    width: 43.26%;
+    text-align: center;
 }
 
 .feature-personajes img {
