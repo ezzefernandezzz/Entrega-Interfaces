@@ -1066,6 +1066,33 @@ footer li{
         bottom: -18%;
     }
 
+    .container-scroll-personajes {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card-personaje {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .card-personaje h3{
+        font-size: 32px;
+    }
+
+    .boton-pre-ordenar {
+        margin-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .boton-pre-ordenar h2 {
+        text-align: center;
+        font-size: 64px;
+    }
+
     .footer-lanzamiento {
         background-color: #000000;
     }
