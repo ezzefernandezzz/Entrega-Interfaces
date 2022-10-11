@@ -413,13 +413,18 @@ footer li{
     .menu-hamburguesa {
         display: flex;
         flex-flow: column;
-        width: 22.77%;
+        padding-left: 15px;
+        width: 22.77vw;
         background-color: #EAEAEA;
     }
 
     .menu-hamburguesa .buscador {
         margin-top: 5px;
         margin-bottom: 5px;
+    }
+
+    .menu-hamburguesa .buscador input {
+        font-family: 'JetBrains Mono', monospace;
     }
 
     .menu-hamburguesa img {
@@ -432,6 +437,7 @@ footer li{
         margin-left: 2%;
         margin-top: 5px;
         margin-bottom: 5px;
+        font-family: 'JetBrains Mono', monospace;
     }
 
     a:link, a:visited, a:hover, a:active {
