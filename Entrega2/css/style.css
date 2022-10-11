@@ -107,6 +107,53 @@ header{
     height: 50%;
 }
 
+
+.menu-hamburguesa {
+    visibility: hidden;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 45%;
+    box-shadow: 0px 20px 20px 0px rgba(10, 27, 68, 1);
+    z-index: 1;
+    /* transition: visibility 2s; */
+    /* agregar clase que agrege o saque transition de visibility cuando hago ocultar */
+}
+
+/* .menu-hamburguesa a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+} */
+
+.mostrar {
+    visibility: visible;
+    animation: animacion-desplegar 1s;
+}
+
+@keyframes animacion-desplegar {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.ocultar {
+    transition: visibility 2s;
+    animation: animacion-ocultar 2s;
+}
+
+@keyframes animacion-ocultar {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 .logo-container{
     display: flex;
     align-self: center;
