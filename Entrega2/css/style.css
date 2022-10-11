@@ -34,7 +34,7 @@ body{
     background-color: #EAEAEA;
 }
 
-/* ------------------------------------------------- Header y elementos internos -------------------------------------------------*/
+/* -------------------------------- Header y elementos internos ----------------------------------*/
 header{
     display: grid;
     background-color: #FC3939;
@@ -50,9 +50,6 @@ header{
 }
 
 .btn-header button{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     border-radius: 30px;
     border: none;
     height: 76.169%;
@@ -74,11 +71,7 @@ header{
 }
 
 .btn-creditos text {
-    text-align: left;
-}
-
-.btn-creditos img {
-    padding-left: 15%
+    display: none;
 }
 
 .btn-perfil{
@@ -91,16 +84,11 @@ header{
     height: 85%;
 }
 
-.btn-perfil-lanzamiento{
-    height: 116.8%;
-}
-
 .btn-perfil text{
-    padding-left: 20%;
+    display: none;
 }
 
 .btn-perfil img{
-    padding-left: 10%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -117,17 +105,19 @@ header{
 
 .logo-container{
     display: flex;
-    justify-content: center;
     align-self: center;
+    justify-content: center;
+}
+
+.logo-container img {
+    width: 100%;
 }
 
 .hambMenu{
     width: 55px;
-    height: 55px;
     align-self: center;
 }
 
-/* -------------------------------------------------Body y elementos internos ------------------------------------------------- */
 main {
     margin: 25px 5.555555%;
 }
@@ -218,8 +208,8 @@ main {
 }
 .contenedores{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-flow: column wrap;
+    align-items: center;
 }
 
 .titulo-boton{
@@ -234,29 +224,10 @@ main {
     border-radius: 10px;
 }
 
-/* .contenedor-grande {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
-
-    width: 655px;
-    height: 320px;
-    padding: 10px;
-    width: 48.958vw;
-    padding: 1%; 
-
-    secundario-base
-    background: #FC3939;
-    border-radius: 20px;
-
-    margin-bottom: 2%;
-} */
-
 .contenedor-grande {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 15px;
     grid-row-gap: 15px;
 
@@ -265,56 +236,37 @@ main {
     border-radius: 20px;
     margin-bottom: 2%;
 }
-
+    
 .contenedor-grande .div1 { grid-area: 1 / 1 / 2 / 3; }
-.contenedor-grande .div2 { grid-area: 1 / 3 / 2 / 4; }
-.contenedor-grande .div3 { grid-area: 1 / 4 / 2 / 5; }
-.contenedor-grande .div4 { grid-area: 2 / 1 / 3 / 2; }
-.contenedor-grande .div5 { grid-area: 2 / 2 / 3 / 3; }
-.contenedor-grande .div6 { grid-area: 2 / 3 / 3 / 4; }
-.contenedor-grande .div7 { grid-area: 2 / 4 / 3 / 5; }
-
-/* .contenedor-chico {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
-    width: 495px;
-    height: 320px;
-    padding: 10px;
-    width: 36.805%;
-    width: 36.805vw;
-    height: 24.652%;
-    background: #FC3939;
-    border-radius: 20px;
-    margin-bottom: 2%;
-} */
+.contenedor-grande .div2 { grid-area: 2 / 1 / 3 / 2; }
+.contenedor-grande .div3 { grid-area: 2 / 2 / 3 / 3; }
+.contenedor-grande .div4 { grid-area: 3 / 1 / 4 / 2; }
+.contenedor-grande .div5 { grid-area: 3 / 2 / 4 / 3; }
+.contenedor-grande .div6 { grid-area: 4 / 1 / 5 / 2; }
+.contenedor-grande .div7 { grid-area: 4 / 2 / 5 / 3; }
 
 .contenedor-chico {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 15px;
     grid-row-gap: 15px;
 
     background: #FC3939;
-    border-radius: 20px;
     padding: 10px;
+    border-radius: 20px;
     margin-bottom: 2%;
 }
-
+    
 .contenedor-chico .div1 { grid-area: 1 / 1 / 2 / 3; }
-.contenedor-chico .div2 { grid-area: 1 / 3 / 2 / 4; }
-.contenedor-chico .div3 { grid-area: 2 / 1 / 3 / 2; }
-.contenedor-chico .div4 { grid-area: 2 / 2 / 3 / 3; }
-.contenedor-chico .div5 { grid-area: 2 / 3 / 3 / 4; }
+.contenedor-chico .div2 { grid-area: 2 / 1 / 3 / 2; }
+.contenedor-chico .div3 { grid-area: 2 / 2 / 3 / 3; }
+.contenedor-chico .div4 { grid-area: 3 / 1 / 4 / 2; }
+.contenedor-chico .div5 { grid-area: 3 / 2 / 4 / 3; }
 
 .gamecard-wide-free {
-    /* width: 47.517%; */
-    /* width: 23.263vw; */
     width: 335px; 
     height: 160px;
-    /* border-radius: 20px; */
 }
 
 .gamecard-wide-free img{
@@ -324,7 +276,6 @@ main {
 }
 
 .gamecard-small-premium, .gamecard-small-free {
-    /* width: 22.695%; */
     width: 160px;
     height: 160px;
     border-radius: 20px;
@@ -337,20 +288,34 @@ main {
 }
 
 /* Footer y elementos internos */
-footer{
-    height: 270px;
+/*footer{
     background-color: #FC3939;
     color: #FFFFFF;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 1.55% 1.6% 1.55% 1.6%;
+}*/
+
+footer {
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 3fr;
-    grid-template-rows: 5fr 1fr;
-    grid-template-areas: 
-        "link soporte contacto busqueda"
-        "copyright copyright copyright copyright";
+    background-color: #FC3939;
+    color: #FFFFFF;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    
     padding: 1.55% 1.6% 1.55% 1.6%;
 }
+    
+footer .busqueda { grid-area: 1 / 1 / 2 / 4; }
+footer .links { grid-area: 2 / 1 / 3 / 2; }
+footer .soporte { grid-area: 2 / 2 / 3 / 3; }
+footer .contacto { grid-area: 2 / 3 / 3 / 4; }
 
-footer .links h3, .juego h3{
+
+footer h3, .juego h3{
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -358,7 +323,7 @@ footer .links h3, .juego h3{
     padding-bottom: 20px;
 }
 
-footer .links li{
+footer li{
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -366,12 +331,11 @@ footer .links li{
     padding-bottom: 8px;
 }
 
-.buscador-redes {
+.busqueda {
     display: flex;
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
-    margin-left: 20%
 }
 
 .buscador img{
@@ -412,7 +376,6 @@ footer .links li{
     font-weight: bold;
     margin-top: 1.31vh;
     margin-bottom: 1.31vh;
-    /* font-weight: 700; */ /* mismo tamaño que poner bold */
 }
 
 .container-redes {
@@ -434,346 +397,583 @@ footer .links li{
     line-height: 21px;
 }
 
+@media (min-width: 790px) {
 
-/*                                      Harry Potter                         */
+    .btn-header button{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        border-radius: 30px;
+        border: none;
+        height: 76.169%;
+    }
 
-.juego-preview{
-    display: flex;
-    justify-content: space-between;
-}
-.contenedor-4linea{
-    width: 900px;
-    height: 482px;
+    .btn-creditos img {
+        padding-left: 15%
+    }
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image.png);
-    filter: blur(1.25px);
-}
+    .btn-creditos text {
+        display: block;
+        text-align: left;
+    }
 
-.contenedor-4linea img{
-    width: 100%;
-    height: 100%;
-}
+    .btn-perfil img{
+        padding-left: 10%;
+    }
 
-.preview{
-    background: #D9D9D9;
-    border-radius: 20px;
-}
+    .btn-perfil text{
+        display: block;
+        padding-left: 20%;
+    }
 
-.creador{
-    position: absolute;
-    right: 10%;
-    bottom: -75%;
-}
+    .contenedores{
+        display: flex;
+    }
 
-.contenedor-multimedia:first-child{
-   /*  background: url(/Entrega2/img/juegos/4EnLinea/Icono\ Play.png);
-    background-repeat: no-repeat;
-    z-index: -1; */
-}
-
-.interacciones{
-    display: flex;
-    width: 900px;
-    justify-content: space-between;
-    margin-top: 8px;
-}
-
-.btn-compartir{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 180px;
-    height: 40px;
-
-    background: #FC3939;
-    border-radius: 30px;
-}
-
-.btn-compartir img {
-    width: 25px;
-}
-
-.calificar{
-    display: flex;
-    align-items: center;
-}
-
-.calificar h4 {
-    height: 16px;
-    margin-right: 10px;
-}
-
-.calificacion {
-    display: flex;
-    align-items: center;
-}
-
-.calificacion h4 {
-    height: 16px;
-    margin-right: 10px;
-}
-
-.calificacion img {
-    height: 30px;
-    width: 30px;
-}
-
-.informacion {
-    display: flex;
-    align-items: center;
-}
-
-.informacion h4 {
-    height: 20px;
-    margin-right: 10px;
-}
-
-.informacion img {
-    height: 20px;
-    width: 20px;
-}
-
-.descripcion-game{
-    width: 900px;
-    height: 200px;
-
-    display: flex;
-    align-items: center;
-}
-
-.interacciones h4, .descripcion-game h4{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
-}
-
-.comentarios{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 1280px;
-    height: 837px;
-
-    background: #D9D9D9;
-    border-radius: 20px;
-    padding: 34px 3.05%
-}
-
-.contenedor-caja-comentarios {
-    width: 91.17%;
-    height: 15%;
-    margin-bottom: 5%;
-}
-
-.contenedor-caja-comentarios textarea{
-    width: 100%;
-    height: 100%;
-    resize: none;
-
-    background: #EFEEEE;
-    border-radius: 15px;
-
-    padding: 10px;
-
-    font-size: 24px;
-
-}
-
-.contenedor-caja-comentarios button {
-    width: 15.43%;
-    height: 55.8%;
-    background: #FC3939;
-    border-radius: 40px;
-
-    position: relative;
-    left: 85%;
-    bottom: 65%;
-}
-
-.comentarios-publicados {
-    width: 91.17%;
-}
-
-.comentario{
-    border-top: 1px solid black;
-    /* border-bottom: 1px solid black; */
-    /* display: flex;
-    flex-direction: column;
-    align-items: flex-start; */
-}
-
-/* ------------------------- Lanzamiento ----------------------------- */
-
-.header-lanzamiento {
-    background-color: #000000;
-    display: flex;
-    justify-content: space-between;
-}
-
-.main-lanzamiento {
-    overflow-x: hidden;
-    margin: 0;
-}
-
-.main-lanzamiento * {
-    font-family: "Star Jedi";
-    font-weight: 500;
-    color: #FFC700;
-}
-
-.hero-section {
-    position: relative;
-}
-
-.game-logo {
-    position: absolute;
-    left: 49.791%;
-    top: 13.23%;
-    width: 40.416%;
-    z-index: 2;
-}
-
-.texto-y-boton h3{
-    position: absolute;
-    z-index: 2;
-    left: 49%;
-    top: 36.5%;
-    width: 42%;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 77px;
-    text-align: center;
-}
-
-.texto-y-boton button {
-    position: absolute;
-    z-index: 2;
-    top: 64.08%;
-    left: 56.527%;
-    width: 27.08%;
-    height: 13.50%;
-    background-color: #FFC700;
-    color: black;
-    border-radius: 10px;
-    font-size: 36px;
-}
-
-.inferno-trooper {
-    position: relative;
-    left: -6.666%;
-    top: 4px;
+    .contenedor-grande {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
     
-    z-index: 2;
-    width: 46.75%;
-
-    filter: blur(0.45px);
-}
-
-.bg-overlay {
-    position: absolute;
-    top: 1px;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-    z-index: 1;
-
-}
-
-.background-space-fight {
-    position: absolute;
-    z-index: 0;
-    top: 1px;
-    left: -10%;
-    height: 100%;
-    width: 111.80%;
-    filter: blur(2.5px);
-    object-fit: cover;
-}
-
-.fade {
-    position: absolute;
-    /* top: 84.5%; */
-    bottom: 2%;
-    left: -20%;
-    background: rgba(0, 0, 0, 0.85);
-    filter: blur(20px);
-    height: 110px;
-    width: 150%;
-    z-index: 2;
-}
-
-.barra-solida {
-    position: absolute;
-    /* top: 90%; */
-    bottom: -2%;
-    left: -20%;
-    background: #000000;
-    filter: blur(7.5px);
-    height: 80px;
-    width: 150%;
-    z-index: 2;
-}
-
-.presentacion-juego {
-    background: url(/Entrega2/img/lanzamiento/starsbg.png);
-    background-size: 500px 500px;
-}
-
-.titulo-seccion {
-    position: relative;
-    top: -30px;
-    text-align: center;
-    font-size: 98px;
-}
-
-.historia {
-    position: relative;
-}
-
-.game-features {
-    position: relative;    
-}
-
-.game-features img {
-    position: relative;
-    width: 100vw;
-    filter: blur(1px);
-}
-
-.game-features .bg-overlay {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-}
-
-.game-features .fade.sup-fade {
-    top: -2%;
-}
-
-.game-features .barra-solida.sup-barra-solida {
-    top: -4%;
-}
-
-.game-features .fade {
-    bottom: -2%;
-} 
-
-.game-features .barra-solida {
-    bottom: -5%;
-}
-
-.overlay-texto-f1 {
-    position: absolute;
-    left: 37.56%;
-    top: 10%;
-    width: 71.111%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    filter: blur(40px);
-    z-index: 2;
-}
+        background: #FC3939;
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 2%;
+    }
     
+    .contenedor-grande .div1 { grid-area: 1 / 1 / 2 / 3; }
+    .contenedor-grande .div2 { grid-area: 1 / 3 / 2 / 4; }
+    .contenedor-grande .div3 { grid-area: 1 / 4 / 2 / 5; }
+    .contenedor-grande .div4 { grid-area: 2 / 1 / 3 / 2; }
+    .contenedor-grande .div5 { grid-area: 2 / 2 / 3 / 3; }
+    .contenedor-grande .div6 { grid-area: 2 / 3 / 3 / 4; }
+    .contenedor-grande .div7 { grid-area: 2 / 4 / 3 / 5; }
+    
+    .contenedor-chico {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+    
+        background: #FC3939;
+        border-radius: 20px;
+        padding: 10px;
+        margin-bottom: 2%;
+    }
+    
+    .contenedor-chico .div1 { grid-area: 1 / 1 / 2 / 3; }
+    .contenedor-chico .div2 { grid-area: 1 / 3 / 2 / 4; }
+    .contenedor-chico .div3 { grid-area: 2 / 1 / 3 / 2; }
+    .contenedor-chico .div4 { grid-area: 2 / 2 / 3 / 3; }
+    .contenedor-chico .div5 { grid-area: 2 / 3 / 3 / 4; }
 
-.footer-lanzamiento {
-    background-color: #000000;
+    footer{
+        background-color: #FC3939;
+        color: #FFFFFF;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr 3fr;
+        grid-template-rows: 5fr 1fr;
+        grid-template-areas: 
+            "link soporte contacto busqueda"
+            "copyright copyright copyright copyright";
+        padding: 1.55% 1.6% 1.55% 1.6%;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+    }
+        
+    footer .links { grid-area: 1 / 1 / 2 / 3; }
+    footer .soporte { grid-area: 1 / 3 / 2 / 5; }
+    footer .contacto { grid-area: 1 / 5 / 2 / 7; }
+    footer .busqueda { grid-area: 1 / 7 / 2 / 10; }
+
+    .busqueda {
+        margin-left: 20%;
+    }
+
+    /*                                      Harry Potter                         */
+
+    .juego-preview{
+        display: flex;
+        justify-content: space-between;
+    }
+    .contenedor-4linea{
+        width: 900px;
+        height: 482px;
+
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image.png);
+        filter: blur(1.25px);
+    }
+
+    .contenedor-4linea img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .preview{
+        background: #D9D9D9;
+        border-radius: 20px;
+    }
+
+    .creador{
+        position: absolute;
+        right: 10%;
+        bottom: -75%;
+    }
+
+    .contenedor-multimedia:first-child{
+    /*  background: url(/Entrega2/img/juegos/4EnLinea/Icono\ Play.png);
+        background-repeat: no-repeat;
+        z-index: -1; */
+    }
+
+    .interacciones{
+        display: flex;
+        width: 900px;
+        justify-content: space-between;
+        margin-top: 8px;
+    }
+
+    .btn-compartir{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 180px;
+        height: 40px;
+
+        background: #FC3939;
+        border-radius: 30px;
+    }
+
+    .btn-compartir img {
+        width: 25px;
+    }
+
+    .calificar{
+        display: flex;
+        align-items: center;
+    }
+
+    .calificar h4 {
+        height: 16px;
+        margin-right: 10px;
+    }
+
+    .calificacion {
+        display: flex;
+        align-items: center;
+    }
+
+    .calificacion h4 {
+        height: 16px;
+        margin-right: 10px;
+    }
+
+    .calificacion img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .informacion {
+        display: flex;
+        align-items: center;
+    }
+
+    .informacion h4 {
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .informacion img {
+        height: 20px;
+        width: 20px;
+    }
+
+    .descripcion-game{
+        width: 900px;
+        height: 200px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .interacciones h4, .descripcion-game h4{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+    }
+
+    .comentarios{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 1280px;
+        height: 837px;
+
+        background: #D9D9D9;
+        border-radius: 20px;
+        padding: 34px 3.05%
+    }
+
+    .contenedor-caja-comentarios {
+        width: 91.17%;
+        height: 15%;
+        margin-bottom: 5%;
+    }
+
+    .contenedor-caja-comentarios textarea{
+        width: 100%;
+        height: 100%;
+        resize: none;
+
+        background: #EFEEEE;
+        border-radius: 15px;
+
+        padding: 10px;
+
+        font-size: 24px;
+
+    }
+
+    .contenedor-caja-comentarios button {
+        width: 15.43%;
+        height: 55.8%;
+        background: #FC3939;
+        border-radius: 40px;
+
+        position: relative;
+        left: 85%;
+        bottom: 65%;
+    }
+
+    .comentarios-publicados {
+        width: 91.17%;
+    }
+
+    .comentario{
+        border-top: 1px solid black;
+        /* border-bottom: 1px solid black; */
+        /* display: flex;
+        flex-direction: column;
+        align-items: flex-start; */
+    }
+
+    /* ------------------------- Lanzamiento ----------------------------- */
+
+        .header-lanzamiento {
+            background-color: #000000;
+            display: flex;
+            justify-content: space-between;
+        }
+
+    .btn-perfil-lanzamiento{
+        height: 116.8%;
+    }
+
+    .main-lanzamiento {
+        overflow-x: hidden;
+        margin: 0;
+    }
+
+    .main-lanzamiento * {
+        font-family: "Star Jedi";
+        font-weight: 500;
+        color: #FFC700;
+    }
+
+    .hero-section {
+        position: relative;
+    }
+
+    .game-logo {
+        position: absolute;
+        left: 49.791%;
+        top: 13.23%;
+        width: 40.416%;
+        z-index: 2;
+    }
+
+    .texto-y-boton h3{
+        position: absolute;
+        z-index: 2;
+        left: 49%;
+        top: 36.5%;
+        width: 42%;
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 77px;
+        text-align: center;
+    }
+
+    .texto-y-boton button {
+        position: absolute;
+        z-index: 2;
+        top: 64.08%;
+        left: 56.527%;
+        width: 27.08%;
+        height: 13.50%;
+        background-color: #FFC700;
+        color: black;
+        border-radius: 10px;
+        font-size: 36px;
+    }
+
+    .inferno-trooper {
+        position: relative;
+        left: -6.666%;
+        top: 4px;
+        
+        z-index: 2;
+        width: 46.75%;
+
+        filter: blur(0.45px);
+    }
+
+    .bg-overlay {
+        position: absolute;
+        top: 1px;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+        z-index: 1;
+
+    }
+
+    .background-space-fight {
+        position: absolute;
+        z-index: 0;
+        top: 1px;
+        left: -10%;
+        height: 100%;
+        width: 111.80%;
+        filter: blur(2.5px);
+        object-fit: cover;
+    }
+
+    .fade {
+        position: absolute;
+        /* top: 84.5%; */
+        bottom: 2%;
+        left: -20%;
+        background: rgba(0, 0, 0, 0.85);
+        filter: blur(20px);
+        height: 110px;
+        width: 150%;
+        z-index: 2;
+    }
+
+    .barra-solida {
+        position: absolute;
+        /* top: 90%; */
+        bottom: -2%;
+        left: -20%;
+        background: #000000;
+        filter: blur(7.5px);
+        height: 80px;
+        width: 150%;
+        z-index: 2;
+    }
+
+    .presentacion-juego {
+        background: url(/Entrega2/img/lanzamiento/starsbg.png);
+        background-size: 500px 500px;
+    }
+
+    .titulo-seccion {
+        position: relative;
+        top: -30px;
+        text-align: center;
+        font-size: 98px;
+    }
+
+    .historia {
+        position: relative;
+    }
+
+    .features h3 {    
+        position: absolute;    
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 77px;    
+        z-index: 3;
+    }
+
+    .features p {
+        position: absolute;   
+        z-index: 3;
+        font-weight: 400;
+        font-size: 33px;
+        line-height: 55px; 
+        text-align: center;
+        color: #EAEAEA;
+    }
+
+    .features .fade {
+        height: 27%;
+        filter: blur(20px);
+    }
+
+    .features .barra-solida {
+        height: 10%;
+        filter: blur(15px);
+    }
+
+    .feature-game-modes {
+        margin-top: 5%;
+        position: relative;    
+    }
+
+    .feature-game-modes h3 {
+        left: 43.33%;
+        top: 23.86%;
+        width: 55.45%;
+    }
+
+    .feature-game-modes p {
+        left: 42.91%;
+        top: 43.81%;
+        width: 53.19%;
+    }
+
+    .feature-game-modes img {
+        position: relative;
+        width: 100vw;
+        filter: blur(1px);
+    }
+
+    .feature-game-modes .bg-overlay {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    }
+
+    .feature-game-modes .fade.sup-fade {
+        height: 14%;
+        top: -2%;
+    }
+
+    .feature-game-modes .barra-solida.sup-barra-solida {
+        top: -10%;
+    }
+
+    .feature-game-modes .fade {
+        height: 27%;
+        bottom: -16%;
+    } 
+
+    .feature-game-modes .barra-solida {
+        height: 15%;
+        bottom: -13%;
+    }
+
+    .overlay-texto-f {
+        position: absolute;
+        left: 37.56%;
+        top: 10%;
+        width: 71.111%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        filter: blur(40px);
+        z-index: 2;
+    }
+
+    .feature-vehiculos {
+        margin-top: 4%;
+        position: relative;
+    }
+
+    .feature-vehiculos h3 {
+        left: 4.51%;
+        top: 17.42%;
+        width: 41.25%;
+    }
+
+    .feature-vehiculos p {
+        left: 3.88%;
+        top: 36.7%;
+        width: 43.26%;
+    }
+
+    .feature-vehiculos img {
+        width: 100%;
+        filter: blur(1px);
+    }
+
+    .feature-vehiculos .bg-overlay {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    }
+
+    .feature-vehiculos .overlay-texto-f {
+        left: -4.09%;
+        width: 54.86%;
+    }
+
+    .feature-vehiculos .fade {
+        filter: blur(40px);
+        bottom: -13%;
+    }
+
+    .feature-personajes {
+        position: relative;
+        margin-bottom: 10%;
+    }
+
+    .feature-personajes h3 {
+        left: 57.56%;
+        top: 19.06%;
+        width: 35.69%;
+        text-align: center;
+    }
+
+    .feature-personajes p {
+        left: 53.75%;
+        top: 48.73%;
+        width: 43.26%;
+        text-align: center;
+    }
+
+    .feature-personajes img {
+        position: relative;
+        width: 100vw;
+        filter: blur(1px);
+    }
+
+    .feature-personajes .overlay-texto-f {
+        left: 47.152%;
+        width: 57.01%;
+    }
+
+    .feature-personajes .bg-overlay {
+        background: none;
+    }
+
+    .feature-personajes .fade {
+        bottom: -17%;
+    }
+
+    .feature-personajes .barra-solida {
+        bottom: -18%;
+    }
+
+    .footer-lanzamiento {
+        background-color: #000000;
+    }
+    /* --------------------------- Body y elementos internos --------------------------------- */
+
 }
+
+@media (min-width: 1400px) {
+    .contenedores{
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+}
+
