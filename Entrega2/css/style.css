@@ -245,11 +245,10 @@ main {
 .gamecard-big .overlay, .gamecard-small .overlay, .gamecard-wide-free .overlay, .gamecard-small-premium .overlay, .gamecard-small-free .overlay {
     display: flex;
     flex-direction: column;
-
     width: 0;
     height: 100%;
     height: 180px;
-     background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8);
     /* filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.8)); */
     position: absolute;
     top: 0;
@@ -291,6 +290,26 @@ main {
 
 .gamecard-small img{
     border-radius: 20px;
+}
+
+.etiqueta-premium {
+    z-index: 3;
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px 0px 20px 0px;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.8));
+    background-color: #ffc800;
+    border-bottom: black solid 2px;
+    border-right: black solid 2px;
+}
+
+.etiqueta-premium p {
+    font-weight: bolder;
+    position: relative;
+    top: 25%;
+    text-align: center;
+    color: black;
 }
 
 .contenedores{
@@ -1092,6 +1111,33 @@ footer li{
 
     .feature-personajes .barra-solida {
         bottom: -18%;
+    }
+
+    .container-scroll-personajes {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card-personaje {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .card-personaje h3{
+        font-size: 32px;
+    }
+
+    .boton-pre-ordenar {
+        margin-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .boton-pre-ordenar h2 {
+        text-align: center;
+        font-size: 64px;
     }
 
     .footer-lanzamiento {
