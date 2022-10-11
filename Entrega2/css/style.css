@@ -246,6 +246,7 @@ main {
 }
 
 .etiqueta-premium {
+    z-index: 3;
     position: absolute;
     width: 80px;
     height: 40px;
