@@ -141,9 +141,9 @@ main {
 }
 
 .h-scrollable-container {
-    display: flex;
+   /*  display: flex;
     justify-content: space-between;
-    overflow: hidden;
+    overflow: hidden; */
     
     /* width: 270px;
     height: 180px; */
@@ -151,6 +151,40 @@ main {
     /* overflow: hidden; */
     cursor: pointer;
     /* border-radius: 20px; */
+}
+
+.h-scrollable-container .slider, .h-scrollable-container .slider2 {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 2px; */
+    
+    /* width: 600px;
+    height: 150px; */
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.h-scrollable-container .control {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #02293b;
+    cursor: pointer;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.h-scrollable-container .prev, .h-scrollable-container .prev2 {
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.h-scrollable-container .next, .h-scrollable-container .next2 {
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
 }
 
 .gamecard-big {
@@ -161,7 +195,7 @@ main {
     border-radius: 20px;
 }
 
-.gamecard-big .overlay, .gamecard-small .overlay, .gamecard-wide-free .overlay {
+.gamecard-big .overlay, .gamecard-small .overlay, .gamecard-wide-free .overlay, .gamecard-small-premium .overlay, .gamecard-small-free .overlay {
     display: flex;
     flex-direction: column;
     width: 0;
@@ -182,8 +216,15 @@ main {
     border-radius: 20px;
 }
 
+.gamecard-small:hover .overlay, .gamecard-small-free:hover .overlay, .gamecard-small-premium:hover .overlay{
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+}
+
 .gamecard-wide-free:hover .overlay {
-    width: 270px;
+    width: 335px;
+    height: 160px;
     border-radius: 20px;
 }
 
@@ -223,11 +264,6 @@ main {
     color: black;
 }
 
-.gamecard-small:hover .overlay {
-    width: 160px;
-    height: 160px;
-    border-radius: 20px;
-}
 .contenedores{
     display: flex;
     flex-flow: column wrap;
@@ -289,6 +325,7 @@ main {
 .gamecard-wide-free {
     width: 335px; 
     height: 160px;
+    position: absolute;
 }
 
 .gamecard-wide-free img{
@@ -301,6 +338,7 @@ main {
     width: 160px;
     height: 160px;
     border-radius: 20px;
+    position: relative;
 }
 
 .gamecard-small-premium img, .gamecard-small-free img{
