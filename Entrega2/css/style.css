@@ -10,6 +10,11 @@
     src: url(/Entrega2/fonts/STJEDISE.TTF);
 }
 
+@font-face {
+    font-family: Steelfish;
+    src: url(/Entrega2/fonts/steelfish.ttf);
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -917,17 +922,48 @@ footer li{
         color: black;
         border-radius: 10px;
         font-size: 36px;
+        overflow: hidden;
+    }
+
+    .texto-y-boton button::before,
+    .texto-y-boton button::after {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 100%;
+    }
+
+    .texto-y-boton button::after {
+        top: 0%;
+        left: -100%;
+        clip-path: polygon(10% 0, 70% 0, 90% 100%, 30% 100%);
+        background-color: #fff6d7be;
+        transition: all 300ms ease;
+    }
+        
+    .texto-y-boton button:hover::after {
+        left: 100%;
     }
 
     .inferno-trooper {
         position: relative;
         left: -6.666%;
         top: 4px;
-        
-        z-index: 2;
+        z-index: 4;
         width: 46.75%;
-
         filter: blur(0.45px);
+        transition: opacity 500ms linear;
+    }
+
+    .inferno-trooper:hover {
+        opacity: 0;
+    }
+
+    .inferno-trooper.if-eye {
+        position: absolute;
+        left: -6.666%;
+        z-index: 3;
     }
 
     .bg-overlay {
@@ -989,6 +1025,58 @@ footer li{
 
     .historia {
         position: relative;
+        display: flex;
+        flex-flow: column wrap;
+        align-content: center;
+        justify-content: center;
+        margin-bottom: 10%;
+    
+    }
+
+    .texto-historia {
+        position: relative;
+        width: 50%;
+        transform: perspective(300px) rotateX(30deg);
+        height: 50vh;
+        padding-right: 10px;
+        overflow-y: scroll;
+    }
+
+    .texto-historia p {
+        text-align: justify;
+        font-family: Steelfish;
+        font-size: 48px;
+        
+
+    }
+
+    .titulo-texto {
+        font-family: Steelfish;
+        font-size: 48px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .texto-historia::-webkit-scrollbar {
+        display: block;
+        transform: perspective(-230px) rotateX(-30deg);
+        width: 10px;
+    }
+    
+    .texto-historia::-webkit-scrollbar-button {
+        display: block;
+        background: #FFCC00;
+    }
+    
+    .texto-historia::-webkit-scrollbar-thumb {
+        display: block;
+        border-radius: 1px;
+        background-color: #FFCC00;
+    }
+    
+    .texto-historia::-webkit-scrollbar-track {
+        display: block;
+        background: black;
     }
 
     .features h3 {    
@@ -1171,12 +1259,12 @@ footer li{
         font-size: 32px;
     }
 
-    .boton-pre-ordenar {
+    .pre-ordenar {
         margin-top: 5%;
         padding-bottom: 5%;
     }
 
-    .boton-pre-ordenar h2 {
+    .pre-ordenar h2 {
         text-align: center;
         font-size: 64px;
     }
