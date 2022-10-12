@@ -11,10 +11,25 @@ const slider2 = document.querySelector('.slider2')
 const hambmenu = document.querySelector('.hambMenu')
 hambmenu.addEventListener('click', mostrarMenu);
 
+const btn_salir = document.querySelector('.btn-salir')
+btn_salir.addEventListener('click', mostrarMenu)
+
 let contador = 0;
 
+/* let nombreJuego = document.querySelector(".gamecard-big img");
+console.log(nombreJuego.alt)
+
+nombreJuego.addEventListener('mouseover', () => {
+    let game_card = document.querySelector(".gamecard-big")
+    let overlay = document.querySelector(".overlay")
+
+    // game_card.classList.add("overlay");
+    overlay.style.width = game_card.clientWidth;
+
+
+}) */
+
 function mostrarMenu() {
-    console.log('dajsjsfan')
     if (contador == 0){
         if(document.getElementById("menuDesplegable").classList.contains("ocultar")){
             console.log('d213123n')
@@ -22,6 +37,8 @@ function mostrarMenu() {
         }
         document.getElementById("menuDesplegable").classList.add("mostrar");
         contador = 1;
+        /*  */
+        document.getElementById("overlay").style.display = "block";
         return;
     }
     else if (contador == 1){
@@ -30,6 +47,8 @@ function mostrarMenu() {
         }
         document.getElementById("menuDesplegable").classList.add("ocultar");
         contador = 0;
+        /*  */
+        document.getElementById("overlay").style.display = "none";
     }
     /* document.getElementById("menuDesplegable").classList.toggle("mostrar"); */
 }
