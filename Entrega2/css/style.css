@@ -69,10 +69,20 @@ header{
     justify-content: center;
 }
 
-
 .btn-creditos{
-    background-color: #FFC700;
     width: 13.19vw;
+}
+
+.btn-creditos, .btn-jugar{
+    background-color: #FFC700;
+}
+
+.btn-creditos:hover, .btn-jugar:hover{
+    background-color: #FFD952;
+}
+
+.btn-creditos:active, .btn-jugar:active{
+    background-color: #FFA800;
 }
 
 .btn-creditos div {
@@ -87,6 +97,14 @@ header{
     background-color: #D6D6D6;
     margin-left: 5%;
     width: 12.5vw;
+}
+
+.btn-perfil:hover{
+    background-color: #EAEAEA;
+}
+
+.btn-perfil:active{
+    background-color: #AAAAAA;
 }
 
 .btn-perfil div{
@@ -124,7 +142,6 @@ header{
     /* transition: visibility 2s; */
     /* agregar clase que agrege o saque transition de visibility cuando hago ocultar */
 }
-
 
 .mostrar {
     visibility: visible;
@@ -325,7 +342,6 @@ main {
     width: 131px;
     height: 49px;
 
-    background: #FFC700;
     border-radius: 20px;
     cursor: pointer;
 }
@@ -372,8 +388,20 @@ main {
 .titulo-boton button{
     width: 120px;
     height: 40px;
-    background: #FC3939;
+   
     border-radius: 10px;
+}
+
+.titulo-boton button, .btn-compartir, btn-comentar{
+    background-color: #FC3939;
+}
+
+.titulo-boton button:hover, .btn-compartir:hover, btn-comentar:hover{
+    background-color: #FF7777;
+}
+
+.titulo-boton button:active, .btn-compartir:active, btn-comentar:active{
+    background-color: #FF2424;
 }
 
 .contenedor-grande {
@@ -546,6 +574,9 @@ footer li{
     padding-top: 20px;
     grid-column: 1 / -1;
     text-align: center;
+}
+
+.copyright, .redes-derechos{
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
@@ -745,7 +776,6 @@ footer li{
         width: 180px;
         height: 40px;
 
-        background: #FC3939;
         border-radius: 30px;
     }
 
@@ -844,7 +874,6 @@ footer li{
     .contenedor-caja-comentarios button {
         width: 15.43%;
         height: 55.8%;
-        background: #FC3939;
         border-radius: 40px;
 
         position: relative;
