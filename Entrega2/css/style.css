@@ -10,6 +10,11 @@
     src: url(/Entrega2/fonts/STJEDISE.TTF);
 }
 
+@font-face {
+    font-family: Steelfish;
+    src: url(/Entrega2/fonts/steelfish.ttf);
+}
+
 *{
 	margin: 0;
 	padding: 0;
