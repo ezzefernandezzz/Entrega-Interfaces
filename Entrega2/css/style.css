@@ -906,11 +906,16 @@ footer li{
 
     /* ------------------------- Lanzamiento ----------------------------- */
 
-        .header-lanzamiento {
-            background-color: #000000;
-            display: flex;
-            justify-content: space-between;
-        }
+    .header-lanzamiento {
+        background-color: #000000;
+        grid-template-areas: "hamb-swlogo logo-container btn-header";
+    }
+
+    .hamb-swlogo {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 15%;
+    }
 
     .btn-perfil-lanzamiento{
         height: 116.8%;
