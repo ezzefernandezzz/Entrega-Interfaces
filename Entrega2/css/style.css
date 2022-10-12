@@ -693,7 +693,7 @@ footer li{
     }
 
     .btn-perfil:hover img {
-        animation: p-img 1.5s infinite linear;
+        animation: p-img 800ms infinite ease-in;
     }
 
     @keyframes p-img {
