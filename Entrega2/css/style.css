@@ -1034,7 +1034,7 @@ footer li{
 
     .texto-historia {
         position: relative;
-        width: 50%;
+        width: 40%;
         transform: perspective(300px) rotateX(30deg);
         height: 50vh;
         padding-right: 10px;
@@ -1061,7 +1061,7 @@ footer li{
     }
     
     .texto-historia::-webkit-scrollbar-button {
-        display: block;
+        display: none;
         background: #FFCC00;
     }
     
