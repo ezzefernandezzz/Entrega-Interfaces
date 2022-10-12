@@ -44,6 +44,7 @@ body{
 }
 
 /* -------------------------------- Header y elementos internos ----------------------------------*/
+
 header{
     display: grid;
     background-color: #FC3939;
@@ -1075,6 +1076,7 @@ footer li{
         align-content: center;
         justify-content: center;
         margin-bottom: 10%;
+        background: url(../img/juegos/Deportes/crazy-flips.jpg);
     }
 
     .texto-historia {
