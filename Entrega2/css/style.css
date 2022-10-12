@@ -989,7 +989,6 @@ footer li{
         align-content: center;
         justify-content: center;
         margin-bottom: 10%;
-    
     }
 
     .texto-historia {
@@ -1005,8 +1004,6 @@ footer li{
         text-align: justify;
         font-family: Steelfish;
         font-size: 48px;
-        
-
     }
 
     .titulo-texto {
@@ -1036,6 +1033,10 @@ footer li{
     .texto-historia::-webkit-scrollbar-track {
         display: block;
         background: black;
+    }
+
+    .historia img {
+        opacity: 0;
     }
 
     .features h3 {    
