@@ -829,6 +829,28 @@ footer li{
         color: black;
         border-radius: 10px;
         font-size: 36px;
+        overflow: hidden;
+    }
+
+    .texto-y-boton button::before,
+    .texto-y-boton button::after {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 100%;
+    }
+
+    .texto-y-boton button::after {
+        top: 0%;
+        left: -100%;
+        clip-path: polygon(10% 0, 70% 0, 90% 100%, 30% 100%);
+        background-color: #fff6d7be;
+        transition: all 300ms ease;
+    }
+        
+    .texto-y-boton button:hover::after {
+        left: 100%;
     }
 
     .inferno-trooper {
@@ -1083,12 +1105,12 @@ footer li{
         font-size: 32px;
     }
 
-    .boton-pre-ordenar {
+    .pre-ordenar {
         margin-top: 5%;
         padding-bottom: 5%;
     }
 
-    .boton-pre-ordenar h2 {
+    .pre-ordenar h2 {
         text-align: center;
         font-size: 64px;
     }
