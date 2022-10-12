@@ -984,6 +984,58 @@ footer li{
 
     .historia {
         position: relative;
+        display: flex;
+        flex-flow: column wrap;
+        align-content: center;
+        justify-content: center;
+        margin-bottom: 10%;
+    
+    }
+
+    .texto-historia {
+        position: relative;
+        width: 50%;
+        transform: perspective(300px) rotateX(30deg);
+        height: 50vh;
+        padding-right: 10px;
+        overflow-y: scroll;
+    }
+
+    .texto-historia p {
+        text-align: justify;
+        font-family: Steelfish;
+        font-size: 48px;
+        
+
+    }
+
+    .titulo-texto {
+        font-family: Steelfish;
+        font-size: 48px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .texto-historia::-webkit-scrollbar {
+        display: block;
+        transform: perspective(-230px) rotateX(-30deg);
+        width: 10px;
+    }
+    
+    .texto-historia::-webkit-scrollbar-button {
+        display: block;
+        background: #FFCC00;
+    }
+    
+    .texto-historia::-webkit-scrollbar-thumb {
+        display: block;
+        border-radius: 1px;
+        background-color: #FFCC00;
+    }
+    
+    .texto-historia::-webkit-scrollbar-track {
+        display: block;
+        background: black;
     }
 
     .features h3 {    
