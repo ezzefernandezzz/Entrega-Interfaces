@@ -388,15 +388,19 @@ main {
 .titulo-boton button{
     width: 120px;
     height: 40px;
-    background: #FC3939;
+   
     border-radius: 10px;
 }
 
-.titulo-boton button:hover{
+.titulo-boton button, .btn-compartir, btn-comentar{
+    background-color: #FC3939;
+}
+
+.titulo-boton button:hover, .btn-compartir:hover, btn-comentar:hover{
     background-color: #FF7777;
 }
 
-.titulo-boton button:active{
+.titulo-boton button:active, .btn-compartir:active, btn-comentar:active{
     background-color: #FF2424;
 }
 
@@ -772,7 +776,6 @@ footer li{
         width: 180px;
         height: 40px;
 
-        background: #FC3939;
         border-radius: 30px;
     }
 
@@ -871,7 +874,6 @@ footer li{
     .contenedor-caja-comentarios button {
         width: 15.43%;
         height: 55.8%;
-        background: #FC3939;
         border-radius: 40px;
 
         position: relative;
