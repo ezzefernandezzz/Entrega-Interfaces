@@ -546,6 +546,9 @@ footer li{
     padding-top: 20px;
     grid-column: 1 / -1;
     text-align: center;
+}
+
+.copyright, .redes-derechos{
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
