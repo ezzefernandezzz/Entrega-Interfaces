@@ -98,6 +98,7 @@ header{
     background-color: #D6D6D6;
     margin-left: 5%;
     width: 12.5vw;
+
 }
 
 .btn-perfil:hover{
@@ -118,8 +119,8 @@ header{
 
 .btn-perfil img{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transition: all 300ms ease-in;
 }
-
 
 .btn-hamburguesa{
     background-color: transparent;
@@ -639,12 +640,38 @@ footer li{
     }
 
     .btn-header button{
+        position: relative;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         border-radius: 30px;
         border: none;
         height: 76.169%;
+    }
+
+    .btn-creditos {
+        overflow: hidden;
+    }
+
+    .btn-creditos::before,
+    .btn-creditos::after {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn-creditos::after {
+        top: 0%;
+        left: -100%;
+        clip-path: polygon(10% 0, 70% 0, 90% 100%, 30% 100%);
+        background-color: #fff6d7be;
+        transition: all 300ms ease;
+    }
+        
+    .btn-creditos:hover::after {
+        left: 100%;
     }
 
     .btn-creditos img {
@@ -663,6 +690,28 @@ footer li{
     .btn-perfil text{
         display: block;
         padding-left: 20%;
+    }
+
+    .btn-perfil:hover img {
+        animation: p-img 1.5s infinite linear;
+    }
+
+    @keyframes p-img {
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(15deg);
+        }
+        50% {
+            transform: rotate(0deg);
+        }
+        75% {
+            transform: rotate(-15deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
     }
 
     .contenedores{
@@ -969,27 +1018,11 @@ footer li{
         border-radius: 10px;
         font-size: 36px;
         overflow: hidden;
+        transition: filter 400ms linear;
     }
 
-    .texto-y-boton button::before,
-    .texto-y-boton button::after {
-        position: absolute;
-        display: block;
-        content: "";
-        width: 100%;
-        height: 100%;
-    }
-
-    .texto-y-boton button::after {
-        top: 0%;
-        left: -100%;
-        clip-path: polygon(10% 0, 70% 0, 90% 100%, 30% 100%);
-        background-color: #fff6d7be;
-        transition: all 300ms ease;
-    }
-        
-    .texto-y-boton button:hover::after {
-        left: 100%;
+    .texto-y-boton button:hover{
+        filter: drop-shadow(0 0 20px #FFC700);
     }
 
     .inferno-trooper {
