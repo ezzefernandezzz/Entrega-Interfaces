@@ -9,7 +9,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const pop_up = document.querySelector('.pop-up')
 
-    const body = document.querySelector('body')
+    /* const body = document.querySelector('body') */
+
+
+    const url = document.querySelector('.items-link > h1');
+    
+    const btn_clipboard = document.querySelector('.btn-clipboard')
+    btn_clipboard.addEventListener('click', copyLink)
 
 
 function abrirPU() {
@@ -22,5 +28,23 @@ function cerrarPU() {
     pop_up.style.width = '0px';
     document.getElementById("overlay").style.display = "none";
     document.body.style.overflow = "visible";
+}
+
+function copyLink() {
+    const inputOculto = document.createElement('input');
+
+    inputOculto.setAttribute('value', url.innerText);
+    document.body.appendChild(inputOculto);
+    inputOculto.select();
+    document.execCommand('copy');
+    document.body.removeChild(inputOculto);
+
+    const mensaje_copy = document.querySelector('.pop-up-portapapeles')
+
+    /* mensaje_copy.style.visibility = "visible"; */
+    if (mensaje_copy.classList.contains("mostrar-ocultar")){
+        mensaje_copy.classList.remove("mostrar-ocultar")
+    }
+    mensaje_copy.classList.add("mostrar-ocultar")
 }
 })

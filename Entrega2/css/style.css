@@ -162,8 +162,8 @@ header{
 }
 
 .ocultar {
-    transition: visibility 0,5s;
-    animation: animacion-ocultar 0,5s;
+    transition: visibility 0.5s;
+    animation: animacion-ocultar 0.5s;
 }
 
 @keyframes animacion-ocultar {
@@ -895,8 +895,8 @@ footer li{
         width: 0px;
         height: 361px;
         position: absolute;
-        top: 50%;           /* Hay que centrar el pop up, esta forma esta MAL */
-        left: 50%;
+        top: 50vw;           /* Hay que centrar el pop up, esta forma esta MAL */
+        left: 50vw;
         z-index: 1;
 
         overflow: hidden;
@@ -904,7 +904,26 @@ footer li{
         transform: translate(-50%,-50%); /* Efecto piola al abrir popup, deshabilitado queda = que figma. (decidir) */
 
     }
+
+    .pop-up-portapapeles{
+        opacity: 0;
+        
+        position: absolute;
+        width: 518px;
+        height: 52px;
+        
+        left: 17%;
+        top: 46%;
+
+        background: #999797;
+    }
     
+    .pop-up-portapapeles > div{
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
     /* .btn-compartir:active + .pop-up {
         width: 786px;
         
@@ -1427,3 +1446,17 @@ footer li{
     }
 }
 
+
+
+.mostrar-ocultar {
+    animation: animacion-prueba 0.5s;
+}
+
+@keyframes animacion-prueba {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
