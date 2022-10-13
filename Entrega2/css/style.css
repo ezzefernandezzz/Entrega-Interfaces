@@ -2,17 +2,17 @@
 
 @font-face {
     font-family: Star Jedi;
-    src: url(/Entrega2/fonts/Starjedi.ttf);
+    src: url(../fonts/Starjedi.ttf);
 }
 
 @font-face {
     font-family: Star Jedi SE;
-    src: url(/Entrega2/fonts/STJEDISE.TTF);
+    src: url(../fonts/STJEDISE.TTF);
 }
 
 @font-face {
     font-family: Steelfish;
-    src: url(/Entrega2/fonts/steelfish.ttf);
+    src: url(../fonts/steelfish.ttf);
 }
 
 *{
