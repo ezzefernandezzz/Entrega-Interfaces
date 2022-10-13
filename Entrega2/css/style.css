@@ -1166,10 +1166,9 @@ footer li{
         position: relative;
         display: flex;
         flex-flow: column wrap;
-        align-content: center;
+        align-items: center;
         justify-content: center;
         margin-bottom: 10%;
-        background: url(../img/juegos/Deportes/crazy-flips.jpg);
     }
 
     .texto-historia {
@@ -1217,7 +1216,9 @@ footer li{
     }
 
     .historia img {
-        opacity: 0;
+        width: 100vw;
+        opacity: 1;
+        object-fit: contain;
     }
 
     .features h3 {    
