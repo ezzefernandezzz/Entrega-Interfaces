@@ -895,12 +895,13 @@ footer li{
         width: 0px;
         height: 361px;
         position: absolute;
-        top: 25%;           /* Hay que centrar el pop up, esta forma esta MAL */
-        left: 25%;
+        top: 50%;           /* Hay que centrar el pop up, esta forma esta MAL */
+        left: 50%;
         z-index: 1;
 
         overflow: hidden;
         transition: all 300ms ease-out;
+        transform: translate(-50%,-50%); /* Efecto piola al abrir popup, deshabilitado queda = que figma. (decidir) */
 
     }
     
