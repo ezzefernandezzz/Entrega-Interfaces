@@ -892,24 +892,26 @@ footer li{
         
         background: #FFFFFF;
 
-        width: 786px;
+        width: 0px;
         height: 361px;
         position: absolute;
-        top: 25%;
+        top: 25%;           /* Hay que centrar el pop up, esta forma esta MAL */
         left: 25%;
-       
+        z-index: 1;
+
         overflow: hidden;
         transition: all 300ms ease-out;
 
     }
     
-    .btn-compartir:active + .pop-up {
+    /* .btn-compartir:active + .pop-up {
         width: 786px;
         
-    }
+    } */
 
     .pop-up button{
         background: transparent;
+        cursor: pointer;
     }
 
     .pop-up h1{
