@@ -1517,12 +1517,22 @@ footer li, .over-personaje li{
 /* LOADER */
 
 .prueba{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
     position: fixed;
     width: 100%;
     height: 100%;
     background: black;
     z-index: 10;
-  }
+}
+
+.prueba .logo {
+    width: 50vh;
+}
+
+
 
 .container-loader {
     margin: 100px auto;
