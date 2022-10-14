@@ -9,4 +9,4 @@ CSS.registerProperty({
 
 setTimeout(function(){
     ventana_carga.style.visibility = "hidden";
-}, 50);
+}, 5000);
