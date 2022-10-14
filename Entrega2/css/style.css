@@ -530,7 +530,7 @@ footer h3, .juego h3{
     padding-bottom: 20px;
 }
 
-footer li{
+footer li, .over-personaje li{
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1080,6 +1080,10 @@ footer li{
         color: #FFC700;
     }
 
+    .over-personaje *{
+        font-family: 'JetBrains Mono', monospace;
+    }
+
     .hero-section {
         position: relative;
     }
@@ -1579,3 +1583,53 @@ footer li{
       --p: 100;
     }
   }
+
+.over-personaje{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    
+    position: absolute;
+    height: 576px;
+    width: 378px;
+
+    background: url(../img/lanzamiento/fondo_overPersonaje.png);
+    border: 1px solid rgba(250, 0, 0, 0.5);
+    border-radius: 30px;
+}
+
+.over-personaje ul{
+    /* list-style-type: circle; */
+    width: 338px;
+    height: 418px;
+}
+
+.over-personaje li{
+    list-style-type: disc;
+}
+
+.tituloPersonaje{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 7.67%;
+    right: 7.67%;
+    top: 3.12%;
+    bottom: 86.81%;
+
+    background: #000000;
+    border-radius: 30px;
+  }
+
+.over-personaje .imagen{
+    height: 63px;
+    width: 70px;
+/* left: 154px;
+top: 110px;
+border-radius: 0px; */
+
+}
