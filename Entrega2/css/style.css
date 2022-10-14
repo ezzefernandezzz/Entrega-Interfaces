@@ -326,7 +326,7 @@ main {
     border-radius: 20px;
 }
 
-.gamecard-big .overlay, .gamecard-small .overlay, .gamecard-wide-free .overlay, .gamecard-small-premium .overlay, .gamecard-small-free .overlay {
+.gamecard-big .overlay, .gamecard-small .overlay, .gamecard-wide .overlay{
     display: flex;
     flex-direction: column;
     width: 0;
@@ -347,13 +347,13 @@ main {
     border-radius: 20px;
 }
 
-.gamecard-small:hover .overlay, .gamecard-small-free:hover .overlay, .gamecard-small-premium:hover .overlay{
+.gamecard-small:hover .overlay{
     width: 160px;
     height: 160px;
     border-radius: 20px;
 }
 
-.gamecard-wide-free:hover .overlay {
+.gamecard-wide:hover .overlay {
     width: 335px;
     height: 160px;
     border-radius: 20px;
@@ -376,8 +376,10 @@ main {
 }
 
 .etiqueta-premium {
-    z-index: 3;
+    z-index: 0;
     position: absolute;
+    top: 0;
+    left: 0;
     width: 80px;
     height: 40px;
     border-radius: 20px 0px 20px 0px;
@@ -465,28 +467,29 @@ main {
 .contenedor-chico .div4 { grid-area: 3 / 1 / 4 / 2; }
 .contenedor-chico .div5 { grid-area: 3 / 2 / 4 / 3; }
 
-.gamecard-wide-free {
+.gamecard-wide {
     width: 335px; 
     height: 160px;
     position: absolute;
 }
 
-.gamecard-wide-free img{
+.gamecard-wide img{
     width: 100%;
     height: 100%;
     border-radius: 20px;
 }
 
-.gamecard-small-premium, .gamecard-small-free {
+.gamecard-small {
     width: 160px;
     height: 160px;
     border-radius: 20px;
     position: relative;
+    z-index: 0;
 }
 
-.gamecard-small-premium img, .gamecard-small-free img{
-    height: 100%;
-    width: 100%;
+.gamecard-small img{
+    width: 160px;
+    height: 160px;
     border-radius: 20px;
 }
 
