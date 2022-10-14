@@ -41,10 +41,17 @@ function copyLink() {
 
     const mensaje_copy = document.querySelector('.pop-up-portapapeles')
 
+    mensaje_copy.classList.add("mostrar-ocultar");
+    setTimeout(function(){
+        mensaje_copy.classList.remove("mostrar-ocultar");
+    }, 2000);
     /* mensaje_copy.style.visibility = "visible"; */
-    if (mensaje_copy.classList.contains("mostrar-ocultar")){
+    /*if (mensaje_copy.classList.contains("mostrar-ocultar")){
         mensaje_copy.classList.remove("mostrar-ocultar")
-    }
-    mensaje_copy.classList.add("mostrar-ocultar")
+    } else {
+        mensaje_copy.classList.add("mostrar-ocultar");
+        //setTimeout(mensaje_copy.classList.remove("mostrar-ocultar"), 2000);
+        //mensaje_copy.classList.remove("mostrar-ocultar");
+    }*/
 }
 })
