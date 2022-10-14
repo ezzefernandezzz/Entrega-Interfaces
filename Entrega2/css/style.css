@@ -320,10 +320,17 @@ main {
 
 .gamecard-big {
     margin-right: 1.171%;
+    width: 270px;
+    height: 180px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 0;
 }
 
 .gamecard-big img {
     border-radius: 20px;
+    width: 270px;
+    height: 180px;
 }
 
 .gamecard-big .overlay, .gamecard-small .overlay, .gamecard-wide .overlay{
@@ -369,9 +376,17 @@ main {
 
 .gamecard-small {
     margin-right: 1.171%;
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 0;
 }
 
 .gamecard-small img{
+    border-radius: 20px;
+    width: 160px;
+    height: 160px;
     border-radius: 20px;
 }
 
@@ -476,20 +491,6 @@ main {
 .gamecard-wide img{
     width: 100%;
     height: 100%;
-    border-radius: 20px;
-}
-
-.gamecard-small {
-    width: 160px;
-    height: 160px;
-    border-radius: 20px;
-    position: relative;
-    z-index: 0;
-}
-
-.gamecard-small img{
-    width: 160px;
-    height: 160px;
     border-radius: 20px;
 }
 
