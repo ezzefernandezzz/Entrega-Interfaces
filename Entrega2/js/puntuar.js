@@ -15,7 +15,9 @@ window.addEventListener('DOMContentLoaded', () => {
         });
         estrellas[i].addEventListener('mouseout', () => {
             if (!estrellas[i].classList.contains('puntuado'))
-                estrellas[i].src = estrella_normal_url;
+            for(let j = 0; j <= i; j++) {
+                estrellas[j].src = estrella_normal_url;
+            }
         })
         estrellas[i].addEventListener('mousedown', () => {
             for(let j = 0; j <= i; j++) {
