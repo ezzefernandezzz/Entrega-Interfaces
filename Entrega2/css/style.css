@@ -920,7 +920,14 @@ footer li, .over-personaje li{
         margin-right: 10px;
     }
 
-    .estrella {
+    .calificar img {
+        margin-right: 5px;
+    }
+
+    .puntuado{
+    }
+
+    /* .estrella {
         display: none;
     }
 
@@ -943,7 +950,7 @@ footer li, .over-personaje li{
         height: 30px;
         width: 30px;
         margin-right: 3px;
-    }
+    } */
 
 
     .calificacion {
