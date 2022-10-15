@@ -430,15 +430,15 @@ main {
     border-radius: 10px;
 }
 
-.titulo-boton button, .btn-compartir, btn-comentar{
+.titulo-boton button, .btn-compartir, .btn-comentar{
     background-color: #FC3939;
 }
 
-.titulo-boton button:hover, .btn-compartir:hover, btn-comentar:hover{
+.titulo-boton button:hover, .btn-compartir:hover, .btn-comentar:hover{
     background-color: #FF7777;
 }
 
-.titulo-boton button:active, .btn-compartir:active, btn-comentar:active{
+.titulo-boton button:active, .btn-compartir:active, .btn-comentar:active{
     background-color: #FF2424;
 }
 
@@ -531,7 +531,7 @@ footer h3, .juego h3{
 }
 
 footer li, .over-personaje li{
-    font-style: normal;
+    /* font-style: normal; */
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
@@ -563,7 +563,7 @@ footer li, .over-personaje li{
     border-radius: 10px;
 }
 
-.redes h4, .btn-creditos, .btn-perfil, .titulo-boton button, .comentario h4, .btn-comentar, .overlay, .btn-jugar{
+.redes h4, .btn-creditos, .btn-perfil, .titulo-boton button, .comentario h4, .btn-comentar, .overlay, .btn-jugar, .tituloPersonaje{
     text-align: center;
     font-weight: 400;
     font-size: 24px;
@@ -1112,7 +1112,7 @@ footer li, .over-personaje li{
         border-radius: 40px;
 
         position: relative;
-        left: 85%;
+        left: 84%;
         bottom: 65%;
     }
 
@@ -1158,6 +1158,10 @@ footer li, .over-personaje li{
 
     .over-personaje *{
         font-family: 'JetBrains Mono', monospace;
+    }
+
+    .over-personaje .bold{
+        font-weight: bold;
     }
 
     .hero-section {
@@ -1670,6 +1674,7 @@ footer li, .over-personaje li{
     }
   }
 
+
 .over-personaje{
     display: flex;
     flex-direction: column;
@@ -1678,18 +1683,32 @@ footer li, .over-personaje li{
 
     
     position: absolute;
-    height: 576px;
-    width: 378px;
+    /* height: 576px; */
+    /* width: 378px; */
+    width: 0px;
+    height: 0px;
 
     background: url(../img/lanzamiento/fondo_overPersonaje.png);
     border: 1px solid rgba(250, 0, 0, 0.5);
     border-radius: 30px;
+
+    overflow: hidden;
+    transition: all 300ms ease-out;
+}
+
+.card-personaje:hover .over-personaje{
+    height: 576px;
+    width: 378px;
 }
 
 .over-personaje ul{
     /* list-style-type: circle; */
-    width: 338px;
-    height: 418px;
+    /* width: 338px; */
+    width: 316px;
+    /* height: 418px; */
+    position: absolute;
+    /* bottom: 20%; */
+    top: 35%;
 }
 
 .over-personaje li{
@@ -1714,8 +1733,7 @@ footer li, .over-personaje li{
 .over-personaje .imagen{
     height: 63px;
     width: 70px;
-/* left: 154px;
-top: 110px;
-border-radius: 0px; */
 
+    position: absolute;
+    bottom: 69.97%;
 }
