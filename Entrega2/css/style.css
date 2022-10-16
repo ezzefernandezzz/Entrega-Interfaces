@@ -147,6 +147,9 @@ header{
     padding-right: 15px;
     /* transition: visibility 2s; */
     /* agregar clase que agrege o saque transition de visibility cuando hago ocultar */
+
+    height: 100%;
+    overflow-y: scroll;
 }
 
 .mostrar {
@@ -304,6 +307,7 @@ main {
 .h-scrollable-container .prev, .h-scrollable-container .prev2, .container-scroll-personajes .prev{
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index: 4;
 }
 
 .container-scroll-personajes .prev{
@@ -314,6 +318,7 @@ main {
     right: 0;
     top: 50%;
     transform: translate(50%, -50%);
+    z-index: 4;
 }
 
 .container-scroll-personajes .next{
@@ -875,6 +880,13 @@ footer li, .over-personaje li{
     
     .contenedor-multimedia {
         height: 100%;
+        border: 1px solid #000000;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 20px;
+        width: 315px;
+
+        margin-right: 10px;
+        margin-bottom: 5px;
     }
 
     .contenedor-multimedia img {
@@ -887,7 +899,7 @@ footer li, .over-personaje li{
     .contenedor-multimedia .boton-play-video {
         position: absolute;
         left: 43%;
-        top: 20%;
+        top: 39%;
         width: 50px;
         height: 50px;
         
@@ -902,11 +914,14 @@ footer li, .over-personaje li{
         height: 100%;
     }
 
+    
+
 
     .galeria-imagenes .contenedor-multimedia img{
-        position: relative;
+        /* position: relative; */
         width: 315px;
-        padding-right: 10px;
+        /* padding-right: 10px; */
+        /* margin-right: 10px; */
     }
 
     .slide-track {
@@ -932,10 +947,8 @@ footer li, .over-personaje li{
         right: 10%;
     }
 
-    .contenedor-multimedia:first-child{
-    /*  background: url(/Entrega2/img/juegos/4EnLinea/Icono\ Play.png);
-        background-repeat: no-repeat;
-        z-index: -1; */
+    .contenedor-multimedia img:first-child{
+        filter: blur(1px)
     }
 
     .interacciones{

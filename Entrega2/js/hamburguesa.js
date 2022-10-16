@@ -19,6 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
             contador = 1;
             /*  */
             document.getElementById("overlay").style.display = "block";
+            document.body.style.overflow = "hidden";
             return;
         }
         else if (contador == 1){
@@ -29,6 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
             contador = 0;
             /*  */
             document.getElementById("overlay").style.display = "none";
+            document.body.style.overflow = "visible";
         }
     }
 })

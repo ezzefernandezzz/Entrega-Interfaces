@@ -54,11 +54,17 @@ window.addEventListener('DOMContentLoaded', () => {
     function abrirPopUpInfo() {
         pop_up_info.classList.remove('display-none');
         overlay_jugar.classList.remove('display-none');
+
+        document.getElementById("overlay").style.display = "block";
+        document.body.style.overflow = "hidden";
     }
 
     function cerrarPopUpInfo() {
         pop_up_info.classList.add('display-none');
         overlay_jugar.classList.add('display-none');
+
+        document.getElementById("overlay").style.display = "none";
+        document.body.style.overflow = "visible";
     }
 
 });
