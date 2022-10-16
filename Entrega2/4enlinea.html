@@ -65,15 +65,20 @@
         </div>
         <div id="overlay"></div><!--  -->
         <section class="juego">
-            <h3>GameOn -> 4 en linea Harry Potter</h2>
+            <h3><a href="index.html">GameOn</a> -> 4 en linea Harry Potter</h2>
             <div class="juego-preview">
                 <div class="contenedor-4linea">
                     <img src="img/juegos/4EnLinea/harry-voldemort.jpg" alt="4 en linea Harry Potter">
+                    <div class="overlay-juego"></div>
+                    <button class="btn-jugar-juego">Jugar|></button>
                 </div>
                 <div>                
                     <section class="preview">
-                        <div class="contenedor-multimedia"><img src="img/juegos/4EnLinea/vid-multimedia.png" alt=""></div>
-                        <!-- <img src="img/juegos/4EnLinea/Icono Play.png" alt=""></div> -->
+                        <div class="contenedor-multimedia">
+                            <img src="img/juegos/4EnLinea/vid-multimedia.png" alt="">
+                            <img class="boton-play-video" src="img/juegos/4EnLinea/Icono Play.png" alt="">
+                        </div>
+                        
                         <div class="galeria-imagenes slide-track">
                             <div class="contenedor-multimedia"><img src="img/juegos/4EnLinea/img-multimedia1.png" alt=""></div>
                             <div class="contenedor-multimedia"><img src="img/juegos/4EnLinea/img-multimedia2.png" alt=""></div>
@@ -114,24 +119,11 @@
                 <div id="overlay"></div><!--  -->
                 <section class="calificar">
                     <h4>Calificar:</h4>
-                    <!-- <img src="img/iconos/CalificacionEstrellas.png" alt=""> -->
                     <img src="img/iconos/estrella-normal.png" class="estrella-puntuar" id="1-estrella">
                     <img src="img/iconos/estrella-normal.png" class="estrella-puntuar" id="2-estrella">
                     <img src="img/iconos/estrella-normal.png" class="estrella-puntuar" id="3-estrella">
                     <img src="img/iconos/estrella-normal.png" class="estrella-puntuar" id="4-estrella">
                     <img src="img/iconos/estrella-normal.png" class="estrella-puntuar" id="5-estrella">
-                    <!--
-                    <input class="estrella" type="checkbox" id="1-estrella">
-                    <label for="1-estrella"></label>
-                    <input class="estrella" type="checkbox" id="2-estrella">
-                    <label for="2-estrella"></label>
-                    <input class="estrella" type="checkbox" id="3-estrella">
-                    <label for="3-estrella"></label>
-                    <input class="estrella" type="checkbox" id="4-estrella">
-                    <label for="4-estrella"></label>
-                    <input class="estrella" type="checkbox" id="5-estrella">
-                    <label for="5-estrella"></label>
-                    -->
                 </section>
                 <section class="calificacion">
                     <h4>Calificación: 4,5</h4>
@@ -139,7 +131,22 @@
                 </section>
                 <section class="informacion">
                     <h4>Cómo jugar</h4>
-                    <img src="img/iconos/informacion.png" alt="">
+                    <img src="img/iconos/informacion.png" id="btn-como-jugar">
+                    <div class="como-jugar display-none">
+                        <h4>Instrucciones</h4>
+                        <br>
+                        <p>El 4 en linea se juega de a dos jugadores sobre un tablero de siete 
+                            columnas y seis filas. <br><br>
+                            El objetivo es alinear 4 fichas de un mismo jugador, horizontalmente, 
+                            verticalmente o en diagonal. <br><br>                          
+                            Las fichas tienen que ponerse en la linea inferior o sobre otra ficha. <br><br> 
+                            Clickea en la columna en la cual deseas dejar caer tu ficha e intenta
+                            derrotar a tu oponente antes de que sea el quien logre alinear 4 fichas.
+                            
+                        </p>
+                        <button class="btn-cerrar-info"><img src="img/iconos/X-cerrar.png" alt=""></button>
+                    </div>
+                    <div class="overlay-como-jugar display-none"></div>
                 </section>
             </div>
             

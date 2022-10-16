@@ -63,6 +63,8 @@ header{
     border-radius: 30px;
     border: none;
     height: 76.169%;
+    
+    cursor: pointer;
 }
 
 .btn-header button div {
@@ -426,8 +428,8 @@ main {
 .titulo-boton button{
     width: 120px;
     height: 40px;
-   
-    border-radius: 10px;
+    border-radius: 10px;    
+    cursor: pointer;
 }
 
 .titulo-boton button, .btn-compartir, .btn-comentar{
@@ -512,7 +514,6 @@ footer {
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 15px;
     grid-row-gap: 15px;
-    
     padding: 1.55% 1.6% 1.55% 1.6%;
 }
     
@@ -528,6 +529,10 @@ footer h3, .juego h3{
     font-size: 24px;
     line-height: 32px;
     padding-bottom: 20px;
+}
+
+footer li {
+    cursor: pointer;
 }
 
 footer li, .over-personaje li{
@@ -811,16 +816,50 @@ footer li, .over-personaje li{
     }
 
     .contenedor-4linea{
+        position: relative;
         width: 900px;
         height: 482px;
 
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image.png);
-        filter: blur(1.25px);
     }
 
     .contenedor-4linea img{
         width: 100%;
         height: 100%;
+        filter: blur(1.50px);
+    }
+
+    .btn-jugar-juego {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 15%;
+        height: 10%;
+        border-radius: 40px;
+        transform: translate(-50%, -50%);
+        background-color: #FC3939;
+        font-size: 24px;
+        font-weight: bold;
+        transition: all 100ms linear;
+        
+        cursor: pointer;
+    }
+
+    .btn-jugar-juego:hover {
+        background-color: #FF7777;
+    }
+
+    .btn-jugar-juego:active {
+        background-color: #FF2424;
+    }
+
+    .overlay-juego {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        top: 0;
+        left: 0;
     }
 
     .preview{
@@ -836,14 +875,23 @@ footer li, .over-personaje li{
     
     .contenedor-multimedia {
         height: 100%;
-        
     }
 
     .contenedor-multimedia img {
         height: 100%;
         width: 100%;
+        
         border-radius: 20px;
-        padding-right: 10px;
+    }
+
+    .contenedor-multimedia .boton-play-video {
+        position: absolute;
+        left: 43%;
+        top: 20%;
+        width: 50px;
+        height: 50px;
+        
+        cursor: pointer;
     }
 
     .galeria-imagenes {
@@ -858,6 +906,7 @@ footer li, .over-personaje li{
     .galeria-imagenes .contenedor-multimedia img{
         position: relative;
         width: 315px;
+        padding-right: 10px;
     }
 
     .slide-track {
@@ -904,6 +953,8 @@ footer li, .over-personaje li{
         height: 40px;
 
         border-radius: 30px;
+        
+        cursor: pointer;
     }
 
     .btn-compartir img {
@@ -922,36 +973,11 @@ footer li, .over-personaje li{
 
     .calificar img {
         margin-right: 5px;
+        cursor: pointer;
     }
 
     .puntuado{
     }
-
-    /* .estrella {
-        display: none;
-    }
-
-    .estrella + label {
-        background: url(../img/iconos/estrella-normal.png);
-        height: 30px;
-        width: 30px;
-        margin-right: 3px;
-    }
-
-    .estrella + label:hover {
-        background: url(../img/iconos/estrella-hover.png);
-        height: 30px;
-        width: 30px;
-        margin-right: 3px;
-    }
-
-    .estrella:checked + label {
-        background: url(../img/iconos/estrella-active.png);
-        height: 30px;
-        width: 30px;
-        margin-right: 3px;
-    } */
-
 
     .calificacion {
         display: flex;
@@ -966,6 +992,7 @@ footer li, .over-personaje li{
     .calificacion img {
         height: 30px;
         width: 30px;
+        
     }
 
     .informacion {
@@ -981,6 +1008,56 @@ footer li, .over-personaje li{
     .informacion img {
         height: 20px;
         width: 20px;
+    }
+
+    .como-jugar {
+        position: fixed;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        width: 30%;
+        text-align: center;
+        background: #FFFFFF;
+        padding: 20px;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+    }
+
+    .informacion .como-jugar h4{
+        font-size: 24px;
+    }
+
+    .informacion > img {
+        cursor: pointer;
+    }
+
+
+    .como-jugar p {
+        font-size: 16px;
+    }
+
+    .display-none {
+        display: none;
+    }
+
+    .btn-cerrar-info {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #FFFFFF;
+        
+        cursor: pointer;
+    }
+
+    .overlay-como-jugar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+
     }
 
     .pop-up{
@@ -1121,6 +1198,8 @@ footer li, .over-personaje li{
         position: relative;
         left: 84%;
         bottom: 65%;
+        
+        cursor: pointer;
     }
 
     .comentarios-publicados {
@@ -1150,6 +1229,8 @@ footer li, .over-personaje li{
 
     .btn-perfil-lanzamiento{
         height: 116.8%;
+        
+        cursor: pointer;
     }
 
     .main-lanzamiento {
@@ -1208,6 +1289,8 @@ footer li, .over-personaje li{
         font-size: 36px;
         overflow: hidden;
         transition: filter 400ms linear;
+        
+        cursor: pointer;
     }
 
     .texto-y-boton button:hover{
@@ -1551,6 +1634,7 @@ footer li, .over-personaje li{
         display: flex;
         flex-flow: column;
         align-items: center;
+        position: relative;
 
         /* width: 378px;
         height: 576px; */
@@ -1561,6 +1645,7 @@ footer li, .over-personaje li{
     }
 
     .pre-ordenar {
+        position: relative;
         margin-top: 5%;
         padding-bottom: 5%;
     }
@@ -1568,6 +1653,18 @@ footer li, .over-personaje li{
     .pre-ordenar h2 {
         text-align: center;
         font-size: 64px;
+        margin-bottom: 3%;
+    }
+
+    .pre-ordenar .texto-y-boton {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pre-ordenar .texto-y-boton button {
+        position: static;
+        padding: 20px;
+
     }
 
     .footer-lanzamiento {
@@ -1704,7 +1801,7 @@ footer li, .over-personaje li{
 }
 
 .card-personaje:hover .over-personaje{
-    height: 576px;
+    height: 100%;
     width: 378px;
 }
 

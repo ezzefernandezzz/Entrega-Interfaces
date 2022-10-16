@@ -4,8 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     estrella_hover_url = "../img/iconos/estrella-hover.png";
     estrella_normal_url = "../img/iconos/estrella-normal.png";
     estrella_active_url = "../img/iconos/estrella-active.png";
-
-    console.log(estrellas);
+    
     for(let i = 0; i < estrellas.length; i++) {
         estrellas[i].addEventListener('mouseover', () => {
             if (!estrellas[i].classList.contains('puntuado'))
