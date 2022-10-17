@@ -2,17 +2,17 @@
 
 @font-face {
     font-family: Star Jedi;
-    src: url(../fonts/Starjedi.ttf);
+    src: url(fonts/Starjedi.ttf);
 }
 
 @font-face {
     font-family: Star Jedi SE;
-    src: url(../fonts/STJEDISE.TTF);
+    src: url(fonts/STJEDISE.TTF);
 }
 
 @font-face {
     font-family: Steelfish;
-    src: url(../fonts/steelfish.ttf);
+    src: url(fonts/steelfish.ttf);
 }
 
 *{
@@ -824,9 +824,7 @@ footer li, .over-personaje li{
 
     .contenedor-4linea{
         position: relative;
-        width: 900px;
-        height: 482px;
-
+        width: 62.5vw;
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image.png);
     }
 
@@ -876,6 +874,7 @@ footer li, .over-personaje li{
         background: #D9D9D9;
         border-radius: 20px;
         overflow: hidden;
+        width: 22.63vw;
         height: 100%;
         padding: 10px;
     }
@@ -1405,7 +1404,7 @@ footer li, .over-personaje li{
     }
 
     .presentacion-juego {
-        background: url(../img/lanzamiento/starsbg.png);
+        background: url(img/lanzamiento/starsbg.png);
         background-size: 500px 500px;
     }
 
@@ -1807,7 +1806,7 @@ footer li, .over-personaje li{
     width: 0px;
     height: 0px;
 
-    background: url(../img/lanzamiento/fondo_overPersonaje.png);
+    background: url(img/lanzamiento/fondo_overPersonaje.png);
     border: 1px solid rgba(250, 0, 0, 0.5);
     border-radius: 30px;
 

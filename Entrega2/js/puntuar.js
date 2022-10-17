@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
     
     estrellas = document.getElementsByClassName('estrella-puntuar');
-    estrella_hover_url = "../img/iconos/estrella-hover.png";
-    estrella_normal_url = "../img/iconos/estrella-normal.png";
-    estrella_active_url = "../img/iconos/estrella-active.png";
+    estrella_hover_url = "img/iconos/estrella-hover.png";
+    estrella_normal_url = "img/iconos/estrella-normal.png";
+    estrella_active_url = "img/iconos/estrella-active.png";
     
     for(let i = 0; i < estrellas.length; i++) {
         estrellas[i].addEventListener('mouseover', () => {
