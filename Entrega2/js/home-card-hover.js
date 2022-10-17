@@ -10,8 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
     function crearOverlays(gamecards){
         for(gamecard of gamecards) {
             let alt = gamecard.firstElementChild.alt;
-            console.log(alt);
-            console.log(gamecard.children.length);
             let price = gamecard.firstElementChild.dataset.price;
             let card_overlay = ``;
             if (price === undefined) {

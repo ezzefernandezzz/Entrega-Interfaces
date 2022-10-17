@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
         /* Es posible acortar el code ya que debido al z-index no lo puede cerrar tocando de nuevo el menu */
         if (contador == 0){
             if(document.getElementById("menuDesplegable").classList.contains("ocultar")){
-                console.log('d213123n')
                 document.getElementById("menuDesplegable").classList.remove("ocultar");
             }
             document.getElementById("menuDesplegable").classList.add("mostrar");
