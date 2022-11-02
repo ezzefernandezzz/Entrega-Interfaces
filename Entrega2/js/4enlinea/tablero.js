@@ -17,9 +17,9 @@ class Tablero {
         if (this.tablero[0][columna].ficha == null) {
             for(let i = 0; i < this.alto; i++) {
                 if (this.tablero[i + 1] == undefined || this.tablero[i + 1][columna].ficha != null) {
-                    console.log(i + " " + columna);
-                    console.log(this.tablero[i][columna]);
                     this.tablero[i][columna].ficha = nueva;
+                    console.log(this.tablero[i][columna]);
+                    return;
                 }
             }
         }

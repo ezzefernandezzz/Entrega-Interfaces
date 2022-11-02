@@ -1,19 +1,15 @@
 window.addEventListener('DOMContentLoaded', () => { 
 
-    let fichaTest = new Ficha("../img/iconos/estrella-active.png");
-    let fichaTest2 = new Ficha("../img/iconos/estrella-active.png");
+    let fichaTest = new Ficha("alfajor");
+    let fichaTest2 = new Ficha("sanguche");
     let casillaTest = new Casilla();
     let jugadorTest = new Jugador("Alfonso", "../img/iconos/perfil.png");
     let tablero = new Tablero(7, 6);
 
-    console.log(fichaTest.imagen)
-    console.log(casillaTest.ficha);
-    console.log(jugadorTest.nombre);
-    console.log(jugadorTest.icono);
-    console.log(tablero.tablero);
+    console.log(fichaTest);
+    console.log(fichaTest2);
 
     tablero.colocarFicha(fichaTest, 0);
-
     tablero.colocarFicha(fichaTest2, 0);
 
     console.log(tablero.tablero);
