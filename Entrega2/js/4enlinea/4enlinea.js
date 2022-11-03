@@ -21,8 +21,13 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log(jugador1);
     console.log(jugador2);
 
-    tablero.colocarFicha(jugador1.fichas.pop(), 0);
-    tablero.colocarFicha(jugador2.fichas.pop(), 0);
+    tablero.colocarFicha(0);
+    tablero.colocarFicha(0);
+    tablero.colocarFicha(1);
+    tablero.colocarFicha(0);
+    tablero.colocarFicha(2);
+    tablero.colocarFicha(0);
+    console.log(tablero.colocarFicha(3));
     
 
     console.log(tablero.tablero);

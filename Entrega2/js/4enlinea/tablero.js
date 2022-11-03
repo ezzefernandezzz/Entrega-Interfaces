@@ -15,8 +15,9 @@ class Tablero {
         this.jugadorActual = null;
     }
 
-    colocarFicha(nueva, columna) {
+    colocarFicha(columna) {
         //Compruebo que el primer lugar de la columna no este ocupado
+        let nueva = this.jugadorActual.fichas.pop();
         if (this.tablero[0][columna].ficha == null) {
             for(let i = 0; i < this.alto; i++) {
                 if (this.tablero[i + 1] == undefined || this.tablero[i + 1][columna].ficha != null) {
@@ -45,11 +46,35 @@ class Tablero {
     }
 
     checkHorizontal(fila, columna) {
-        let pos = columna;
-        //Arranca en 1 contando la pos actual (ficha recien colocada)
+        let pos = columna - 1;
         let sumaFichas = 1;
+        let contiguo = true;
+        let tipo_ficha = this.jugadorActual.url_icono;
         //Check izq
+        while (pos >= 0 && contiguo) {            
+            if (this.tablero[fila][pos].ficha != null) {
+                if (this.tablero[fila][pos].ficha.imagen == tipo_ficha) {
+                    sumaFichas++;
+                    pos--;
+                } else
+                    contiguo = false;
+            } else
+                contiguo = false;
+        }
+        pos = columna + 1;
         //Check der
+        while (pos < this.ancho && contiguo) {
+            if (this.tablero[fila][pos].ficha != null) {
+                if (this.tablero[fila][pos].ficha.imagen == tipo_ficha) {
+                    sumaFichas++;
+                    pos++;
+                } else
+                    contiguo = false;
+            } else
+                contiguo = false;
+        }
+        return sumaFichas >= this.fichas_en_linea;
+    
     }
 
     checkVertical(fila, columna) {
