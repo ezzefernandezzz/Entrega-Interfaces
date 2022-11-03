@@ -30,7 +30,8 @@ class Tablero {
 
     jugadaGanadora(fila, columna) {
         if (this.checkHorizontal(fila, columna) || this.checkVertical(fila, columna) 
-            || this.checkDiagonal(fila, columna)) {
+            || this.checkDiagonales(fila, columna)) {
+                console.log("Jugador ganador: " + this.jugadorActual.nombre);
                 return true;
             }
         this.cambiarTurnoJugador();
@@ -49,39 +50,121 @@ class Tablero {
         let pos = columna - 1;
         let sumaFichas = 1;
         let contiguo = true;
-        let tipo_ficha = this.jugadorActual.url_icono;
         //Check izq
-        while (pos >= 0 && contiguo) {            
-            if (this.tablero[fila][pos].ficha != null) {
-                if (this.tablero[fila][pos].ficha.imagen == tipo_ficha) {
-                    sumaFichas++;
-                    pos--;
-                } else
-                    contiguo = false;
+        while (pos >= 0 && contiguo) {  
+            if (this.casillaTieneFichaJugadorAct(fila, pos)) {
+                sumaFichas++;
+                pos--;
             } else
-                contiguo = false;
+            contiguo = false;
         }
-        pos = columna + 1;
         //Check der
+        pos = columna + 1;
+        contiguo = true;
         while (pos < this.ancho && contiguo) {
-            if (this.tablero[fila][pos].ficha != null) {
-                if (this.tablero[fila][pos].ficha.imagen == tipo_ficha) {
-                    sumaFichas++;
-                    pos++;
-                } else
-                    contiguo = false;
+            if (this.casillaTieneFichaJugadorAct(fila, pos)) {
+                sumaFichas++;
+                pos++;
             } else
                 contiguo = false;
         }
         return sumaFichas >= this.fichas_en_linea;
-    
     }
 
     checkVertical(fila, columna) {
+        let pos = fila - 1;
+        let sumaFichas = 1;
+        let contiguo = true;
+        //Check arriba
+        while (pos >= 0 && contiguo) {
+            if (this.casillaTieneFichaJugadorAct(pos, columna)) {
+                sumaFichas++;
+                pos--;
+            } else
+                contiguo = false;
+        }
+        pos = fila + 1;
+        contiguo = true;
+        //Check abajo
+        while (pos < this.alto && contiguo) {
+           if (this.casillaTieneFichaJugadorAct(pos, columna)) {
+                sumaFichas++;
+                pos++;
+           } else
+            contiguo = false;
+        }
+        return sumaFichas >= this.fichas_en_linea;
+    }
+
+    casillaTieneFichaJugadorAct(fila, columna) {
+        let tipo_ficha = this.jugadorActual.url_icono;
+        if (this.tablero[fila][columna].ficha != null) {
+            if (this.tablero[fila][columna].ficha.imagen == tipo_ficha)
+                return true;
+        }
+        return false;
+    }
+
+    checkDiagonales(fila, columna) {
+        return (this.checkDiagonalIzq(fila, columna) || this.checkDiagonalDer(fila, columna));
 
     }
 
-    checkDiagonal(fila, columna) {
+    //Diagonal que va desde la esq sup izq hasta la esq inf der '\' 
+    checkDiagonalIzq(fila, columna) { 
+        let posX = columna - 1;
+        let posY = fila - 1;
+        let sumaFichas = 1;
+        let contiguo = true;
+        while (posX >= 0 && posY >= 0 && contiguo) {
+            if (this.casillaTieneFichaJugadorAct(posY, posX)) {
+                sumaFichas++;
+                posX--;
+                posY--;
+            } else
+                contiguo = false;
+        }
+        contiguo = true;
+        posX = columna + 1;
+        posY = fila + 1;
+        while (posX < this.ancho && posY < this.alto && contiguo) {
+            if (this.casillaTieneFichaJugadorAct(posY, posX)) {
+                sumaFichas++;
+                posX++;
+                posY++;
+            } else
+                contiguo = false;
+        }
+        return sumaFichas >= this.fichas_en_linea;
+
+    }
+
+    //Diagonal que va desde la esq sup der hasta la esq inf izq '/'
+    checkDiagonalDer(fila, columna) {
+        let posX = columna + 1;
+        let posY = fila - 1;
+        let sumaFichas = 1;
+        let contiguo = true;
+        while(posX < this.ancho && posY >= 0 && contiguo) {
+            if (this.casillaTieneFichaJugadorAct(posY, posX)) {
+                sumaFichas++;
+                posX++;
+                posY--;
+            } else
+                contiguo = false;
+        }
+        contiguo = true;
+        posX = columna - 1;
+        posY = fila + 1;
+        while(posX >= 0 && posY < this.alto && contiguo) {
+            if (this.casillaTieneFichaJugadorAct(posY, posX)) {
+                sumaFichas++;
+                posX--;
+                posY++;
+            } else
+                contiguo = false;
+        }
+        return sumaFichas >= this.fichas_en_linea;
 
     }
 
