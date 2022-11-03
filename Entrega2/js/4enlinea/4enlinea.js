@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //instancia tablero
 //    let tablero = new Tablero(7, 6, 4); 
-    let tablero = new Tablero(ctx, canvas.offsetWidth, canvas.offsetHeight, 4); 
+    let tablero = new Tablero(canvas.offsetWidth, canvas.offsetHeight, 4); 
     //fichasTotales
     let cantFichas = (tablero.ancho * tablero.alto);
     //instancia jugadores
