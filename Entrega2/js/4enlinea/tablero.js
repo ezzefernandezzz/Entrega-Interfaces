@@ -18,10 +18,10 @@ class Tablero {
             for(let i = 0; i < this.alto; i++) {
                 if (this.tablero[i + 1] == undefined || this.tablero[i + 1][columna].ficha != null) {
                     this.tablero[i][columna].ficha = nueva;
-                    console.log(this.tablero[i][columna]);
                     return;
                 }
             }
         }
     }
+
 }
