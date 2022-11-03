@@ -18,10 +18,15 @@ class Tablero {
             for(let i = 0; i < this.alto; i++) {
                 if (this.tablero[i + 1] == undefined || this.tablero[i + 1][columna].ficha != null) {
                     this.tablero[i][columna].ficha = nueva;
-                    return;
+                    return [i, columna];
                 }
             }
         }
     }
 
+    checkHorizontal(fila, columna) {
+        let pos = columna;
+    }
+
+    
 }
