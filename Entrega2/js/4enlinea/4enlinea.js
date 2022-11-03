@@ -1,17 +1,20 @@
 window.addEventListener('DOMContentLoaded', () => { 
 
-    let fichaTest = new Ficha("alfajor");
-    let fichaTest2 = new Ficha("sanguche");
-    let tablero = new Tablero(7, 6);
-    let jugadorTest = new Jugador("Alfonso", "../img/iconos/perfil.png", (tablero.ancho * tablero.alto) / 2);
+    let tablero = new Tablero(7, 6, 4);
+    let jugador1 = new Jugador("Alfonso", "../img/iconos/perfil.png", (tablero.ancho * tablero.alto) / 2);
+    let jugador2 = new Jugador("Carlos", "../img/iconos/moneda.jpg", (tablero.ancho * tablero.alto) / 2);
+    tablero.jugadores.push(jugador1);
+    tablero.jugadores.push(jugador2);
+    tablero.jugadorActual = tablero.jugadores[0];
 
-    console.log(jugadorTest.fichas.length);
+    console.log(tablero);
 
-    console.log(fichaTest);
-    console.log(fichaTest2);
+    console.log(jugador1);
+    console.log(jugador2);
 
-    tablero.colocarFicha(fichaTest, 0);
-    console.log(tablero.colocarFicha(fichaTest2, 0));
+    tablero.colocarFicha(jugador1.fichas.pop(), 0);
+    tablero.colocarFicha(jugador2.fichas.pop(), 0);
+    
 
     console.log(tablero.tablero);
 
