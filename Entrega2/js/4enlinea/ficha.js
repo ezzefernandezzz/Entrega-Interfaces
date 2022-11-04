@@ -8,7 +8,7 @@ class Ficha {
 
     draw(ctx) {
         ctx.beginPath();
-        ctx.arc(posX, posY, this.rad, 0, 2 * Math.PI);
+        ctx.arc(this.posX, this.posY, this.rad, 0, 2 * Math.PI);
         let asd = ctx.createPattern(this.imagen, "repeat");
         ctx.fillStyle = asd;
         ctx.fill();

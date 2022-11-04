@@ -26,20 +26,27 @@ window.addEventListener('DOMContentLoaded', () => {
 
     tablero.draw(ctx);
 
+    //TO DO: seleccionar ficha cuando se la clickea (y ver como hacer para soltarla cuando se suelta el mousedown)
     function mouseDown(e) {
-        console.log(e);
         let x = e.layerX - e.target.offsetLeft;
         let y = e.layerY - e.target.offsetTop;
-        console.log(x);
-        console.log(y);
+        for (let i = 0; i < cantFichas / 2; i++) {
+        if (jugador1.fichas[i].isSelected(x, y))
+            console.log("J1: " + i);
+        if (jugador2.fichas[i].isSelected(x, y))
+            console.log("J2: " + i);
+        }
     }
 
+    //TO DO: ver vid de javi para lo del isMouseDown = false y toda la bola
     function mouseUp(e) {
 
     }
 
     function mouseMove(e) {
     }
+
+
     /* console.log(tablero);
 
     console.log(jugador1);
@@ -65,6 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log(tablero.colocarFicha(0));
     tablero.colocarFicha(5); */
 
+    /* jugada ganadora j1 diagonal
     tablero.colocarFicha(3); //1
     tablero.colocarFicha(2);
     tablero.colocarFicha(2); //1
@@ -76,14 +84,9 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log(tablero.colocarFicha(0)); //1
     tablero.colocarFicha(6);
     console.log(tablero.colocarFicha(0)); //1
-    
+    */
 
-    
-    
-
-
-    console.log(tablero.tablero);
-
+    //console.log(tablero.tablero);
 
     /*
     tablero.tablero[0][0].ficha = fichaTest;
