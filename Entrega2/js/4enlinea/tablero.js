@@ -1,5 +1,5 @@
 class Tablero {
-    constructor(ancho, alto, fichas_en_linea) {
+    constructor(ancho, alto, fichas_en_linea, ctx) {
         this.ancho = ancho;
         this.alto = alto;
         this.tablero = [];

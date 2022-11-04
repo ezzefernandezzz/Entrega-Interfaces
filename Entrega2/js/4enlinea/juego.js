@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let canvas = document.getElementById("myCanvas");
     //console.log(canvas);
     let ctx = canvas.getContext("2d");
+    console.log(ctx);
 
     //instancia tablero
     let tablero = new Tablero(7, 6, 4); 
@@ -10,8 +11,8 @@ window.addEventListener('DOMContentLoaded', () => {
     //fichasTotales
     let cantFichas = (tablero.ancho * tablero.alto);
     //instancia jugadores
-    let jugador1 = new Jugador("Alfonso", "../img/iconos/perfil.png", cantFichas / 2);
-    let jugador2 = new Jugador("Carlos", "../img/iconos/moneda.jpg", cantFichas / 2);
+    let jugador1 = new Jugador("Alfonso", "../img/iconos/perfil.png", cantFichas / 2, ctx);
+    let jugador2 = new Jugador("Carlos", "../img/iconos/moneda.jpg", cantFichas / 2, ctx);
     tablero.jugadores.push(jugador1);
     tablero.jugadores.push(jugador2);
     tablero.jugadorActual = tablero.jugadores[0];
