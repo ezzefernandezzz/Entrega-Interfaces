@@ -3,7 +3,6 @@ class Jugador {
         this.nombre = nombre;
         this.url_icono = url_icono /* default */;
         this.ctx = ctx;
-        console.log(this.ctx);
         this.fichas = this.generarFichas(cantidad);
     }
 
@@ -11,7 +10,7 @@ class Jugador {
         let fichas = [];
         for (let i = 0; i < cantidad; i++) {
             fichas.push(new Ficha(this.url_icono));
-            fichas[i].draw(this.ctx);
+            //fichas[i].draw(this.ctx);
         }
         return fichas;
     }

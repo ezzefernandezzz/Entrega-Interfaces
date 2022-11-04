@@ -2,21 +2,44 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let canvas = document.getElementById("myCanvas");
     //console.log(canvas);
+    canvas.addEventListener('mousedown', mouseDown);
+    canvas.addEventListener('mouseup', mouseUp);
+    canvas.addEventListener('mousemove', mouseMove);
+
+
     let ctx = canvas.getContext("2d");
-    console.log(ctx);
+    let ficha1 = new Image();
+    ficha1.src = "img/iconos/perfil.png";
+    let ficha2 = new Image();
+    ficha2.src = "img/iconos/icono moneda.png";
 
     //instancia tablero
     let tablero = new Tablero(7, 6, 4); 
-    //let tablero = new Tablero(canvas.offsetWidth, canvas.offsetHeight, 4); 
     //fichasTotales
     let cantFichas = (tablero.ancho * tablero.alto);
     //instancia jugadores
-    let jugador1 = new Jugador("Alfonso", "../img/iconos/perfil.png", cantFichas / 2, ctx);
-    let jugador2 = new Jugador("Carlos", "../img/iconos/moneda.jpg", cantFichas / 2, ctx);
+    let jugador1 = new Jugador("Alfonso", ficha1, cantFichas / 2, ctx);
+    let jugador2 = new Jugador("Carlos", ficha2, cantFichas / 2, ctx);
     tablero.jugadores.push(jugador1);
     tablero.jugadores.push(jugador2);
     tablero.jugadorActual = tablero.jugadores[0];
 
+    tablero.draw(ctx);
+
+    function mouseDown(e) {
+        console.log(e);
+        let x = e.layerX - e.target.offsetLeft;
+        let y = e.layerY - e.target.offsetTop;
+        console.log(x);
+        console.log(y);
+    }
+
+    function mouseUp(e) {
+
+    }
+
+    function mouseMove(e) {
+    }
     /* console.log(tablero);
 
     console.log(jugador1);

@@ -168,5 +168,21 @@ class Tablero {
 
     }
 
+    draw(ctx) {
+        for(let i = 0; i < this.alto; i++) {
+            for(let j = 0; j < this.ancho; j++) {
+                if (i == 0) {
+                    ctx.beginPath();
+                    ctx.rect(j * 60 + ((900 - 420) / 2), i - 30 + ((500 - 360) / 2), 60, 60);
+                    ctx.fillStyle = "#FFFF00";
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.closePath();
+                }
+                this.tablero[i][j].draw(ctx, 60 * j, 60 * i);    
+            }
+        }
+    }
+
     
 }
