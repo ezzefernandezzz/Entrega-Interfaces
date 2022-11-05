@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function mouseDown(e) {
         let x = e.layerX - e.target.offsetLeft;
         let y = e.layerY - e.target.offsetTop;
-        for (let i = 0; i < jugador1.fichas.length / 2; i++) {
+        for (let i = 0; i < jugador1.fichas.length; i++) {
             if (jugador1.fichas[i].isSelected(x, y)) {
                 /*console.log("J1: " + i);
                 console.log("J1 Arrlength:" + jugador1.fichas.length);*/
@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
             let x = e.layerX - e.target.offsetLeft;
             let y = e.layerY - e.target.offsetTop;
             for(let i = 0; i < tablero.ancho; i++) {
-                console.log(tablero.indicadores[i].isPointInside(x,y));
+                //console.log(tablero.indicadores[i].isPointInside(x,y));
                 if (tablero.indicadores[i].isPointInside(x,y)) {
                     tablero.colocarFicha(fichaClickeada, i);
                     if (tablero.jugadores[0].fichas.includes(fichaClickeada))
@@ -77,8 +77,8 @@ window.addEventListener('DOMContentLoaded', () => {
             let x = e.layerX - e.target.offsetLeft;
             let y = e.layerY - e.target.offsetTop;
             fichaClickeada.setPos(x, y);
-            clearCanvas();
         }
+        clearCanvas();
         reDraw();
         
     }
