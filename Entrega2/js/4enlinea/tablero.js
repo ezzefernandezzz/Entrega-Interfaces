@@ -38,6 +38,7 @@ class Tablero {
         if (this.checkHorizontal(fila, columna) || this.checkVertical(fila, columna) 
             || this.checkDiagonales(fila, columna)) {
                 console.log("Jugador ganador: " + this.jugadorActual.nombre);
+                this.cambiarTurnoJugador();
                 return true;
             }
         this.cambiarTurnoJugador();

@@ -25,15 +25,17 @@ window.addEventListener('DOMContentLoaded', () => {
     tablero.jugadores.push(jugador2);
     tablero.jugadorActual = tablero.jugadores[0];
 
-    
     let fichaClickeada = null;
+    let indiceFicha = -1;
     let isMouseDown = false;
+
     function mouseDown(e) {
         let x = e.layerX - e.target.offsetLeft;
         let y = e.layerY - e.target.offsetTop;
         for (let i = 0; i < tablero.jugadorActual.fichas.length; i++) {
             if (tablero.jugadorActual.fichas[i].isSelected(x, y)) {
                 fichaClickeada = tablero.jugadorActual.fichas[i];
+                indiceFicha = i;
                 isMouseDown = true;
             }
         }
@@ -46,13 +48,13 @@ window.addEventListener('DOMContentLoaded', () => {
             let x = e.layerX - e.target.offsetLeft;
             let y = e.layerY - e.target.offsetTop;
             for(let i = 0; i < tablero.ancho; i++) {
-                //console.log(tablero.indicadores[i].isPointInside(x,y));
                 if (tablero.indicadores[i].isPointInside(x,y)) {
                     tablero.colocarFicha(fichaClickeada, i);
+                    //tablero.jugadorActual.fichas.splice(tablero.jugadorActual.fichas.indexOf(fichaClickeada), 1);
                     if (tablero.jugadores[0].fichas.includes(fichaClickeada))
                         tablero.jugadores[0].fichas.splice(tablero.jugadores[0].fichas.indexOf(fichaClickeada), 1);
                     else
-                        tablero.jugadores[1].fichas.splice(tablero.jugadores[1].fichas.indexOf(fichaClickeada), 1);
+                        tablero.jugadores[1].fichas.splice(tablero.jugadores[1].fichas.indexOf(fichaClickeada), 1); 
 
                 }
             }
