@@ -17,18 +17,28 @@ window.addEventListener('DOMContentLoaded', () => {
     let tablero = new Tablero(7, 6, 4); 
     //fichasTotales
     let cantFichas = (tablero.ancho * tablero.alto);
-    //instancia jugadores
-    tablero.draw(ctx);
+    
+    tablero.draw(ctx);  //Dibujo el tablero
+
+    //Instancia jugadores con mitad de fichas para cada 1
+
     let jugador1 = new Jugador("Alfonso", ficha1, cantFichas / 2, ctx, "red");
     let jugador2 = new Jugador("Carlos", ficha2, cantFichas / 2, ctx, "blue");
+
+    //Al arreglo de jugadores del tablero, agrego el j1 y j2
     tablero.jugadores.push(jugador1);
     tablero.jugadores.push(jugador2);
+
+    //Selecciono el jugador actual como el 1ero en el arreglo
     tablero.jugadorActual = tablero.jugadores[0];
 
     
-    let fichaClickeada = null;
-    let isMouseDown = false;
+    let fichaClickeada = null;  
+    let isMouseDown = false;    //Click izquierdo presionado
+    
     function mouseDown(e) {
+        console.log(e.layerX);
+    //    console.log(e.clientX - canvas.offsetLeft);
         let x = e.layerX - e.target.offsetLeft;
         let y = e.layerY - e.target.offsetTop;
         for (let i = 0; i < jugador1.fichas.length / 2; i++) {

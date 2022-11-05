@@ -1,22 +1,22 @@
 class Tablero {
     constructor(ancho, alto, fichas_en_linea, ctx) {
-        this.ancho = ancho;
-        this.alto = alto;
+        this.ancho = ancho; //Cant columnas
+        this.alto = alto;   //Cant filas
         this.tablero = [];
         this.indicadores = [];
-        for(let j = 0; j < alto; j++) {
-            let fila = [];
-            for(let i = 0; i < ancho; i++) {
-                if (j == 0) {
-                    this.indicadores.push(new Indicador(i * 60, 60));
+        for(let j = 0; j < alto; j++) { //de 0 a cantidad de filas
+            let fila = [];  // instancio una fila
+            for(let i = 0; i < ancho; i++) {   //de 0 a cantidad de columnas
+                if (j == 0) {   //si estoy en el primer ciclo
+                    this.indicadores.push(new Indicador(i * 60, 60));   //Creo indicador donde tirar como cant de columnas
                 }
-                fila.push(new Casilla);
+                fila.push(new Casilla); //Instancio cantidad de casillas como columnas
             }
-            this.tablero.push(fila);
+            this.tablero.push(fila); // Agrego la fila generada al tablero y repito
         }
-        this.fichas_en_linea = fichas_en_linea;
-        this.jugadores = [];
-        this.jugadorActual = null;
+        this.fichas_en_linea = fichas_en_linea; //genero x cantidad de ficha
+        this.jugadores = [];    //Creo el arreglo de jugadores
+        this.jugadorActual = null;  //El jugador inicial esta vacio
     }
 
     colocarFicha(nueva, columna) {
@@ -175,12 +175,13 @@ class Tablero {
     }
 
     draw(ctx) {
-        for(let i = 0; i < this.alto; i++) {
-            for(let j = 0; j < this.ancho; j++) {
+        for(let i = 0; i < this.alto; i++) {    //De 0 a cantidad de filas
+            for(let j = 0; j < this.ancho; j++) {   //De 0 a cantidad de columnas
                 if (i == 0) {
-                    this.indicadores[j].draw(ctx);
+                    this.indicadores[j].draw(ctx);  //Dibujo el indicador en el contexto
                 }
-                this.tablero[i][j].draw(ctx, 60 * j, 60 * i);    
+                this.tablero[i][j].draw(ctx, 60 * j, 60 * i);
+                //Accedo a la pos i del tablero, que me va a devolver una FILA, y accedo a la pos J de la fila y la dibujo 
             }
         }
     }
