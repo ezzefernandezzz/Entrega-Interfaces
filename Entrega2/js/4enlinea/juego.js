@@ -25,8 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Instancia jugadores con mitad de fichas para cada 1
 
-    let jugador1 = new Jugador("Alfonso", ficha1, cantFichas / 2, ctx, "red");
-    let jugador2 = new Jugador("Carlos", ficha2, cantFichas / 2, ctx, "blue");
+    let jugador1 = new Jugador("Alfonso", ficha1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight);
+    let jugador2 = new Jugador("Carlos", ficha2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 200, canvas.offsetHeight);
 
     //Al arreglo de jugadores del tablero, agrego el j1 y j2
     tablero.jugadores.push(jugador1);
@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let fichaClickeada = null;
     let indiceFicha = -1;
-    let isMouseDown = false;
+    let isMouseDown = false; //Click izquierdo presionado
 
     function mouseDown(e) {
         console.log(e.layerX);

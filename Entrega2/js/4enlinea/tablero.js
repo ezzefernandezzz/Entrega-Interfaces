@@ -1,7 +1,7 @@
 class Tablero {
     constructor(ancho, alto, fichas_en_linea) {
-        this.ancho = ancho;
-        this.alto = alto;
+        this.ancho = ancho; //Cant columnas
+        this.alto = alto;   //Cant filas
         this.tablero = [];
         this.indicadores = [];
         for(let j = 0; j < alto; j++) { //de 0 a cantidad de filas
