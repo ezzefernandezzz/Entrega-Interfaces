@@ -1,7 +1,7 @@
 class Tablero {
-    constructor(ancho, alto, fichas_en_linea, ctx) {
-        this.ancho = ancho; //Cant columnas
-        this.alto = alto;   //Cant filas
+    constructor(ancho, alto, fichas_en_linea) {
+        this.ancho = ancho;
+        this.alto = alto;
         this.tablero = [];
         this.indicadores = [];
         for(let j = 0; j < alto; j++) { //de 0 a cantidad de filas
@@ -20,9 +20,6 @@ class Tablero {
     }
 
     colocarFicha(nueva, columna) {
-        //Esta forma es temporal, dsp de poder seleccionar una ficha clickeando hay que pasarla como parametro
-        //a esta funcion para distinguir la ficha seleccionada y no solo sacar la ultima del arreglo
-        //let nueva = this.jugadorActual.fichas.pop();
         //Compruebo que el primer lugar de la columna no este ocupado
         if (this.tablero[0][columna].ficha == null) {
             for(let i = 0; i < this.alto; i++) {
@@ -38,6 +35,7 @@ class Tablero {
         if (this.checkHorizontal(fila, columna) || this.checkVertical(fila, columna) 
             || this.checkDiagonales(fila, columna)) {
                 console.log("Jugador ganador: " + this.jugadorActual.nombre);
+                this.cambiarTurnoJugador();
                 return true;
             }
         this.cambiarTurnoJugador();
