@@ -21,7 +21,7 @@ class Jugador {
     }
 
     draw() {
-        for (let i = 0; i < this.cantidad; i++) {
+        for (let i = 0; i < this.fichas.length; i++) {
             this.fichas[i].draw(this.ctx);
         }
     }

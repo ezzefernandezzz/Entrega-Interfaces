@@ -28,17 +28,18 @@ window.addEventListener('DOMContentLoaded', () => {
     
     let fichaClickeada = null;
     let isMouseDown = false;
-    //TO DO: seleccionar ficha cuando se la clickea (y ver como hacer para soltarla cuando se suelta el mousedown)
     function mouseDown(e) {
         let x = e.layerX - e.target.offsetLeft;
         let y = e.layerY - e.target.offsetTop;
-        for (let i = 0; i < cantFichas / 2; i++) {
+        for (let i = 0; i < jugador1.fichas.length / 2; i++) {
             if (jugador1.fichas[i].isSelected(x, y)) {
                 /*console.log("J1: " + i);
                 console.log("J1 Arrlength:" + jugador1.fichas.length);*/
                 fichaClickeada = jugador1.fichas[i];
                 isMouseDown = true;
             }
+        }
+        for (let i = 0; i < jugador2.fichas.length; i++) {
             if (jugador2.fichas[i].isSelected(x, y)) {
                 /*console.log("J2: " + i);
                 console.log("J2 Arrlength:" + jugador2.fichas.length);*/
@@ -59,6 +60,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 console.log(tablero.indicadores[i].isPointInside(x,y));
                 if (tablero.indicadores[i].isPointInside(x,y)) {
                     tablero.colocarFicha(fichaClickeada, i);
+                    if (tablero.jugadores[0].fichas.includes(fichaClickeada))
+                        tablero.jugadores[0].fichas.splice(tablero.jugadores[0].fichas.indexOf(fichaClickeada), 1);
+                    else
+                        tablero.jugadores[1].fichas.splice(tablero.jugadores[1].fichas.indexOf(fichaClickeada), 1);
+
                 }
             }
             fichaClickeada = null;
@@ -72,11 +78,15 @@ window.addEventListener('DOMContentLoaded', () => {
             let y = e.layerY - e.target.offsetTop;
             fichaClickeada.setPos(x, y);
             clearCanvas();
-            tablero.draw(ctx);
-            tablero.jugadores[0].draw();
-            tablero.jugadores[1].draw();            
         }
+        reDraw();
         
+    }
+
+    function reDraw() {
+        tablero.draw(ctx);
+        tablero.jugadores[0].draw();
+        tablero.jugadores[1].draw();     
     }
 
     function clearCanvas() {
