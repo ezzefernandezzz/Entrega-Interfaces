@@ -17,8 +17,6 @@ class Indicador {
     }
 
     isPointInside(x, y) {
-        /*console.log("Mayor q: " + (this.posX + this.size));
-        console.log("Menor q: " + (this.posX + this.offsetX));*/
         return x < this.posX + this.size + this.offsetX && x > this.posX + this.offsetX 
             && y < this.posY + this.size + this.offsetY && y > this.posY + this.offsetY;
     }

@@ -14,6 +14,9 @@ window.addEventListener('DOMContentLoaded', () => {
     ficha2.src = "img/iconos/icono moneda.png";
 
     //instancia tablero
+    //Habria que ver de pasarle el canvas al tablero para que pueda pasarselo a las otras clases
+    //Para que puedan realizar sus calculos
+    //Ej: Posicion de las fichas de los jugadores
     let tablero = new Tablero(7, 6, 4); 
     //fichasTotales
     let cantFichas = (tablero.ancho * tablero.alto);
@@ -41,7 +44,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    //TO DO: ver vid de javi para lo del isMouseDown = false y toda la bola
     function mouseUp(e) {
         isMouseDown = false;
         if (fichaClickeada != null) {
@@ -50,6 +52,8 @@ window.addEventListener('DOMContentLoaded', () => {
             for(let i = 0; i < tablero.ancho; i++) {
                 if (tablero.indicadores[i].isPointInside(x,y)) {
                     tablero.colocarFicha(fichaClickeada, i);
+                    //Esto deberia funcionar de forma similar al if pero elimina otras fichas que no son
+                    //las seleccionadas por alguna razon
                     //tablero.jugadorActual.fichas.splice(tablero.jugadorActual.fichas.indexOf(fichaClickeada), 1);
                     if (tablero.jugadores[0].fichas.includes(fichaClickeada))
                         tablero.jugadores[0].fichas.splice(tablero.jugadores[0].fichas.indexOf(fichaClickeada), 1);
@@ -59,7 +63,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             }
             fichaClickeada = null;
-
         }
     }
 
@@ -84,54 +87,5 @@ window.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle = "white";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
-
-
-    /* console.log(tablero);
-
-    console.log(jugador1);
-    console.log(jugador2); */
-
-    /* Jugada ganadora Jugador1 horizontal
-    tablero.colocarFicha(0);
-    tablero.colocarFicha(0);
-    tablero.colocarFicha(1);
-    tablero.colocarFicha(0);
-    console.log(tablero.colocarFicha(2));
-    tablero.colocarFicha(0);
-    console.log(tablero.colocarFicha(3));
-    */
-
-    /* Jugada ganadora Jugador1 vertical
-    tablero.colocarFicha(0);
-    tablero.colocarFicha(1);
-    tablero.colocarFicha(0);
-    tablero.colocarFicha(2);
-    console.log(tablero.colocarFicha(0));
-    tablero.colocarFicha(3);
-    console.log(tablero.colocarFicha(0));
-    tablero.colocarFicha(5); */
-
-    /* jugada ganadora j1 diagonal
-    tablero.colocarFicha(3); //1
-    tablero.colocarFicha(2);
-    tablero.colocarFicha(2); //1
-    tablero.colocarFicha(1); 
-    tablero.colocarFicha(1); //1
-    tablero.colocarFicha(0);
-    tablero.colocarFicha(1); //1
-    tablero.colocarFicha(0);
-    console.log(tablero.colocarFicha(0)); //1
-    tablero.colocarFicha(6);
-    console.log(tablero.colocarFicha(0)); //1
-    */
-
-    //console.log(tablero.tablero);
-
-    /*
-    tablero.tablero[0][0].ficha = fichaTest;
-    console.log(tablero.tablero[0][0].ficha);
-    tablero.tablero[0][5].ficha = fichaTest;
-    console.log(tablero.tablero[0][5].ficha);
-    */
     
 });
