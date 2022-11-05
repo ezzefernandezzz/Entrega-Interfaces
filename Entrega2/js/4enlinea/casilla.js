@@ -21,7 +21,10 @@ class Casilla {
         //hay que pasar un parametro para que se mantenga el mismo numero en las fichas que aca en la casilla
         ctx.beginPath();
         ctx.arc(x + ((900 - 420) / 2) + 60 / 2, y + 30 + ((500 - 360) / 2) + 60 / 2, 26, 0, 2 * Math.PI);   
-        ctx.fillStyle = "white";
+        if (this.ficha == null) 
+            ctx.fillStyle = "white";
+        else
+            ctx.fillStyle = this.ficha.fill;
         ctx.fill();
         ctx.stroke();
     }

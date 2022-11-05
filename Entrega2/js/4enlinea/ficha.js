@@ -1,16 +1,17 @@
 class Ficha {
-    constructor(url) {
+    constructor(url, fill) {
         this.imagen = url;
         this.posX = Math.random() * 850 + 30;
         this.posY = Math.random() * 450 + 30;
         this.rad = 26;
+        this.fill = fill;
+
     }
 
     draw(ctx) {
         ctx.beginPath();
         ctx.arc(this.posX, this.posY, this.rad, 0, 2 * Math.PI);
-        let asd = ctx.createPattern(this.imagen, "repeat");
-        ctx.fillStyle = asd;
+        ctx.fillStyle = this.fill;
         ctx.fill();
         ctx.stroke();
     }
@@ -19,5 +20,10 @@ class Ficha {
         let _x = this.posX - x;
         let _y = this.posY - y;
         return Math.sqrt(_x * _x + _y * _y) < this.rad;
+    }
+
+    setPos(x, y) {
+        this.posX = x;
+        this.posY = y;
     }
 }

@@ -3,9 +3,13 @@ class Tablero {
         this.ancho = ancho;
         this.alto = alto;
         this.tablero = [];
+        this.indicadores = [];
         for(let j = 0; j < alto; j++) {
             let fila = [];
             for(let i = 0; i < ancho; i++) {
+                if (j == 0) {
+                    this.indicadores.push(new Indicador(i * 60, 60));
+                }
                 fila.push(new Casilla);
             }
             this.tablero.push(fila);
@@ -15,10 +19,10 @@ class Tablero {
         this.jugadorActual = null;
     }
 
-    colocarFicha(columna) {
+    colocarFicha(nueva, columna) {
         //Esta forma es temporal, dsp de poder seleccionar una ficha clickeando hay que pasarla como parametro
         //a esta funcion para distinguir la ficha seleccionada y no solo sacar la ultima del arreglo
-        let nueva = this.jugadorActual.fichas.pop();
+        //let nueva = this.jugadorActual.fichas.pop();
         //Compruebo que el primer lugar de la columna no este ocupado
         if (this.tablero[0][columna].ficha == null) {
             for(let i = 0; i < this.alto; i++) {
@@ -174,12 +178,7 @@ class Tablero {
         for(let i = 0; i < this.alto; i++) {
             for(let j = 0; j < this.ancho; j++) {
                 if (i == 0) {
-                    ctx.beginPath();
-                    ctx.rect(j * 60 + ((900 - 420) / 2), i - 30 + ((500 - 360) / 2), 60, 60);
-                    ctx.fillStyle = "#FFFF00";
-                    ctx.fill();
-                    ctx.stroke();
-                    ctx.closePath();
+                    this.indicadores[j].draw(ctx);
                 }
                 this.tablero[i][j].draw(ctx, 60 * j, 60 * i);    
             }
