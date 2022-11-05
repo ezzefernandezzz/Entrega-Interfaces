@@ -31,23 +31,12 @@ window.addEventListener('DOMContentLoaded', () => {
     function mouseDown(e) {
         let x = e.layerX - e.target.offsetLeft;
         let y = e.layerY - e.target.offsetTop;
-        for (let i = 0; i < jugador1.fichas.length; i++) {
-            if (jugador1.fichas[i].isSelected(x, y)) {
-                /*console.log("J1: " + i);
-                console.log("J1 Arrlength:" + jugador1.fichas.length);*/
-                fichaClickeada = jugador1.fichas[i];
+        for (let i = 0; i < tablero.jugadorActual.fichas.length; i++) {
+            if (tablero.jugadorActual.fichas[i].isSelected(x, y)) {
+                fichaClickeada = tablero.jugadorActual.fichas[i];
                 isMouseDown = true;
             }
         }
-        for (let i = 0; i < jugador2.fichas.length; i++) {
-            if (jugador2.fichas[i].isSelected(x, y)) {
-                /*console.log("J2: " + i);
-                console.log("J2 Arrlength:" + jugador2.fichas.length);*/
-                fichaClickeada = jugador2.fichas[i];
-                isMouseDown = true;
-            }
-        }
-        //console.log(fichaClickeada);
     }
 
     //TO DO: ver vid de javi para lo del isMouseDown = false y toda la bola
