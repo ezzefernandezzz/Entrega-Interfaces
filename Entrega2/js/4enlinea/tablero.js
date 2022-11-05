@@ -20,9 +20,6 @@ class Tablero {
     }
 
     colocarFicha(nueva, columna) {
-        //Esta forma es temporal, dsp de poder seleccionar una ficha clickeando hay que pasarla como parametro
-        //a esta funcion para distinguir la ficha seleccionada y no solo sacar la ultima del arreglo
-        //let nueva = this.jugadorActual.fichas.pop();
         //Compruebo que el primer lugar de la columna no este ocupado
         if (this.tablero[0][columna].ficha == null) {
             for(let i = 0; i < this.alto; i++) {
