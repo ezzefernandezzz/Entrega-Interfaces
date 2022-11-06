@@ -43,11 +43,13 @@ class Tablero {
     }
 
     cambiarTurnoJugador() {
-        if (this.jugadorActual == this.jugadores[0])
+        this.jugadorActual.detenerReloj();
+        if (this.jugadorActual == this.jugadores[0]) 
             this.jugadorActual = this.jugadores[1];
-        else
+        else {
             this.jugadorActual = this.jugadores[0];
-
+        }
+        this.jugadorActual.iniciarReloj();
     }
 
     checkHorizontal(fila, columna) {

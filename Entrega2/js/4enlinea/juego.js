@@ -34,6 +34,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Selecciono el jugador actual como el 1ero en el arreglo
     tablero.jugadorActual = tablero.jugadores[0];
+    //Comienzo a descontar tiempo del jugador
+    tablero.jugadorActual.iniciarReloj();
 
     let fichaClickeada = null;
     let coordOriginalFichaX;
@@ -49,7 +51,6 @@ window.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < tablero.jugadorActual.fichas.length; i++) {
             if (tablero.jugadorActual.fichas[i].isSelected(x, y)) {
                 fichaClickeada = tablero.jugadorActual.fichas[i];
-                console.log(fichaClickeada);
                 indiceFicha = i;
                 isMouseDown = true;
                 coordOriginalFichaX = fichaClickeada.posXFicha;
@@ -89,9 +90,13 @@ window.addEventListener('DOMContentLoaded', () => {
             fichaClickeada.setPos(x, y);
         }
         clearCanvas();
-        reDraw();
-        
+        reDraw();        
     }
+
+    setInterval(() => {
+        clearCanvas();
+        reDraw();
+    }, 1    );
 
     function reDraw() {
         tablero.draw(ctx);
