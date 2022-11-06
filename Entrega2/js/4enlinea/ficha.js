@@ -21,13 +21,13 @@ class Ficha {
     }
 
     isSelected(x, y) {
-        let _x = this.posX - x;
-        let _y = this.posY - y;
+        let _x = this.posXFicha - x;
+        let _y = this.posYFicha - y;
         return Math.sqrt(_x * _x + _y * _y) < this.rad;
     }
 
     setPos(x, y) {
-        this.posX = x;
-        this.posY = y;
+        this.posXFicha = x;
+        this.posYFicha = y;
     }
 }

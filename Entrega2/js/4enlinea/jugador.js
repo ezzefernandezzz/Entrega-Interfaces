@@ -24,15 +24,25 @@ class Jugador {
         //ya que busca las mismas en otro xy
 
         /* for (let i = 0; i < this.cantidadFichas; i++) { */
-        for (let i = 0; i < (5); i++) {
+        /*for (let i = 0; i < (5); i++) {
             /*if(i >= this.cantidadFichas /2){
                 fila += fila * 2; 
                 console.log(fila)
-            }*/
+            }
             console.log(this.canvas);
             fichas.push(new Ficha(this.url_icono, this.fill, fila , this.posY/2 + i *50, 26));
             fichas.push(new Ficha(this.url_icono, this.fill, fila + 60 ,this.posY/2 + i *50, 26));
             fichas[i].draw(this.ctx);
+        }*/
+        for (let i = 0; i < this.cantidadFichas; i++) {
+            if (i % 2 == 0) {
+                fichas.push(new Ficha(this.url_icono, this.fill, fila + 60, this.posY / 2 + ((i - 1) / 2) * 20, 26));
+            } else {
+                fichas.push(new Ficha(this.url_icono, this.fill, fila, this.posY / 2 + (i / 2) * 20, 26 ));
+            }
+            fichas[i].draw(this.ctx);
+            if (i == 0) {
+            }
         }
         return fichas;
     }

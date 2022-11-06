@@ -36,19 +36,24 @@ window.addEventListener('DOMContentLoaded', () => {
     tablero.jugadorActual = tablero.jugadores[0];
 
     let fichaClickeada = null;
+    let coordOriginalFichaX;
+    let coordOriginalFichaY;
     let indiceFicha = -1;
     let isMouseDown = false; //Click izquierdo presionado
 
     function mouseDown(e) {
-        console.log(e.layerX);
-    //    console.log(e.clientX - canvas.offsetLeft);
+    //  console.log(e.layerX);
+    //  console.log(e.clientX - canvas.offsetLeft);
         let x = e.layerX - e.target.offsetLeft;
         let y = e.layerY - e.target.offsetTop;
         for (let i = 0; i < tablero.jugadorActual.fichas.length; i++) {
             if (tablero.jugadorActual.fichas[i].isSelected(x, y)) {
                 fichaClickeada = tablero.jugadorActual.fichas[i];
+                console.log(fichaClickeada);
                 indiceFicha = i;
                 isMouseDown = true;
+                coordOriginalFichaX = fichaClickeada.posXFicha;
+                coordOriginalFichaY = fichaClickeada.posYFicha;
             }
         }
     }
@@ -68,7 +73,9 @@ window.addEventListener('DOMContentLoaded', () => {
                         tablero.jugadores[0].fichas.splice(tablero.jugadores[0].fichas.indexOf(fichaClickeada), 1);
                     else
                         tablero.jugadores[1].fichas.splice(tablero.jugadores[1].fichas.indexOf(fichaClickeada), 1); 
-
+                } else {
+                    fichaClickeada.posXFicha = coordOriginalFichaX;
+                    fichaClickeada.posYFicha = coordOriginalFichaY;
                 }
             }
             fichaClickeada = null;
