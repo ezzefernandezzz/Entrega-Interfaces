@@ -1,6 +1,8 @@
 class Ficha {
-    constructor(url, fill, posXFicha, posYFicha, rad) {
-        this.imagen = url;
+    constructor(imagen, fill, posXFicha, posYFicha, rad) {
+        this.imagen = imagen;
+
+        /* console.log("kafsnnasfnfas" + imagen.src); */
         this.posX = Math.random() * 850 + 30;
         this.posY = Math.random() * 450 + 30;
         /* this.rad = 26; */
@@ -13,8 +15,8 @@ class Ficha {
     draw(ctx) {
         ctx.beginPath();
 
-        let img = new Image();
-        img.src="img/4enlinea/fichaaparecium.png";
+        /* let img = new Image();
+        img.src="img/4enlinea/fichaaparecium.png"; */
 
         /* ctx.arc(this.posX, this.posY, this.rad, 0, 2 * Math.PI); */
         ctx.arc(this.posXFicha, this.posYFicha, this.rad, 0, 2 * Math.PI);
@@ -24,7 +26,7 @@ class Ficha {
         ctx.fill();
         ctx.stroke();
 
-        ctx.drawImage(img, this.posXFicha-25, this.posYFicha-25, 50, 50);
+        ctx.drawImage(this.imagen, this.posXFicha-25, this.posYFicha-25, 50, 50);
     }
 
     isSelected(x, y) {

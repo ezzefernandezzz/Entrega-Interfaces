@@ -87,11 +87,6 @@ window.addEventListener('DOMContentLoaded', () => {
         canvas.addEventListener('mousedown', mouseDown);
         canvas.addEventListener('mouseup', mouseUp);
         canvas.addEventListener('mousemove', mouseMove);
-        
-        let ficha1 = new Image();
-        ficha1.src = "img/4enlinea/fichaaparecium.png";
-        let ficha2 = new Image();
-        ficha2.src = "img/4enlinea/fichaincendio.png";
 
         let boton_reiniciar = new Boton(canvas.width - 50, canvas.height - 50, 50, 50, "R", "#11FF11");
         let boton_menu = new Boton(canvas.width - 100, canvas.height - 50, 50, 50, "M", "#FF1111");
@@ -109,10 +104,17 @@ window.addEventListener('DOMContentLoaded', () => {
         tablero.draw(ctx);
 
         let sizeFichas = tablero.getSizeFichas();
-        console.log(sizeFichas);
+       /*  console.log(sizeFichas); */
 
-        let jugador1 = new Jugador("Alfonso", ficha1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight, sizeFichas);
-        let jugador2 = new Jugador("Carlos", ficha2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight, sizeFichas);
+
+        let fichaJ1 = new Image();
+        fichaJ1.src = "img/4enlinea/fichaaparecium.png";
+
+        let fichaJ2 = new Image();
+        fichaJ2.src = "img/4enlinea/fichaincendio.png";
+
+        let jugador1 = new Jugador("Alfonso", fichaJ1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight, sizeFichas);
+        let jugador2 = new Jugador("Carlos", fichaJ2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight, sizeFichas);
 
         tablero.jugadores.push(jugador1);
         tablero.jugadores.push(jugador2);

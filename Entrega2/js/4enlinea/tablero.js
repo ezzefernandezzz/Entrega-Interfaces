@@ -117,9 +117,12 @@ class Tablero {
     }
 
     casillaTieneFichaJugadorAct(fila, columna) {
-        let tipo_ficha = this.jugadorActual.url_icono;
+        let tipo_ficha = this.jugadorActual.imgFicha;
+        /* console.log(tipo_ficha); */
+
         if (this.tablero[fila][columna].ficha != null) {
-            if (this.tablero[fila][columna].ficha.imagen == tipo_ficha)
+            console.log(this.tablero[fila][columna].ficha.imagen.src);
+            if (this.tablero[fila][columna].ficha.imagen.src == tipo_ficha.src)
                 return true;
         }
         return false;
