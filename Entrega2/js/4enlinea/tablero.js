@@ -12,13 +12,14 @@ class Tablero {
 
         this.tamanioColumnas = (this.ancho * this.sizeFicha);
         this.tamanioFilas = (this.alto * this.sizeFicha);
+
         for(let j = 0; j < alto; j++) { //de 0 a cantidad de filas
             let fila = [];  // instancio una fila
             for(let i = 0; i < ancho; i++) {   //de 0 a cantidad de columnas
                 if (j == 0) {   //si estoy en el primer ciclo
                     this.indicadores.push(new Indicador(i * this.sizeFicha, this.sizeFicha, this.cW, this.cH, this.tamanioColumnas, this.tamanioFilas));   //Creo indicador donde tirar como cant de columnas
                 }
-                fila.push(new Casilla); //Instancio cantidad de casillas como columnas
+                fila.push(new Casilla(this.sizeFicha)); //Instancio cantidad de casillas como columnas
             }
             this.tablero.push(fila); // Agrego la fila generada al tablero y repito
         }

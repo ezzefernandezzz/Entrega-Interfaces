@@ -1,7 +1,7 @@
 class Casilla {
-    constructor() {
+    constructor(size) {
         this.ficha = null;
-        this.size = 60;
+        this.size = size;
     }        
 
     draw(ctx, x, y, canvasWidth, canvasHeight, columna, fila) {
@@ -23,7 +23,7 @@ class Casilla {
         //hay que pasar un parametro para que se mantenga el mismo numero en las fichas que aca en la casilla
         ctx.beginPath();
         //ctx.arc(x + ((900 - 420) / 2) + 50 / 2, y + 25 + ((500 - 360) / 2) + 60 / 2, 22, 0, 2 * Math.PI);   
-        ctx.arc(x + ((canvasWidth - columna) / 2) + 50 / 2, y + 25 + ((canvasHeight - fila) / 2) + 60 / 2, 22, 0, 2 * Math.PI);   
+        ctx.arc(x + ((canvasWidth - columna) / 2) + this.size / 2, y + (this.size/2) + ((canvasHeight - fila) / 2) + 60 / 2, 22, 0, 2 * Math.PI);   
         if (this.ficha == null) 
             ctx.fillStyle = "white";
         else
