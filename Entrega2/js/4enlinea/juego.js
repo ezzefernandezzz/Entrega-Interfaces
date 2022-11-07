@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //initGame();
 
     function mostrarMenuInicio() {
+        clearCanvas();
         canvas.addEventListener('mousedown', mouseDown);
         let botones = [];
         let boton_fill = "#22CCFF";
@@ -75,9 +76,15 @@ window.addEventListener('DOMContentLoaded', () => {
                     botones[i].unclickButton(ctx);
             }
         }
+
+        function clearCanvas() {
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
     }
 
     function initGame(tablero) {
+        let runGame = true;
         canvas.addEventListener('mousedown', mouseDown);
         canvas.addEventListener('mouseup', mouseUp);
         canvas.addEventListener('mousemove', mouseMove);
@@ -87,6 +94,12 @@ window.addEventListener('DOMContentLoaded', () => {
         let ficha2 = new Image();
         ficha2.src = "img/4enlinea/fichaincendio.png";
 
+        let boton_reiniciar = new Boton(canvas.width - 50, canvas.height - 50, 50, 50, "R", "#11FF11");
+        let boton_menu = new Boton(canvas.width - 100, canvas.height - 50, 50, 50, "M", "#FF1111");
+
+        let botones = [];
+        botones.push(boton_reiniciar);
+        botones.push(boton_menu);
 
         //Habria que ver de pasarle el canvas al tablero para que pueda pasarselo a las otras clases
         //Para que puedan realizar sus calculos
@@ -126,6 +139,12 @@ window.addEventListener('DOMContentLoaded', () => {
                     coordOriginalFichaY = fichaClickeada.posYFicha;
                 }
             }
+            if (boton_menu.isPointInside(x,y)) {
+                irAlMenu();
+            }
+            if (boton_reiniciar.isPointInside(x,y)) {
+                reiniciarJuego();
+            }
         }
 
         function mouseUp(e) {
@@ -159,19 +178,33 @@ window.addEventListener('DOMContentLoaded', () => {
                     isMouseDown = false;
                 }
             }
-            clearCanvas();
-            reDraw();        
+            //clearCanvas();
+            //reDraw();        
         }
 
-        setInterval(() => {
+        let interval_id;
+        interval_id = setInterval(() => {
             clearCanvas();
             reDraw();
         }, 1    );
+            
+        function irAlMenu() {
+            clearInterval(interval_id);
+            mostrarMenuInicio();
+        }
+
+        function reiniciarJuego() {
+            clearInterval(interval_id);
+            initGame(new Tablero(tablero.ancho, tablero.alto, tablero.fichas_en_linea, tablero.cW, tablero.cH));
+        }
 
         function reDraw() {
             tablero.draw(ctx);
             tablero.jugadores[0].draw();
             tablero.jugadores[1].draw();     
+            for(let boton of botones) {
+                boton.draw(ctx);
+            }
         }
 
         function clearCanvas() {
