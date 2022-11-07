@@ -12,7 +12,6 @@ class Jugador {
         //Para esto pensaba pasarle algun parametro a las fichas que indiquen su posicion base
         
         this.posX = posX;
-        console.log(this.posX);
         this.posY = posY;
         this.fichas = this.generarFichas();
 
@@ -37,7 +36,8 @@ class Jugador {
 
     iniciarReloj() {
         this.interval_id = setInterval(() => {
-            this.tiempo--;
+            if (this.tiempo > 0)
+                this.tiempo--;
         }, 1000);
     }
 
@@ -50,8 +50,8 @@ class Jugador {
         this.ctx.font = '48px serif';
         let minutos = Math.floor(this.tiempo / 60);
         let segundos = (this.tiempo % 60);
-        if (segundos == 0) {
-            segundos = '00';
+        if (segundos < 10) {
+            segundos = '0' + segundos;
         };
         this.ctx.fillText(minutos + ":" + segundos, this.posX + 50, 50);
         for (let i = 0; i < this.fichas.length; i++) {

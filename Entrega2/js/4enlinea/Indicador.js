@@ -3,7 +3,9 @@ class Indicador {
         this.posX = posX;
         this.posY = 0;
         this.size = size;
+        //Ancho de canvas - ancho de tablero dividido 2
         this.offsetX = (900 - 420) / 2;
+        //Alto de canvas - alto de tablero dividido 2
         this.offsetY = - 30 + (500 - 360) / 2;
     }
 
