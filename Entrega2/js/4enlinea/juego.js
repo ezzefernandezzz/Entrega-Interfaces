@@ -11,14 +11,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let botones = [];
 
-        let boton_jugar = new Boton((canvas.width - 300) / 2, (canvas.height - 80) / 2, 300, 80, "Jugar", "aquamarine");
+        let boton_jugar = 
+            new Boton((canvas.width - 300) / 2, (canvas.height - 80) / 2, 300, 80, "Jugar", "aquamarine");
 
         let boton_fill = "#22CCFF";
         let boton_fill_clicked ="#DD3333";
 
-        let boton_tablero_4 = new Boton((canvas.width - 200) / 3 - 100, canvas.offsetTop, 200, 80, "4 en Linea", boton_fill);
-        let boton_tablero_5 = new Boton(((canvas.width - 200) / 3) * 2 - 100, canvas.offsetTop, 200, 80, "5 en Linea", boton_fill);
-        let boton_tablero_6 = new Boton(((canvas.width - 200) / 3) * 3 - 100, canvas.offsetTop, 200, 80, "6 en Linea", boton_fill);
+        let boton_tablero_4 = 
+            new Boton((canvas.width - 200) / 3 - 100, canvas.offsetTop, 200, 80, "4 en Linea", boton_fill);
+        let boton_tablero_5 = 
+            new Boton(((canvas.width - 200) / 3) * 2 - 100, canvas.offsetTop, 200, 80, "5 en Linea", boton_fill);
+        let boton_tablero_6 = 
+            new Boton(((canvas.width - 200) / 3) * 3 - 100, canvas.offsetTop, 200, 80, "6 en Linea", boton_fill);
 
         boton_jugar.draw(ctx);
         botones.push(boton_tablero_4);
@@ -29,17 +33,31 @@ window.addEventListener('DOMContentLoaded', () => {
             botones[i].draw(ctx);   
         }
 
+        function getBotonSeleccionado() {
+            for(let i = 0; i < botones.length; i++) {
+                if (botones[i].isClicked)
+                    return botones[i];
+            }
+        }
+
+        function crearTablero(filas, columnas, x_en_linea) {
+            return new Tablero(filas, columnas, x_en_linea);
+        }
+
         function mouseDown(e) {
             let x = e.layerX - e.target.offsetLeft;
             let y = e.layerY - e.target.offsetTop;     
-            if (boton_jugar.isPointInside(x,y))
+            if (boton_jugar.isPointInside(x,y)) {
+                canvas.removeEventListener('mousedown', mouseDown);
                 initGame();
+            }
             for (let i = 0; i < botones.length; i++) {
                 if (botones[i].isPointInside(x,y))
                     botones[i].clickButton(ctx, boton_fill_clicked);
                 else
                     botones[i].unclickButton(ctx);
             }
+            console.log(getBotonSeleccionado());
         }
     }
 
