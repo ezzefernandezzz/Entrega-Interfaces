@@ -27,7 +27,7 @@ class Casilla {
         //ctx.arc(x + ((900 - 420) / 2) + 50 / 2, y + 25 + ((500 - 360) / 2) + 60 / 2, 22, 0, 2 * Math.PI);
         let posXcirc = posXrect + this.size / 2;
         let posYcirc = posYrect + this.size / 2;
-        ctx.arc(posXcirc, posYcirc, this.size/3, 0, 2 * Math.PI);   
+        ctx.arc(posXcirc, posYcirc, this.size/2, 0, 2 * Math.PI);   
         if (this.ficha == null) {
             ctx.fillStyle = "white";
             ctx.fill();

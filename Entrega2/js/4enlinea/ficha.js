@@ -22,9 +22,15 @@ class Ficha {
         ctx.arc(this.posXFicha, this.posYFicha, this.rad, 0, 2 * Math.PI);
         /* ctx.clip(); *///
         ctx.fillStyle = this.fill;
+
+        //AHRE
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "grey";
+
         ctx.fill();
         ctx.stroke();
         ctx.drawImage(this.imagen, this.posXFicha-this.rad, this.posYFicha-this.rad, this.rad*2, this.rad*2);
+        ctx.closePath();
     }
 
     isSelected(x, y) {

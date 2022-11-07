@@ -6,6 +6,7 @@ class Tablero {
         this.cH = cH; // Canvas height
 
         this.sizeFicha = cW / (fichas_en_linea*3.2);
+        
         /* this.sizeFicha = 60 * fichas_en_linea/4; */
 
         this.tablero = [];
@@ -30,7 +31,7 @@ class Tablero {
     }
 
     getSizeFichas(){
-        return this.sizeFicha/3;
+        return this.sizeFicha/2;
     }
 
     colocarFicha(nueva, columna) {

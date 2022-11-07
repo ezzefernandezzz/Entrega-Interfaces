@@ -921,6 +921,13 @@ footer li, .over-personaje li{
         height: 400px;
     }
 
+    .time-video-player{
+        background: black;
+        opacity: 0.6;
+        /* width: 115px; */
+        color: white;
+    }
+
     .galeria-imagenes {
         display: flex;
         flex-flow: row nowrap;
