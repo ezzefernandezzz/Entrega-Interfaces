@@ -20,13 +20,11 @@ class Ficha {
 
         /* ctx.arc(this.posX, this.posY, this.rad, 0, 2 * Math.PI); */
         ctx.arc(this.posXFicha, this.posYFicha, this.rad, 0, 2 * Math.PI);
-
         /* ctx.clip(); *///
         ctx.fillStyle = this.fill;
         ctx.fill();
         ctx.stroke();
-
-        ctx.drawImage(this.imagen, this.posXFicha-25, this.posYFicha-25, 50, 50);
+        ctx.drawImage(img, this.posXFicha-this.rad, this.posYFicha-this.rad, this.rad*2, this.rad*2);
     }
 
     isSelected(x, y) {

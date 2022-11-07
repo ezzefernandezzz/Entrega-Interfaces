@@ -13,7 +13,9 @@ class Casilla {
         ctx.beginPath();
         
         //ctx.rect(x + ((900 - 420) / 2), y + 30 + ((500 - 360) / 2), this.size, this.size);
-        ctx.rect(x + ((canvasWidth - columna) / 2), y + (this.size / 2) + ((canvasHeight - fila) / 2), this.size, this.size);
+        let posXrect = x + ((canvasWidth - columna) / 2);
+        let posYrect = y + (this.size / 2) + ((canvasHeight - fila) / 2);
+        ctx.rect(posXrect, posYrect, this.size, this.size);
         ctx.fillStyle = "#FF9D5C"
         ctx.fill();
         ctx.stroke();
@@ -22,13 +24,19 @@ class Casilla {
         //Idem que lo mencionado antes, y 26 (3er parametro) es el tamaño de las fichas, habria que ver si
         //hay que pasar un parametro para que se mantenga el mismo numero en las fichas que aca en la casilla
         ctx.beginPath();
-        //ctx.arc(x + ((900 - 420) / 2) + 50 / 2, y + 25 + ((500 - 360) / 2) + 60 / 2, 22, 0, 2 * Math.PI);   
-        ctx.arc(x + ((canvasWidth - columna) / 2) + (this.size / 2), y + (this.size / 2) + ((canvasHeight - fila) / 2) + this.size / 2, this.size/3, 0, 2 * Math.PI);   
-        if (this.ficha == null) 
+        //ctx.arc(x + ((900 - 420) / 2) + 50 / 2, y + 25 + ((500 - 360) / 2) + 60 / 2, 22, 0, 2 * Math.PI);
+        let posXcirc = posXrect + this.size / 2;
+        let posYcirc = posYrect + this.size / 2;
+        ctx.arc(posXcirc, posYcirc, this.size/3, 0, 2 * Math.PI);   
+        if (this.ficha == null) {
             ctx.fillStyle = "white";
-        else
-            ctx.fillStyle = this.ficha.fill;
-        ctx.fill();
+            ctx.fill();
+        }
+        else {
+            this.ficha.posXFicha = posXcirc;
+            this.ficha.posYFicha = posYcirc;
+            this.ficha.draw(ctx);
+        }
         ctx.stroke();
         ctx.closePath();
     }
