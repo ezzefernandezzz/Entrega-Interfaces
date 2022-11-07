@@ -6,12 +6,13 @@ class Boton {
         this.alto = alto;
         this.fill = fill;
         this.texto = texto;
+        this.isClicked = false;
     }
 
-    draw(ctx) {
+    draw(ctx, fill = this.fill) {
         ctx.beginPath();
         ctx.roundRect(this.posX, this.posY, this.ancho, this.alto, 20);
-        ctx.fillStyle = this.fill;
+        ctx.fillStyle = fill;
         ctx.fill();
         ctx.stroke();
         ctx.closePath();
@@ -26,10 +27,13 @@ class Boton {
             && y < this.posY + this.alto && y > this.posY;
     }
 
-    //Por alguna razón, pinta otro boton en vez de pintar el boton actual
-    //Seguramente hay una mejor forma de cambiar el color del boton
-    clicked(ctx) {
-        ctx.fillStyle = "#BC66FE";
-        ctx.fill();
+    unclickButton(ctx) {
+        this.isClicked = false;
+        this.draw(ctx);
+    }
+
+    clickButton(ctx, fill) {
+        this.isClicked = true;
+        this.draw(ctx, fill);
     }
 }
