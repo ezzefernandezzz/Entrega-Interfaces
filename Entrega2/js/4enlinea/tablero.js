@@ -29,6 +29,10 @@ class Tablero {
         this.jugadorActual = null;  //El jugador inicial esta vacio
     }
 
+    getSizeFichas(){
+        return this.sizeFicha/3;
+    }
+
     colocarFicha(nueva, columna) {
         //Compruebo que el primer lugar de la columna no este ocupado
         if (this.tablero[0][columna].ficha == null) {

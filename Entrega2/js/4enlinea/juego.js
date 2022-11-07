@@ -108,8 +108,11 @@ window.addEventListener('DOMContentLoaded', () => {
         
         tablero.draw(ctx);
 
-        let jugador1 = new Jugador("Alfonso", ficha1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight);
-        let jugador2 = new Jugador("Carlos", ficha2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight);
+        let sizeFichas = tablero.getSizeFichas();
+        console.log(sizeFichas);
+
+        let jugador1 = new Jugador("Alfonso", ficha1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight, sizeFichas);
+        let jugador2 = new Jugador("Carlos", ficha2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight, sizeFichas);
 
         tablero.jugadores.push(jugador1);
         tablero.jugadores.push(jugador2);
