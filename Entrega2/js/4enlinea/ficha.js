@@ -1,11 +1,6 @@
 class Ficha {
     constructor(imagen, fill, posXFicha, posYFicha, rad) {
         this.imagen = imagen;
-
-        /* console.log("kafsnnasfnfas" + imagen.src); */
-        this.posX = Math.random() * 850 + 30;
-        this.posY = Math.random() * 450 + 30;
-        /* this.rad = 26; */
         this.rad = rad;
         this.fill = fill;
         this.posXFicha = posXFicha;

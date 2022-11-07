@@ -12,29 +12,54 @@ window.addEventListener('DOMContentLoaded', () => {
         let botones = [];
         let boton_fill = "#22CCFF";
         let boton_fill_clicked ="#DD3333";
-        let boton_jugar = 
-                new Boton((canvas.width - (canvas.width / 4)) / 2, (canvas.height - 80) / 2, canvas.width / 4, 80, "Jugar", "aquamarine");  
+        let boton_jugar;
         let modo_seleccionado;
         crearBotones();
+        drawSeleccionFichas();
+
+        function drawSeleccionFichas() {
+            ctx.textAlign = "center";
+            ctx.font = "48px monospace";
+            ctx.fillText("Harry Potter vs Voldemort", canvas.width / 2, canvas.offsetTop + 36);
+            ctx.fillText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
+
+            ctx.textAlign = "left";
+            ctx.font = "36px monospace";
+            ctx.fillText("Jugador 1", 80, canvas.offsetTop + 48 * 3);
+
+            ctx.textAlign = "right";
+            ctx.fillText("Jugador 2", canvas.width - 80, canvas.offsetTop + 48 * 3);
+
+            let hechizo1 = new Image();
+            hechizo1.src = "img/4enlinea/fichaaparecium.png";
+            let hechizo2 = new Image();
+            hechizo2.src = "img/4enlinea/fichasilencio.png";
+            let ficha_muestra1 = new Ficha(hechizo1, "red", 80, canvas.height / 2, 26);
+            let ficha_muestra2 = new Ficha(hechizo2, "blue", canvas.width - 80, canvas.height / 2, 26);
+            hechizo1.onload = ficha_muestra1.draw(ctx);
+            hechizo2.onload = ficha_muestra2.draw(ctx);
+
+        }
 
         function crearBotones() { 
-            let boton_tablero_4 = 
-                new Boton(((canvas.width - 200) / 4) - 100, canvas.offsetTop, 160, 80, "4 en Linea", boton_fill);
-            let boton_tablero_5 = 
-                new Boton(((canvas.width - 200) / 4) * 2 - 100, canvas.offsetTop, 160, 80, "5 en Linea", boton_fill);
-            let boton_tablero_6 = 
-                new Boton(((canvas.width - 200) / 4) * 3 - 100, canvas.offsetTop, 160, 80, "6 en Linea", boton_fill);
-            let boton_tablero_7 = 
-                new Boton(((canvas.width - 200) / 4) * 4 - 100, canvas.offsetTop, 160, 80, "7 en Linea", boton_fill);
+            let h_boton_t = canvas.height / 10;
+            let w_boton_t = (canvas.width / 12) * 2;
+            let posX_base = (canvas.width - w_boton_t) / 4;
+            let posY = canvas.height - canvas.offsetTop - h_boton_t;
+            boton_jugar = 
+                new Boton((canvas.width - (canvas.width / 4)) / 2, (posY - h_boton_t * 1.5), canvas.width / 4, h_boton_t + 10, "Jugar", "aquamarine");  
+            let boton_tablero_4 = new Boton(posX_base - 100, posY, w_boton_t, h_boton_t, "4 en Linea", boton_fill);
+            let boton_tablero_5 = new Boton(posX_base * 2 - 100, posY, w_boton_t, h_boton_t, "5 en Linea", boton_fill);
+            let boton_tablero_6 = new Boton(posX_base * 3 - 100, posY, w_boton_t, h_boton_t, "6 en Linea", boton_fill);
+            let boton_tablero_7 = new Boton(posX_base * 4 - 100, posY, w_boton_t, h_boton_t, "7 en Linea", boton_fill);
 
-            boton_jugar.draw(ctx);
             botones.push(boton_tablero_4);
             botones.push(boton_tablero_5);
             botones.push(boton_tablero_6);
             botones.push(boton_tablero_7);
 
-            for (let i = 0; i < botones.length; i++) {
-                botones[i].draw(ctx);   
+            for(let boton of botones) {
+                boton.draw(ctx);
             }
 
             modo_seleccionado = botones[0]; //Default 4 en linea;
