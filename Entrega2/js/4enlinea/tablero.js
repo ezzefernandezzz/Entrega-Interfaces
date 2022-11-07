@@ -5,7 +5,8 @@ class Tablero {
         this.cW = cW; // Canvas Width
         this.cH = cH; // Canvas height
 
-        this.sizeFicha = 60;
+        this.sizeFicha = cW / (fichas_en_linea*3.2);
+        /* this.sizeFicha = 60 * fichas_en_linea/4; */
 
         this.tablero = [];
         this.indicadores = [];

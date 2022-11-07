@@ -8,13 +8,14 @@ class Ficha {
         this.fill = fill;
         this.posXFicha = posXFicha;
         this.posYFicha = posYFicha;
-
     }
 
     draw(ctx) {
         ctx.beginPath();
         /* ctx.arc(this.posX, this.posY, this.rad, 0, 2 * Math.PI); */
         ctx.arc(this.posXFicha, this.posYFicha, this.rad, 0, 2 * Math.PI);
+
+        /* ctx.clip(); *///
         ctx.fillStyle = this.fill;
         ctx.fill();
         ctx.stroke();

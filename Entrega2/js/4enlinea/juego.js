@@ -87,6 +87,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let ficha2 = new Image();
         ficha2.src = "img/4enlinea/fichaincendio.png";
 
+
         //Habria que ver de pasarle el canvas al tablero para que pueda pasarselo a las otras clases
         //Para que puedan realizar sus calculos
         //Ej: Posicion de las fichas de los jugadores
@@ -96,7 +97,7 @@ window.addEventListener('DOMContentLoaded', () => {
         tablero.draw(ctx);
 
         let jugador1 = new Jugador("Alfonso", ficha1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight);
-        let jugador2 = new Jugador("Carlos", ficha2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 200, canvas.offsetHeight);
+        let jugador2 = new Jugador("Carlos", ficha2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight);
 
         tablero.jugadores.push(jugador1);
         tablero.jugadores.push(jugador2);
