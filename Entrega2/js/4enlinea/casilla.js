@@ -11,7 +11,6 @@ class Casilla {
         //para poder pasarlo a las demas clases y asi hacer las cuentas dinamicamente para los tableros mas grandes)
         //Y pasarle desde tablero a casilla la cantidad de columnas y filas que tiene
         ctx.beginPath();
-        console.log(columna);
         //ctx.rect(x + ((900 - 420) / 2), y + 30 + ((500 - 360) / 2), this.size, this.size);
         ctx.rect(x + ((canvasWidth - columna) / 2), y + 30 + ((canvasHeight - fila) / 2), this.size, this.size);
         ctx.fillStyle = "#FF9D5C"
