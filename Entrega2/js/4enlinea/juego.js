@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let boton_fill = "#22CCFF";
         let boton_fill_clicked ="#DD3333";
         let boton_jugar = 
-                new Boton((canvas.width - 300) / 2, (canvas.height - 80) / 2, 300, 80, "Jugar", "aquamarine");  
+                new Boton((canvas.width - (canvas.width / 4)) / 2, (canvas.height - 80) / 2, canvas.width / 4, 80, "Jugar", "aquamarine");  
         let modo_seleccionado;
         crearBotones();
 
