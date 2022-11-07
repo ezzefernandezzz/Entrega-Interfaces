@@ -19,16 +19,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
         function crearBotones() { 
             let boton_tablero_4 = 
-                new Boton((canvas.width - 200) / 3 - 100, canvas.offsetTop, 200, 80, "4 en Linea", boton_fill);
+                new Boton(((canvas.width - 200) / 4) - 100, canvas.offsetTop, 160, 80, "4 en Linea", boton_fill);
             let boton_tablero_5 = 
-                new Boton(((canvas.width - 200) / 3) * 2 - 100, canvas.offsetTop, 200, 80, "5 en Linea", boton_fill);
+                new Boton(((canvas.width - 200) / 4) * 2 - 100, canvas.offsetTop, 160, 80, "5 en Linea", boton_fill);
             let boton_tablero_6 = 
-                new Boton(((canvas.width - 200) / 3) * 3 - 100, canvas.offsetTop, 200, 80, "6 en Linea", boton_fill);
+                new Boton(((canvas.width - 200) / 4) * 3 - 100, canvas.offsetTop, 160, 80, "6 en Linea", boton_fill);
+            let boton_tablero_7 = 
+                new Boton(((canvas.width - 200) / 4) * 4 - 100, canvas.offsetTop, 160, 80, "7 en Linea", boton_fill);
 
             boton_jugar.draw(ctx);
             botones.push(boton_tablero_4);
             botones.push(boton_tablero_5);
             botones.push(boton_tablero_6);
+            botones.push(boton_tablero_7);
 
             for (let i = 0; i < botones.length; i++) {
                 botones[i].draw(ctx);   
@@ -48,6 +51,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     return new Tablero(8, 7, 5, canvas.width, canvas.height);
                 case botones[2]:
                     return new Tablero(9, 8, 6, canvas.width, canvas.height);
+                case botones[3]:
+                    return new Tablero(10, 9, 7, canvas.width, canvas.height);
                 default:
                     return new Tablero(7, 6, 4, canvas.width, canvas.height);
             }
