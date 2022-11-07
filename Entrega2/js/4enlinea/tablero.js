@@ -121,7 +121,7 @@ class Tablero {
         /* console.log(tipo_ficha); */
 
         if (this.tablero[fila][columna].ficha != null) {
-            console.log(this.tablero[fila][columna].ficha.imagen.src);
+            /* console.log(this.tablero[fila][columna].ficha.imagen.src); */
             if (this.tablero[fila][columna].ficha.imagen.src == tipo_ficha.src)
                 return true;
         }
