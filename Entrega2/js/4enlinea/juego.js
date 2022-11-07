@@ -42,13 +42,13 @@ window.addEventListener('DOMContentLoaded', () => {
         function crearTablero() {
             switch (modo_seleccionado) {
                 case botones[0]:
-                    return new Tablero(7, 6, 4);
+                    return new Tablero(7, 6, 4, canvas.width, canvas.height);
                 case botones[1]:
-                    return new Tablero(8, 7, 5);
+                    return new Tablero(8, 7, 5, canvas.width, canvas.height);
                 case botones[2]:
-                    return new Tablero(9, 8, 6);
+                    return new Tablero(9, 8, 6, canvas.width, canvas.height);
                 default:
-                    return new Tablero(7, 6, 4);
+                    return new Tablero(7, 6, 4, canvas.width, canvas.height);
             }
         }
 

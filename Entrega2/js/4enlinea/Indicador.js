@@ -1,12 +1,12 @@
 class Indicador {
-    constructor(posX, size){
+    constructor(posX, size, cW, cH, tColumnas, tFilas){
         this.posX = posX;
         this.posY = 0;
         this.size = size;
         //Ancho de canvas - ancho de tablero dividido 2
-        this.offsetX = (900 - 420) / 2;
+        this.offsetX = (cW - tColumnas) / 2;
         //Alto de canvas - alto de tablero dividido 2
-        this.offsetY = - 20 + (500 - 360) / 2;
+        this.offsetY = - 20 + (cH - tFilas) / 2;
     }
 
     draw(ctx) {
