@@ -8,60 +8,70 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function mostrarMenuInicio() {
         canvas.addEventListener('mousedown', mouseDown);
-
         let botones = [];
-
-        let boton_jugar = 
-            new Boton((canvas.width - 300) / 2, (canvas.height - 80) / 2, 300, 80, "Jugar", "aquamarine");
-
         let boton_fill = "#22CCFF";
         let boton_fill_clicked ="#DD3333";
+        let boton_jugar = 
+                new Boton((canvas.width - 300) / 2, (canvas.height - 80) / 2, 300, 80, "Jugar", "aquamarine");  
+        let modo_seleccionado;
+        crearBotones();
 
-        let boton_tablero_4 = 
-            new Boton((canvas.width - 200) / 3 - 100, canvas.offsetTop, 200, 80, "4 en Linea", boton_fill);
-        let boton_tablero_5 = 
-            new Boton(((canvas.width - 200) / 3) * 2 - 100, canvas.offsetTop, 200, 80, "5 en Linea", boton_fill);
-        let boton_tablero_6 = 
-            new Boton(((canvas.width - 200) / 3) * 3 - 100, canvas.offsetTop, 200, 80, "6 en Linea", boton_fill);
+        function crearBotones() { 
+            let boton_tablero_4 = 
+                new Boton((canvas.width - 200) / 3 - 100, canvas.offsetTop, 200, 80, "4 en Linea", boton_fill);
+            let boton_tablero_5 = 
+                new Boton(((canvas.width - 200) / 3) * 2 - 100, canvas.offsetTop, 200, 80, "5 en Linea", boton_fill);
+            let boton_tablero_6 = 
+                new Boton(((canvas.width - 200) / 3) * 3 - 100, canvas.offsetTop, 200, 80, "6 en Linea", boton_fill);
 
-        boton_jugar.draw(ctx);
-        botones.push(boton_tablero_4);
-        botones.push(boton_tablero_5);
-        botones.push(boton_tablero_6);
+            boton_jugar.draw(ctx);
+            botones.push(boton_tablero_4);
+            botones.push(boton_tablero_5);
+            botones.push(boton_tablero_6);
 
-        for (let i = 0; i < botones.length; i++) {
-            botones[i].draw(ctx);   
-        }
-
-        function getBotonSeleccionado() {
-            for(let i = 0; i < botones.length; i++) {
-                if (botones[i].isClicked)
-                    return botones[i];
+            for (let i = 0; i < botones.length; i++) {
+                botones[i].draw(ctx);   
             }
+
+            modo_seleccionado = botones[0]; //Default 4 en linea;
+            boton_jugar.texto = "Jugar " + botones[0].texto;
+            boton_jugar.draw(ctx);
         }
 
-        function crearTablero(filas, columnas, x_en_linea) {
-            return new Tablero(filas, columnas, x_en_linea);
+        function crearTablero() {
+            switch (modo_seleccionado) {
+                case botones[0]:
+                    return new Tablero(7, 6, 4);
+                case botones[1]:
+                    return new Tablero(8, 7, 5);
+                case botones[2]:
+                    return new Tablero(9, 8, 6);
+                default:
+                    return new Tablero(7, 6, 4);
+            }
         }
 
         function mouseDown(e) {
             let x = e.layerX - e.target.offsetLeft;
             let y = e.layerY - e.target.offsetTop;     
-            if (boton_jugar.isPointInside(x,y)) {
+            if (boton_jugar.isPointInside(x,y) && modo_seleccionado) {
                 canvas.removeEventListener('mousedown', mouseDown);
-                initGame();
+                initGame(crearTablero());
             }
             for (let i = 0; i < botones.length; i++) {
-                if (botones[i].isPointInside(x,y))
+                if (botones[i].isPointInside(x,y)) {
                     botones[i].clickButton(ctx, boton_fill_clicked);
-                else
+                    modo_seleccionado = botones[i];
+                    boton_jugar.texto = "Jugar " + botones[i].texto;
+                    boton_jugar.draw(ctx);
+                }
+                else 
                     botones[i].unclickButton(ctx);
             }
-            console.log(getBotonSeleccionado());
         }
     }
 
-    function initGame() {
+    function initGame(tablero) {
         canvas.addEventListener('mousedown', mouseDown);
         canvas.addEventListener('mouseup', mouseUp);
         canvas.addEventListener('mousemove', mouseMove);
@@ -76,7 +86,6 @@ window.addEventListener('DOMContentLoaded', () => {
         //Habria que ver de pasarle el canvas al tablero para que pueda pasarselo a las otras clases
         //Para que puedan realizar sus calculos
         //Ej: Posicion de las fichas de los jugadores
-        let tablero = new Tablero(7, 6, 4); 
         //fichasTotales
         let cantFichas = (tablero.ancho * tablero.alto);
         

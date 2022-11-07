@@ -8,7 +8,7 @@ class Tablero {
             let fila = [];  // instancio una fila
             for(let i = 0; i < ancho; i++) {   //de 0 a cantidad de columnas
                 if (j == 0) {   //si estoy en el primer ciclo
-                    this.indicadores.push(new Indicador(i * 60, 60));   //Creo indicador donde tirar como cant de columnas
+                    this.indicadores.push(new Indicador(i * 50, 50));   //Creo indicador donde tirar como cant de columnas
                 }
                 fila.push(new Casilla); //Instancio cantidad de casillas como columnas
             }
@@ -180,7 +180,7 @@ class Tablero {
                 if (i == 0) {
                     this.indicadores[j].draw(ctx);  //Dibujo el indicador en el contexto
                 }
-                this.tablero[i][j].draw(ctx, 60 * j, 60 * i);
+                this.tablero[i][j].draw(ctx, 50 * j, 50 * i);
                 //Accedo a la pos i del tablero, que me va a devolver una FILA, y accedo a la pos J de la fila y la dibujo 
             }
         }
