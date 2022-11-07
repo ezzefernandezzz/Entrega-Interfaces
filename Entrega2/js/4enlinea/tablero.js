@@ -1,14 +1,22 @@
 class Tablero {
-    constructor(ancho, alto, fichas_en_linea) {
+    constructor(ancho, alto, fichas_en_linea, cW, cH) {
         this.ancho = ancho; //Cant columnas
         this.alto = alto;   //Cant filas
+        this.cW = cW; // Canvas Width
+        this.cH = cH; // Canvas height
+
+        this.sizeFicha = 60;
+
         this.tablero = [];
         this.indicadores = [];
+
+        this.tamanioColumnas = (this.ancho * this.sizeFicha);
+        this.tamanioFilas = (this.alto * this.sizeFicha);
         for(let j = 0; j < alto; j++) { //de 0 a cantidad de filas
             let fila = [];  // instancio una fila
             for(let i = 0; i < ancho; i++) {   //de 0 a cantidad de columnas
                 if (j == 0) {   //si estoy en el primer ciclo
-                    this.indicadores.push(new Indicador(i * 50, 50));   //Creo indicador donde tirar como cant de columnas
+                    this.indicadores.push(new Indicador(i * this.sizeFicha, this.sizeFicha, this.cW, this.cH, this.tamanioColumnas, this.tamanioFilas));   //Creo indicador donde tirar como cant de columnas
                 }
                 fila.push(new Casilla); //Instancio cantidad de casillas como columnas
             }
@@ -180,7 +188,9 @@ class Tablero {
                 if (i == 0) {
                     this.indicadores[j].draw(ctx);  //Dibujo el indicador en el contexto
                 }
-                this.tablero[i][j].draw(ctx, 50 * j, 50 * i);
+                /* console.log(this.ancho * this.sizeFicha);
+                console.log(this.alto * this.sizeFicha); */
+                this.tablero[i][j].draw(ctx, this.sizeFicha * j, this.sizeFicha * i, this.cW, this.cH, this.tamanioColumnas, this.tamanioFilas);
                 //Accedo a la pos i del tablero, que me va a devolver una FILA, y accedo a la pos J de la fila y la dibujo 
             }
         }
