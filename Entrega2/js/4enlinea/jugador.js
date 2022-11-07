@@ -1,5 +1,5 @@
 class Jugador {
-    constructor(nombre, url_icono, cantidadFichas, ctx, fill, posX, posY) {
+    constructor(nombre, url_icono, cantidadFichas, ctx, fill, posX, posY, sizeFicha) {
         this.nombre = nombre;
         this.url_icono = url_icono /* default */;
         this.ctx = ctx;
@@ -7,6 +7,8 @@ class Jugador {
         this.cantidadFichas = cantidadFichas;
         this.tiempo = 30;
         this.interval_id;
+
+        this.sizeFicha = sizeFicha;
         //TO DO: Hay que hacer un offset para la posicion de las fichas. Ej: Jugador1 genera las en el primer 
         //cuarto de la pantalla y el jugador2 genera sus fichas en el ultimo cuarto
         //Para esto pensaba pasarle algun parametro a las fichas que indiquen su posicion base
@@ -25,9 +27,9 @@ class Jugador {
         //ya que busca las mismas en otro xy
         for (let i = 0; i < this.cantidadFichas; i++) {
             if (i % 2 == 0) {
-                fichas.push(new Ficha(this.url_icono, this.fill, fila + 50, this.posY / 3 + ((i - 1) / 2) * 12, 22));
+                fichas.push(new Ficha(this.url_icono, this.fill, fila + 50, this.posY / 3 + ((i - 1) / 2) * 12, this.sizeFicha));
             } else {
-                fichas.push(new Ficha(this.url_icono, this.fill, fila, this.posY / 3 + (i / 2) * 12, 22));
+                fichas.push(new Ficha(this.url_icono, this.fill, fila, this.posY / 3 + (i / 2) * 12, this.sizeFicha));
             }
             fichas[i].draw(this.ctx);
         }
