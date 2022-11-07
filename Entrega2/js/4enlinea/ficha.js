@@ -20,7 +20,7 @@ class Ficha {
         ctx.fillStyle = this.fill;
         ctx.fill();
         ctx.stroke();
-        ctx.drawImage(img, this.posXFicha-25, this.posYFicha-25, 50, 50);
+        ctx.drawImage(img, this.posXFicha-this.rad, this.posYFicha-this.rad, this.rad*2, this.rad*2);
     }
 
     isSelected(x, y) {
