@@ -37,7 +37,7 @@ class Tablero {
                 console.log("Jugador ganador: " + this.jugadorActual.nombre);
                 this.jugadorActual.detenerReloj();
                 return true;
-            }
+        }
         this.cambiarTurnoJugador();
         return false;
     }

@@ -11,16 +11,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let botones = [];
 
-        let boton_jugar = new Boton((canvas.width - 100) / 2, (canvas.height - 80) / 2, 100, 80);
-        boton_jugar.draw(ctx);
+        let boton_jugar = new Boton((canvas.width - 300) / 2, (canvas.height - 80) / 2, 300, 80, "Jugar", "aquamarine");
+
+        let boton_tablero_4 = new Boton((canvas.width - 200) / 3 - 100, canvas.offsetTop, 200, 80, "4 en Linea", "#22CCFF");
+        let boton_tablero_5 = new Boton(((canvas.width - 200) / 3) * 2 - 100, canvas.offsetTop, 200, 80, "5 en Linea", "#22CCFF");
+        let boton_tablero_6 = new Boton(((canvas.width - 200) / 3) * 3 - 100, canvas.offsetTop, 200, 80, "6 en Linea", "#22CCFF");
 
         botones.push(boton_jugar);
+        botones.push(boton_tablero_4);
+        botones.push(boton_tablero_5);
+        botones.push(boton_tablero_6);
+
+        for (let i = 0; i < botones.length; i++) {
+            botones[i].draw(ctx);   
+        }
 
         function mouseDown(e) {
             let x = e.layerX - e.target.offsetLeft;
             let y = e.layerY - e.target.offsetTop;     
             if (boton_jugar.isPointInside(x,y))
                 initGame();
+            if (boton_tablero_4.isPointInside(x,y)) {
+                boton_tablero_4.clicked(ctx);
+            }
         }
     }
 
