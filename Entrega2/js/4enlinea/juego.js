@@ -30,14 +30,32 @@ window.addEventListener('DOMContentLoaded', () => {
             ctx.textAlign = "right";
             ctx.fillText("Jugador 2", canvas.width - 80, canvas.offsetTop + 48 * 3);
 
-            let hechizo1 = new Image();
-            hechizo1.src = "img/4enlinea/fichaaparecium.png";
-            let hechizo2 = new Image();
-            hechizo2.src = "img/4enlinea/fichasilencio.png";
-            let ficha_muestra1 = new Ficha(hechizo1, "red", 80, canvas.height / 2, 26);
-            let ficha_muestra2 = new Ficha(hechizo2, "blue", canvas.width - 80, canvas.height / 2, 26);
-            hechizo1.onload = ficha_muestra1.draw(ctx);
-            hechizo2.onload = ficha_muestra2.draw(ctx);
+            let hechizo_aparecium = new Image();
+            hechizo_aparecium.src = "img/4enlinea/fichaaparecium.png";
+            let hechizo_silencio = new Image();
+            hechizo_silencio.src = "img/4enlinea/fichasilencio.png";
+            let hechizo_aguamenti = new Image();
+            hechizo_aguamenti.src = "img/4enlinea/fichaaguamenti.png";
+            let hechizo_incendio = new Image();
+            hechizo_incendio.src =  "img/4enlinea/fichaincendio.png";
+            let hechizo_alohomora = new Image();
+            hechizo_alohomora.src =  "img/4enlinea/fichaalohomora.png";
+            let hechizo_ascendio = new Image();
+            hechizo_ascendio.src =  "img/4enlinea/fichaascendio.png";
+            let ficha_muestra1 = new Ficha(hechizo_aparecium, "red", 110, canvas.height / 2, 26);
+            let ficha_muestra2 = new Ficha(hechizo_incendio, "red", 110 + 30 * 2, canvas.height / 2, 26);
+            let ficha_muestra3 = new Ficha(hechizo_alohomora, "red", 110 + 30 * 4, canvas.height / 2, 26);
+            let ficha_muestra4 = new Ficha(hechizo_silencio, "blue", canvas.width - 110, canvas.height / 2, 26);
+            let ficha_muestra5 = new Ficha(hechizo_ascendio, "blue", canvas.width - 110 - 30 * 2, canvas.height / 2, 26);
+            let ficha_muestra6 = new Ficha(hechizo_aguamenti, "blue", canvas.width - 110 - 30 * 4, canvas.height / 2, 26);
+            hechizo_aparecium.onload = function() {ficha_muestra1.draw(ctx);}
+            hechizo_incendio.onload = function() {ficha_muestra2.draw(ctx);}
+            hechizo_alohomora.onload = function() {ficha_muestra3.draw(ctx);}
+            hechizo_silencio.onload = function() {ficha_muestra4.draw(ctx);}
+            hechizo_ascendio.onload = function() {ficha_muestra5.draw(ctx);}
+            hechizo_aguamenti.onload = function() {ficha_muestra6.draw(ctx);}
+
+            console.log(ficha_muestra3);
 
         }
 
