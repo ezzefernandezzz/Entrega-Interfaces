@@ -5,7 +5,7 @@ class Jugador {
         this.ctx = ctx;
         this.fill = fill;
         this.cantidadFichas = cantidadFichas;
-        this.tiempo = 20;
+        this.tiempo = 5;
         this.interval_id;
         //TO DO: Hay que hacer un offset para la posicion de las fichas. Ej: Jugador1 genera las en el primer 
         //cuarto de la pantalla y el jugador2 genera sus fichas en el ultimo cuarto

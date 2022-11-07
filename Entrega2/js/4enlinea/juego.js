@@ -34,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             modo_seleccionado = botones[0]; //Default 4 en linea;
+            botones[0].clickButton(ctx, boton_fill_clicked);
             boton_jugar.texto = "Jugar " + botones[0].texto;
             boton_jugar.draw(ctx);
         }
@@ -75,14 +76,12 @@ window.addEventListener('DOMContentLoaded', () => {
         canvas.addEventListener('mousedown', mouseDown);
         canvas.addEventListener('mouseup', mouseUp);
         canvas.addEventListener('mousemove', mouseMove);
-
         
         let ficha1 = new Image();
         ficha1.src = "img/iconos/perfil.png";
         let ficha2 = new Image();
         ficha2.src = "img/iconos/icono moneda.png";
 
-        //instancia tablero
         //Habria que ver de pasarle el canvas al tablero para que pueda pasarselo a las otras clases
         //Para que puedan realizar sus calculos
         //Ej: Posicion de las fichas de los jugadores
@@ -111,12 +110,10 @@ window.addEventListener('DOMContentLoaded', () => {
         let isMouseDown = false; //Click izquierdo presionado
 
         function mouseDown(e) {
-        //  console.log(e.layerX);
-        //  console.log(e.clientX - canvas.offsetLeft);
             let x = e.layerX - e.target.offsetLeft;
             let y = e.layerY - e.target.offsetTop;
             for (let i = 0; i < tablero.jugadorActual.fichas.length; i++) {
-                if (tablero.jugadorActual.fichas[i].isSelected(x, y)) {
+                if (tablero.jugadorActual.fichas[i].isSelected(x, y) && tablero.jugadorActual.tiempo > 0) {
                     fichaClickeada = tablero.jugadorActual.fichas[i];
                     indiceFicha = i;
                     isMouseDown = true;
@@ -132,11 +129,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 let x = e.layerX - e.target.offsetLeft;
                 let y = e.layerY - e.target.offsetTop;
                 for(let i = 0; i < tablero.ancho; i++) {
-                    if (tablero.indicadores[i].isPointInside(x,y)) {
+                    if (tablero.indicadores[i].isPointInside(x,y) && tablero.jugadorActual.tiempo > 0) {
                         tablero.colocarFicha(fichaClickeada, i);
-                        //Esto deberia funcionar de forma similar al if pero elimina otras fichas que no son
-                        //las seleccionadas por alguna razon
-                        //tablero.jugadorActual.fichas.splice(tablero.jugadorActual.fichas.indexOf(fichaClickeada), 1);
                         if (tablero.jugadores[0].fichas.includes(fichaClickeada))
                             tablero.jugadores[0].fichas.splice(tablero.jugadores[0].fichas.indexOf(fichaClickeada), 1);
                         else
