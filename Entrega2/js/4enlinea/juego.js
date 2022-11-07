@@ -84,7 +84,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function initGame(tablero) {
-        let runGame = true;
         canvas.addEventListener('mousedown', mouseDown);
         canvas.addEventListener('mouseup', mouseUp);
         canvas.addEventListener('mousemove', mouseMove);
@@ -174,9 +173,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     fichaClickeada.setPos(coordOriginalFichaX, coordOriginalFichaY);
                     isMouseDown = false;
                 }
-            }
-            //clearCanvas();
-            //reDraw();        
+            }        
         }
 
         let interval_id;
@@ -187,12 +184,20 @@ window.addEventListener('DOMContentLoaded', () => {
             
         function irAlMenu() {
             clearInterval(interval_id);
+            limpiarEventos();
             mostrarMenuInicio();
         }
 
         function reiniciarJuego() {
             clearInterval(interval_id);
+            limpiarEventos();
             initGame(new Tablero(tablero.ancho, tablero.alto, tablero.fichas_en_linea, tablero.cW, tablero.cH));
+        }
+
+        function limpiarEventos() {
+            canvas.removeEventListener('mousedown', mouseDown);
+            canvas.removeEventListener('mouseup', mouseUp);
+            canvas.removeEventListener('mousemove', mouseMove);
         }
 
         function reDraw() {
