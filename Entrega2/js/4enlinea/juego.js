@@ -132,11 +132,19 @@ window.addEventListener('DOMContentLoaded', () => {
        /*  console.log(sizeFichas); */
 
 
+        /* let img = new Image();
+        img.src = "img/4enlinea/logo-hp.png";
+        ctx.drawImage(img, 10, 10);
+        console.log(img); */
+
+
         let fichaJ1 = new Image();
-        fichaJ1.src = "img/4enlinea/fichaaparecium.png";
+        /* fichaJ1.src = "img/4enlinea/fichaaparecium.png"; */
+        fichaJ1.src = "img/4enlinea/ficha-harry.png";
 
         let fichaJ2 = new Image();
-        fichaJ2.src = "img/4enlinea/fichaincendio.png";
+        /* fichaJ2.src = "img/4enlinea/fichaincendio.png"; */
+        fichaJ2.src = "img/4enlinea/ficha-voldemort.png";
 
         let jugador1 = new Jugador("Alfonso", fichaJ1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight, sizeFichas);
         let jugador2 = new Jugador("Carlos", fichaJ2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight, sizeFichas);
