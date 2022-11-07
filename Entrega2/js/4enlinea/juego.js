@@ -78,9 +78,9 @@ window.addEventListener('DOMContentLoaded', () => {
         canvas.addEventListener('mousemove', mouseMove);
         
         let ficha1 = new Image();
-        ficha1.src = "img/iconos/perfil.png";
+        ficha1.src = "img/4enlinea/fichaaparecium.png";
         let ficha2 = new Image();
-        ficha2.src = "img/iconos/icono moneda.png";
+        ficha2.src = "img/4enlinea/fichaincendio.png";
 
         //Habria que ver de pasarle el canvas al tablero para que pueda pasarselo a las otras clases
         //Para que puedan realizar sus calculos
@@ -88,20 +88,16 @@ window.addEventListener('DOMContentLoaded', () => {
         //fichasTotales
         let cantFichas = (tablero.ancho * tablero.alto);
         
-        tablero.draw(ctx);  //Dibujo el tablero
-
-        //Instancia jugadores con mitad de fichas para cada 1
+        tablero.draw(ctx);
 
         let jugador1 = new Jugador("Alfonso", ficha1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight);
         let jugador2 = new Jugador("Carlos", ficha2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 200, canvas.offsetHeight);
 
-        //Al arreglo de jugadores del tablero, agrego el j1 y j2
         tablero.jugadores.push(jugador1);
         tablero.jugadores.push(jugador2);
 
         //Selecciono el jugador actual como el 1ero en el arreglo
         tablero.jugadorActual = tablero.jugadores[0];
-        //Comienzo a descontar tiempo del jugador
         tablero.jugadorActual.iniciarReloj();
 
         let fichaClickeada = null;
