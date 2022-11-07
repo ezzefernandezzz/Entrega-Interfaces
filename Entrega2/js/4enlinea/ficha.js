@@ -12,6 +12,10 @@ class Ficha {
 
     draw(ctx) {
         ctx.beginPath();
+
+        let img = new Image();
+        img.src="img/4enlinea/fichaaparecium.png";
+
         /* ctx.arc(this.posX, this.posY, this.rad, 0, 2 * Math.PI); */
         ctx.arc(this.posXFicha, this.posYFicha, this.rad, 0, 2 * Math.PI);
 
@@ -19,6 +23,8 @@ class Ficha {
         ctx.fillStyle = this.fill;
         ctx.fill();
         ctx.stroke();
+
+        ctx.drawImage(img, this.posXFicha-25, this.posYFicha-25, 50, 50);
     }
 
     isSelected(x, y) {
