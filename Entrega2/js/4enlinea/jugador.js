@@ -53,7 +53,7 @@ class Jugador {
         if (segundos < 10) {
             segundos = '0' + segundos;
         };
-        this.ctx.fillText(minutos + ":" + segundos, this.posX + 48*2, 50);
+        this.ctx.fillText(minutos + ":" + segundos, this.posX + 36*2, 50);
         for (let i = 0; i < this.fichas.length; i++) {
             this.fichas[i].draw(this.ctx);
         }
