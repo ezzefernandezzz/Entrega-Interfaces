@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function mostrarMenuInicio() {
         clearCanvas();
         canvas.addEventListener('mousedown', mouseDown);
+        dibujarFondo();
         let botones = [];
         let boton_fill = "#22CCFF";
         let boton_fill_clicked ="#DD3333";
@@ -16,11 +17,25 @@ window.addEventListener('DOMContentLoaded', () => {
         let modo_seleccionado;
         let fichas_j1 = [];
         let fichas_j2 = [];
-        crearBotones();
-        dibujarTexto()
-        dibujarSeleccionFichas();
-        let ficha_j1_seleccionada = fichas_j1[0].imagen;
-        let ficha_j2_seleccionada = fichas_j2[0].imagen;
+
+
+        let ficha_j1_seleccionada;
+        let ficha_j2_seleccionada;
+
+        function dibujarFondo() {
+            let fondo = new Image();
+            fondo.src = "img/4enlinea/fondo.jpg";
+            fondo.onload = function() {
+                ctx.filter = 'blur(6px)';
+                ctx.drawImage(fondo, 0, 0, canvas.width, canvas.height);
+                ctx.filter = 'none';
+                crearBotones();
+                dibujarTexto()
+                dibujarSeleccionFichas();
+                ficha_j1_seleccionada = fichas_j1[0].imagen;
+                ficha_j2_seleccionada = fichas_j2[0].imagen;
+            }
+        }
 
         function dibujarSeleccionFichas() {
             let hechizo_aparecium = new Image();
@@ -54,17 +69,24 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         function dibujarTexto() {
+            ctx.lineWidth = 8;
+            ctx.strokeStyle = "white";
             ctx.textAlign = "center";
             ctx.font = "48px monospace";
+            ctx.strokeText("Harry Potter vs Voldemort", canvas.width / 2, canvas.offsetTop + 36);
             ctx.fillText("Harry Potter vs Voldemort", canvas.width / 2, canvas.offsetTop + 36);
+            ctx.strokeText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
             ctx.fillText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
 
             ctx.textAlign = "left";
             ctx.font = "36px monospace";
+            ctx.strokeText("Jugador 1", 80, canvas.offsetTop + 48 * 3);
             ctx.fillText("Jugador 1", 80, canvas.offsetTop + 48 * 3);
 
             ctx.textAlign = "right";
+            ctx.strokeText("Jugador 2", canvas.width - 80, canvas.offsetTop + 48 * 3);
             ctx.fillText("Jugador 2", canvas.width - 80, canvas.offsetTop + 48 * 3);
+            ctx.fillStyle = "black";
         }
 
         function crearBotones() { 
@@ -256,7 +278,7 @@ window.addEventListener('DOMContentLoaded', () => {
         function reiniciarJuego() {
             clearInterval(interval_id);
             limpiarEventos();
-            initGame(new Tablero(tablero.ancho, tablero.alto, tablero.fichas_en_linea, tablero.cW, tablero.cH));
+            initGame(new Tablero(tablero.ancho, tablero.alto, tablero.fichas_en_linea, tablero.cW, tablero.cH), ficha_j1, ficha_j2);
         }
 
         function limpiarEventos() {

@@ -19,8 +19,8 @@ class Ficha {
         ctx.fillStyle = this.fill;
 
         //AHRE
-        ctx.lineWidth = 3;
-        ctx.strokeStyle = "grey";
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#222222";
 
         ctx.fill();
         ctx.stroke();
