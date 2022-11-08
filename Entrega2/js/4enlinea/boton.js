@@ -11,19 +11,26 @@ class Boton {
     }
 
     draw(ctx, fill = this.fill) {
-        ctx.beginPath();
-        ctx.roundRect(this.posX, this.posY, this.ancho, this.alto, 20);
-        ctx.fillStyle = fill;
         ctx.strokeStyle = "black";
-        ctx.fill();
-        ctx.stroke();
-        ctx.closePath();
-        ctx.fillStyle = "black";
-        ctx.font = "24px monospace";
-        ctx.textAlign = "center";
-        ctx.fillText(this.texto, this.posX + this.ancho / 2, this.posY + ((this.alto + 12) / 2) );
-        if (this.imagen)
+        if (this.imagen) {
+            ctx.beginPath();
+            ctx.arc(this.posX + this.ancho / 2, this.posY + this.ancho / 2, this.ancho / 2, 0, Math.PI * 2);
             ctx.drawImage(this.imagen, this.posX, this.posY, this.ancho, this.alto);
+            ctx.lineWidth = 3;
+            ctx.stroke();
+        } else {
+            ctx.beginPath();
+            ctx.roundRect(this.posX, this.posY, this.ancho, this.alto, 20);
+            ctx.fillStyle = fill;
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+            ctx.fillStyle = "black";
+            ctx.font = "24px monospace";
+            ctx.textAlign = "center";
+            ctx.fillText(this.texto, this.posX + this.ancho / 2, this.posY + ((this.alto + 12) / 2) );
+        }
+
 
     }
 
