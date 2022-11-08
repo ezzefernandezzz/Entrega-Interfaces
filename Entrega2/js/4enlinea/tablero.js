@@ -198,8 +198,6 @@ class Tablero {
                 if (i == 0) {
                     this.indicadores[j].draw(ctx);  //Dibujo el indicador en el contexto
                 }
-                /* console.log(this.ancho * this.sizeFicha);
-                console.log(this.alto * this.sizeFicha); */
                 this.tablero[i][j].draw(ctx, this.sizeFicha * j, this.sizeFicha * i, this.cW, this.cH, this.tamanioColumnas, this.tamanioFilas);
                 //Accedo a la pos i del tablero, que me va a devolver una FILA, y accedo a la pos J de la fila y la dibujo 
             }

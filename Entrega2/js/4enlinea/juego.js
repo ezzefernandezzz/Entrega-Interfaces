@@ -182,16 +182,17 @@ window.addEventListener('DOMContentLoaded', () => {
         //fichasTotales
         let cantFichas = (tablero.ancho * tablero.alto);
         
-        tablero.draw(ctx);
+        let fondo = new Image();
+        fondo.src = "img/4enlinea/fondotablero.jpeg";
+        fondo.onload = function() {
+
+        }
+
+        function reDrawBG() {
+            ctx.drawImage(fondo, 0, 0, canvas.width, canvas.height);
+        }
 
         let sizeFichas = tablero.getSizeFichas();
-       /*  console.log(sizeFichas); */
-
-
-        /* let img = new Image();
-        img.src = "img/4enlinea/logo-hp.png";
-        ctx.drawImage(img, 10, 10);
-        console.log(img); */
 
         let jugador1 = new Jugador("Alfonso", ficha_j1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight, sizeFichas, "green");
         let jugador2 = new Jugador("Carlos", ficha_j2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight, sizeFichas, "yellow");
@@ -299,6 +300,7 @@ window.addEventListener('DOMContentLoaded', () => {
         function clearCanvas() {
             ctx.fillStyle = "white";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
+
         }
 
     }
