@@ -78,8 +78,8 @@ window.addEventListener('DOMContentLoaded', () => {
             ctx.font = "48px monospace";
             ctx.strokeText("Harry Potter vs Voldemort", canvas.width / 2, 50);
             ctx.fillText("Harry Potter vs Voldemort", canvas.width / 2, 50);
-            ctx.strokeText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
-            ctx.fillText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
+            ctx.strokeText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 56);
+            ctx.fillText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 56);
 
             ctx.textAlign = "left";
             ctx.font = "36px monospace";

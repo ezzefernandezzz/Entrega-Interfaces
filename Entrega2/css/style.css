@@ -938,7 +938,12 @@ footer li, .over-personaje li{
         align-items: center;
     }
 
+    .contenedor-multimedia{
+        position: relative;
+    }
+
     .contenedor-multimedia img:hover{
+        /* position: absolute; */
         transform: scale(1.5); 
     }
     
