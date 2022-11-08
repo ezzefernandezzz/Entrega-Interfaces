@@ -175,9 +175,16 @@ window.addEventListener('DOMContentLoaded', () => {
         img_menu.src = "img/4enlinea/boton_menu.png";
         let fondo = new Image();
         fondo.src = "img/4enlinea/fondotablero.jpeg";
+        let fondo_gameover = new Image();
+        fondo_gameover.src = "img/4enlinea/harry-vs-voldemort.jpg";
 
-        let boton_reiniciar = new Boton(canvas.width - 60, canvas.height - 60, 50, 50, "R", "#FF1111");
-        let boton_menu = new Boton(canvas.width - 120, canvas.height - 60, 50, 50, "M", "#11FF11");
+        let icono_harry = new Image();
+        icono_harry.src = "img/4enlinea/ficha-harry.png";
+        let icono_voldemort = new Image();
+        icono_voldemort.src = "img/4enlinea/ficha-voldemort.png";
+
+        let boton_menu = new Boton(canvas.width - 60, canvas.height - 60, 50, 50, "M", "#11FF11");
+        let boton_reiniciar = new Boton(canvas.width - 120, canvas.height - 60, 50, 50, "R", "#FF1111");
         img_reiniciar.onload = function() {boton_reiniciar.imagen = img_reiniciar};
         img_menu.onload = function() {boton_menu.imagen = img_menu};
 
@@ -212,7 +219,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 ctx.drawImage(fondo, 0, 0, canvas.width, canvas.height);
                 ctx.filter = 'none';
                 reDraw();
-                checkJuegoEnCurso();
+                gameOverScreen();
             }, 1    );
         }
 
@@ -299,19 +306,15 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         
 
-        function checkJuegoEnCurso() {
+        function gameOverScreen() {
             if (!tablero.juegoEnCurso || tablero.jugadorActual.tiempo == 0) {
                 clearInterval(interval_id);
                 clearCanvas();
-                ctx.fillStyle = "black";
-                ctx.textAlign = "center";
-                ctx.font = "48px monospace";
-                if (tablero.jugadorActual.tiempo == 0) {
-                    ctx.fillText("¡Se termino el tiempo " + tablero.jugadorActual.nombre + "!"
-                        , canvas.width / 2, canvas.height / 2 - canvas.height / 10);
-                    tablero.cambiarTurnoJugador();
-                }
-                ctx.fillText("Ganador: " + tablero.jugadorActual.nombre, canvas.width / 2, canvas.height / 2);
+                ctx.filter = 'blur(6px)';
+                ctx.drawImage(fondo_gameover, 0, 0, canvas.width, canvas.height);
+                ctx.filter = 'none';
+                textoGameOver();
+                
                 for(let i = 0; i < botones.length; i++) {
                     if (i == 0)
                         botones[i].posX = (canvas.width / 2) - botones[i].ancho * 2;
@@ -322,6 +325,27 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+        }
+
+        function textoGameOver() {
+            ctx.lineWidth = 8;
+            ctx.fillStyle = "black";
+            ctx.textAlign = "center";
+            ctx.font = "48px monospace";
+            ctx.strokeStyle = "white";
+            if (tablero.jugadorActual.tiempo == 0) {
+                ctx.strokeText("¡Se termino el tiempo " + tablero.jugadorActual.nombre + "!"
+                , canvas.width / 2, canvas.height / 2 - canvas.height / 10);
+                ctx.fillText("¡Se termino el tiempo " + tablero.jugadorActual.nombre + "!"
+                    , canvas.width / 2, canvas.height / 2 - canvas.height / 10);
+                tablero.cambiarTurnoJugador();
+            }
+            if (tablero.jugadorActual == tablero.jugadores[0])
+                ctx.drawImage(icono_harry, canvas.width / 2 - 50, canvas.height / 2 - 200, 100, 100);
+            else
+                ctx.drawImage(icono_voldemort, canvas.width / 2 - 50, canvas.height / 2 - 200, 100, 100);
+            ctx.strokeText("Ganador: " + tablero.jugadorActual.nombre, canvas.width / 2, canvas.height / 2);
+            ctx.fillText("Ganador: " + tablero.jugadorActual.nombre, canvas.width / 2, canvas.height / 2);
         }
 
         function clearCanvas() {
