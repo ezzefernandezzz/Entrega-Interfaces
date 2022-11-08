@@ -290,12 +290,14 @@ window.addEventListener('DOMContentLoaded', () => {
         
 
         function checkJuegoEnCurso() {
-            if (!tablero.juegoEnCurso) {
+            if (!tablero.juegoEnCurso || tablero.jugadorActual.tiempo == 0) {
                 clearInterval(interval_id);
                 clearCanvas();
                 ctx.fillStyle = "black";
                 ctx.textAlign = "center";
                 ctx.font = "48px monospace";
+                if (tablero.jugadorActual.tiempo == 0)
+                    tablero.cambiarTurnoJugador();
                 ctx.fillText("Ganador: " + tablero.jugadorActual.nombre, canvas.width / 2, canvas.height / 2);
                 for(let i = 0; i < botones.length; i++) {
                     if (i == 0)
