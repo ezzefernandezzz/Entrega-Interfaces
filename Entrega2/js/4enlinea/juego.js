@@ -176,8 +176,10 @@ window.addEventListener('DOMContentLoaded', () => {
         let fondo = new Image();
         fondo.src = "img/4enlinea/fondotablero.jpeg";
 
-        let boton_reiniciar = new Boton(canvas.width - 50, canvas.height - 50, 50, 50, "R", "#11FF11");
-        let boton_menu = new Boton(canvas.width - 100, canvas.height - 50, 50, 50, "M", "#FF1111");
+        let boton_reiniciar = new Boton(canvas.width - 60, canvas.height - 60, 50, 50, "R", "#FF1111");
+        let boton_menu = new Boton(canvas.width - 120, canvas.height - 60, 50, 50, "M", "#11FF11");
+        img_reiniciar.onload = function() {boton_reiniciar.imagen = img_reiniciar};
+        img_menu.onload = function() {boton_menu.imagen = img_menu};
 
         let botones = [];
         botones.push(boton_reiniciar);

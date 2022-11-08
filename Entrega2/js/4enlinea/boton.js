@@ -7,6 +7,7 @@ class Boton {
         this.fill = fill;
         this.texto = texto;
         this.isClicked = false;
+        this.imagen;
     }
 
     draw(ctx, fill = this.fill) {
@@ -21,6 +22,8 @@ class Boton {
         ctx.font = "24px monospace";
         ctx.textAlign = "center";
         ctx.fillText(this.texto, this.posX + this.ancho / 2, this.posY + ((this.alto + 12) / 2) );
+        if (this.imagen)
+            ctx.drawImage(this.imagen, this.posX, this.posY, this.ancho, this.alto);
 
     }
 
