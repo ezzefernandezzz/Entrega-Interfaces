@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         function dibujarFondo() {
             let fondo = new Image();
-            fondo.src = "img/4enlinea/fondo.jpg";
+            fondo.src = "img/4enlinea/fondotablero.jpeg";
             fondo.onload = function() {
                 ctx.filter = 'blur(6px)';
                 ctx.drawImage(fondo, 0, 0, canvas.width, canvas.height);
@@ -181,16 +181,6 @@ window.addEventListener('DOMContentLoaded', () => {
         //Ej: Posicion de las fichas de los jugadores
         //fichasTotales
         let cantFichas = (tablero.ancho * tablero.alto);
-        
-        let fondo = new Image();
-        fondo.src = "img/4enlinea/fondotablero.jpeg";
-        fondo.onload = function() {
-
-        }
-
-        function reDrawBG() {
-            ctx.drawImage(fondo, 0, 0, canvas.width, canvas.height);
-        }
 
         let sizeFichas = tablero.getSizeFichas();
 
