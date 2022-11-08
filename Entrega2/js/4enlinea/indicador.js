@@ -13,6 +13,7 @@ class Indicador {
         ctx.beginPath();
         ctx.rect(this.posX + this.offsetX, this.posY + this.offsetY, this.size, this.size);
         ctx.fillStyle = "#FFFF00";
+        ctx.lineWidth = 1;
         ctx.strokeStyle = "black";
         ctx.fill();
         ctx.stroke();
