@@ -190,7 +190,8 @@ window.addEventListener('DOMContentLoaded', () => {
             let x = e.layerX - e.target.offsetLeft;
             let y = e.layerY - e.target.offsetTop;
             for (let i = 0; i < tablero.jugadorActual.fichas.length; i++) {
-                if (tablero.jugadorActual.fichas[i].isSelected(x, y) && tablero.jugadorActual.tiempo > 0) {
+                if (tablero.jugadorActual.fichas[i].isSelected(x, y) && tablero.jugadorActual.tiempo > 0
+                    && tablero.juegoEnCurso) {
                     fichaClickeada = tablero.jugadorActual.fichas[i];
                     indiceFicha = i;
                     isMouseDown = true;
@@ -212,7 +213,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 let x = e.layerX - e.target.offsetLeft;
                 let y = e.layerY - e.target.offsetTop;
                 for(let i = 0; i < tablero.ancho; i++) {
-                    if (tablero.indicadores[i].isPointInside(x,y) && tablero.jugadorActual.tiempo > 0) {
+                    if (tablero.indicadores[i].isPointInside(x,y) && tablero.jugadorActual.tiempo > 0 
+                        && tablero.juegoEnCurso) {
                         tablero.colocarFicha(fichaClickeada, i);
                         if (tablero.jugadores[0].fichas.includes(fichaClickeada))
                             tablero.jugadores[0].fichas.splice(tablero.jugadores[0].fichas.indexOf(fichaClickeada), 1);

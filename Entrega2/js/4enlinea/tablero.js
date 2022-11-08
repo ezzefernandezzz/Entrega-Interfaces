@@ -6,8 +6,6 @@ class Tablero {
         this.cH = cH; // Canvas height
 
         this.sizeFicha = cW / (fichas_en_linea*3.2);
-        
-        /* this.sizeFicha = 60 * fichas_en_linea/4; */
 
         this.tablero = [];
         this.indicadores = [];
@@ -28,6 +26,7 @@ class Tablero {
         this.fichas_en_linea = fichas_en_linea; //genero x cantidad de ficha
         this.jugadores = [];    //Creo el arreglo de jugadores
         this.jugadorActual = null;  //El jugador inicial esta vacio
+        this.juegoEnCurso = true;
     }
 
     getSizeFichas(){
@@ -51,6 +50,7 @@ class Tablero {
             || this.checkDiagonales(fila, columna)) {
                 console.log("Jugador ganador: " + this.jugadorActual.nombre);
                 this.jugadorActual.detenerReloj();
+                this.juegoEnCurso = false;
                 return true;
         }
         this.cambiarTurnoJugador();
