@@ -10,7 +10,7 @@ class Jugador {
         this.ctx = ctx;
         this.fill = fill;
         this.cantidadFichas = cantidadFichas;
-        this.tiempo = 30;
+        this.tiempo = 150;
         this.interval_id;
 
         this.sizeFicha = sizeFicha;
@@ -53,7 +53,7 @@ class Jugador {
     }
 
     draw() {
-        this.ctx.fillStyle = "black";
+        this.ctx.fillStyle = "white";
         this.ctx.font = '48px serif';
         let minutos = Math.floor(this.tiempo / 60);
         let segundos = (this.tiempo % 60);
@@ -61,6 +61,7 @@ class Jugador {
             segundos = '0' + segundos;
         };
         this.ctx.fillText(minutos + ":" + segundos, this.posX + 36*2, 50);
+        this.ctx.fillStyle = "black";
         for (let i = 0; i < this.fichas.length; i++) {
             this.fichas[i].draw(this.ctx);
         }
