@@ -285,6 +285,7 @@ main {
 }
 
 .titulo-categoria {
+    font-family: 'Helvetica', 'Arial', sans-serif;
     font-weight: 400;
     font-size: 32px;
     line-height: 42px;
@@ -613,12 +614,16 @@ footer li, .over-personaje li{
     line-height: 32px;
 }
 
-.comentario h4{
+.comentario h4:nth-child(2){
     font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 .overlay{
     color: #FFFFFF;
+}
+
+.overlay text{
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 .comentario h4{
@@ -1125,8 +1130,12 @@ footer li, .over-personaje li{
     }
 
 
-    .como-jugar p {
+    .como-jugar p{
         font-size: 16px;
+    }
+
+    .btn-compartir{
+        font-size: 20px;
     }
 
     .display-none {
