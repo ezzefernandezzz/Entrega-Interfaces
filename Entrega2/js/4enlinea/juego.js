@@ -59,6 +59,11 @@ window.addEventListener('DOMContentLoaded', () => {
             ctx.fillText("Harry Potter vs Voldemort", canvas.width / 2, canvas.offsetTop + 36);
             ctx.fillText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
 
+            let img = new Image();
+            img.src = "img/4enlinea/logo-hp.png";
+            ctx.drawImage(img, 10, 10);
+            console.log(img);
+
             ctx.textAlign = "left";
             ctx.font = "36px monospace";
             ctx.fillText("Jugador 1", 80, canvas.offsetTop + 48 * 3);
@@ -165,11 +170,6 @@ window.addEventListener('DOMContentLoaded', () => {
         let sizeFichas = tablero.getSizeFichas();
        /*  console.log(sizeFichas); */
 
-
-        /* let img = new Image();
-        img.src = "img/4enlinea/logo-hp.png";
-        ctx.drawImage(img, 10, 10);
-        console.log(img); */
 
         let jugador1 = new Jugador("Alfonso", ficha_j1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight, sizeFichas, "green");
         let jugador2 = new Jugador("Carlos", ficha_j2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight, sizeFichas, "yellow");
