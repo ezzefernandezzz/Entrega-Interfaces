@@ -874,7 +874,10 @@ footer li, .over-personaje li{
         left: 0;
         width: 900x;
         height: 500px;
-        z-index: 5;
+    }
+
+    .z-index-min {
+        z-index: -1;
     }
 
     .preview{
@@ -906,12 +909,11 @@ footer li, .over-personaje li{
     .contenedor-multimedia img, .contenedor-vid img {
         height: 100%;
         width: 100%;
-        
         border-radius: 20px;
     }
 
     .zoom {
-        transition: transform .2s; 
+        transition: transform .2s;
     }
     
     .contenedor-vid-game{
