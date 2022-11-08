@@ -73,8 +73,8 @@ window.addEventListener('DOMContentLoaded', () => {
             ctx.strokeStyle = "white";
             ctx.textAlign = "center";
             ctx.font = "48px monospace";
-            ctx.strokeText("Harry Potter vs Voldemort", canvas.width / 2, canvas.offsetTop + 36);
-            ctx.fillText("Harry Potter vs Voldemort", canvas.width / 2, canvas.offsetTop + 36);
+            ctx.strokeText("Harry Potter vs Voldemort", canvas.width / 2, 50);
+            ctx.fillText("Harry Potter vs Voldemort", canvas.width / 2, 50);
             ctx.strokeText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
             ctx.fillText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
 
@@ -95,11 +95,11 @@ window.addEventListener('DOMContentLoaded', () => {
             let posX_base = (canvas.width - w_boton_t) / 4;
             let posY = canvas.height - canvas.offsetTop - h_boton_t;
             boton_jugar = 
-                new Boton((canvas.width - (canvas.width / 4)) / 2, (posY - h_boton_t * 1.5), canvas.width / 4, h_boton_t + 10, "Jugar", "aquamarine");  
-            let boton_tablero_4 = new Boton(posX_base - 100, posY, w_boton_t, h_boton_t, "4 en Linea", boton_fill);
-            let boton_tablero_5 = new Boton(posX_base * 2 - 100, posY, w_boton_t, h_boton_t, "5 en Linea", boton_fill);
-            let boton_tablero_6 = new Boton(posX_base * 3 - 100, posY, w_boton_t, h_boton_t, "6 en Linea", boton_fill);
-            let boton_tablero_7 = new Boton(posX_base * 4 - 100, posY, w_boton_t, h_boton_t, "7 en Linea", boton_fill);
+                new Boton((canvas.width - (canvas.width / 4)) / 2, (posY - h_boton_t * 1.5) - 20, canvas.width / 4, h_boton_t + 10, "Jugar", "aquamarine");  
+            let boton_tablero_4 = new Boton(posX_base - 100, posY - 20, w_boton_t, h_boton_t, "4 en Linea", boton_fill);
+            let boton_tablero_5 = new Boton(posX_base * 2 - 100, posY - 20, w_boton_t, h_boton_t, "5 en Linea", boton_fill);
+            let boton_tablero_6 = new Boton(posX_base * 3 - 100, posY - 20, w_boton_t, h_boton_t, "6 en Linea", boton_fill);
+            let boton_tablero_7 = new Boton(posX_base * 4 - 100, posY - 20, w_boton_t, h_boton_t, "7 en Linea", boton_fill);
 
             botones.push(boton_tablero_4);
             botones.push(boton_tablero_5);
