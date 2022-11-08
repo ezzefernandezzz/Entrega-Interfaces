@@ -78,6 +78,15 @@ window.addEventListener('DOMContentLoaded', () => {
             ctx.strokeText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
             ctx.fillText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
 
+            //Tachado
+            /* let img = new Image();
+            img.src = "img/4enlinea/logo-hp.png";
+            img.onload = function() {
+                ctx.drawImage(img, (canvas.width - (canvas.width / 2)) / 2, (canvas.height - (canvas.height/2)) / 2, 300, 200);
+                console.log(img);
+            } */
+            
+
             ctx.textAlign = "left";
             ctx.font = "36px monospace";
             ctx.strokeText("Jugador 1", 80, canvas.offsetTop + 48 * 3);
@@ -191,8 +200,6 @@ window.addEventListener('DOMContentLoaded', () => {
         function reDrawBG() {
             ctx.drawImage(fondo, 0, 0, canvas.width, canvas.height);
         }
-
-        let sizeFichas = tablero.getSizeFichas();
 
         let jugador1 = new Jugador("Alfonso", ficha_j1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight, sizeFichas, "green");
         let jugador2 = new Jugador("Carlos", ficha_j2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight, sizeFichas, "yellow");
