@@ -18,9 +18,9 @@ class Ficha {
         /* ctx.clip(); *///
         ctx.fillStyle = this.fill;
 
-        //AHRE
-        ctx.lineWidth = 3;
-        ctx.strokeStyle = "grey";
+        //borde del color de la ficha
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = this.fill;
 
         ctx.fill();
         ctx.stroke();

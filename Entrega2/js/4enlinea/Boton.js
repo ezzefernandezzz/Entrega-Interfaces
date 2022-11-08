@@ -13,6 +13,7 @@ class Boton {
         ctx.beginPath();
         ctx.roundRect(this.posX, this.posY, this.ancho, this.alto, 20);
         ctx.fillStyle = fill;
+        ctx.strokeStyle = "black";
         ctx.fill();
         ctx.stroke();
         ctx.closePath();
