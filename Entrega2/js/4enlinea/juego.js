@@ -78,10 +78,14 @@ window.addEventListener('DOMContentLoaded', () => {
             ctx.strokeText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
             ctx.fillText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
 
-            let img = new Image();
+            //Tachado
+            /* let img = new Image();
             img.src = "img/4enlinea/logo-hp.png";
-            ctx.drawImage(img, 10, 10);
-            console.log(img);
+            img.onload = function() {
+                ctx.drawImage(img, (canvas.width - (canvas.width / 2)) / 2, (canvas.height - (canvas.height/2)) / 2, 300, 200);
+                console.log(img);
+            } */
+            
 
             ctx.textAlign = "left";
             ctx.font = "36px monospace";
