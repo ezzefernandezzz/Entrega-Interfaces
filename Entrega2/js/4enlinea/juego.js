@@ -184,8 +184,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let sizeFichas = tablero.getSizeFichas();
 
-        let jugador1 = new Jugador("Alfonso", ficha_j1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight, sizeFichas, "green");
-        let jugador2 = new Jugador("Carlos", ficha_j2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight, sizeFichas, "yellow");
+        let jugador1 = new Jugador("Jugador 1", ficha_j1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight, sizeFichas, "green");
+        let jugador2 = new Jugador("Jugador 2", ficha_j2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight, sizeFichas, "yellow");
 
         tablero.jugadores.push(jugador1);
         tablero.jugadores.push(jugador2);
@@ -258,6 +258,7 @@ window.addEventListener('DOMContentLoaded', () => {
         interval_id = setInterval(() => {
             clearCanvas();
             reDraw();
+            checkJuegoEnCurso();
         }, 1    );
             
         function irAlMenu() {
@@ -285,6 +286,29 @@ window.addEventListener('DOMContentLoaded', () => {
             for(let boton of botones) {
                 boton.draw(ctx);
             }
+        }
+        
+
+        function checkJuegoEnCurso() {
+            if (!tablero.juegoEnCurso || tablero.jugadorActual.tiempo == 0) {
+                clearInterval(interval_id);
+                clearCanvas();
+                ctx.fillStyle = "black";
+                ctx.textAlign = "center";
+                ctx.font = "48px monospace";
+                if (tablero.jugadorActual.tiempo == 0)
+                    tablero.cambiarTurnoJugador();
+                ctx.fillText("Ganador: " + tablero.jugadorActual.nombre, canvas.width / 2, canvas.height / 2);
+                for(let i = 0; i < botones.length; i++) {
+                    if (i == 0)
+                        botones[i].posX = (canvas.width / 2) - botones[i].ancho * 2;
+                    else
+                        botones[i].posX = (canvas.width / 2) + botones[i].ancho;
+                    botones[i].posY = canvas.height / 2 + botones[i].alto / 2;
+                    botones[i].draw(ctx);
+                }
+            }
+
         }
 
         function clearCanvas() {
