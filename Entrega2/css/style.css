@@ -614,16 +614,16 @@ footer li, .over-personaje li{
     line-height: 32px;
 }
 
-.comentario h4:nth-child(2){
+.comentario h4:nth-child(2), .contenedor-caja-comentarios textarea, .overlay text, .comentarios h3{
     font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.comentarios h3{
+    font-size: 36px;
 }
 
 .overlay{
     color: #FFFFFF;
-}
-
-.overlay text{
-    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 .comentario h4{
@@ -1292,12 +1292,12 @@ footer li, .over-personaje li{
     }
 
     .contenedor-caja-comentarios button {
-        width: 15.43%;
+        width: 10%;
         height: 55.8%;
         border-radius: 40px;
 
         position: relative;
-        left: 84%;
+        left: 89%;
         bottom: 65%;
         
         cursor: pointer;
