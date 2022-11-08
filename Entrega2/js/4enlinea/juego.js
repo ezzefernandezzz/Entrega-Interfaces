@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function mostrarMenuInicio() {
         clearCanvas();
         canvas.addEventListener('mousedown', mouseDown);
-        dibujarFondo();
+        drawMenuInicio();
         let botones = [];
         let boton_fill = "#22CCFF";
         let boton_fill_clicked ="#DD3333";
@@ -22,7 +22,8 @@ window.addEventListener('DOMContentLoaded', () => {
         let ficha_j1_seleccionada;
         let ficha_j2_seleccionada;
 
-        function dibujarFondo() {
+        //Dibuja el menu de inicio incluyendo el fondo, titulo, text, fichas, etc
+        function drawMenuInicio() {
             let fondo = new Image();
             fondo.src = "img/4enlinea/fondo.jpg";
             fondo.onload = function() {
@@ -37,6 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        //Carga los distintos tipos de fichas a variables para mostrarlas luego de que carguen
         function dibujarSeleccionFichas() {
             let hechizo_aparecium = new Image();
             hechizo_aparecium.src = "img/4enlinea/fichaaparecium.png";
@@ -68,6 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         }
 
+        //Muestra el texto del titulo y jugadores
         function dibujarTexto() {
             ctx.lineWidth = 8;
             ctx.strokeStyle = "white";
@@ -89,6 +92,7 @@ window.addEventListener('DOMContentLoaded', () => {
             ctx.fillStyle = "black";
         }
 
+        //Crea los botones que se usaran para seleccionar los distintos modos de tablero
         function crearBotones() { 
             let h_boton_t = canvas.height / 10;
             let w_boton_t = (canvas.width / 12) * 2;
@@ -116,6 +120,7 @@ window.addEventListener('DOMContentLoaded', () => {
             boton_jugar.draw(ctx);
         }
 
+        //Crea el tablero segun el tipo de boton clickeado
         function crearTablero() {
             switch (modo_seleccionado) {
                 case botones[0]:
@@ -131,6 +136,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        //evento mouseDown para trackear clicks en fichas y botones
         function mouseDown(e) {
             let x = e.layerX - e.target.offsetLeft;
             let y = e.layerY - e.target.offsetTop;     
@@ -158,12 +164,14 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        //para limpiar la pantalla cuando se vuelve al inicio despues de una partida
         function clearCanvas() {
             ctx.fillStyle = "white";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
     }
 
+    //Se encarga del juego en si, logica de eventos y logica de juego en algunos casos como trackear el tiempo
     function initGame(tablero, ficha_j1, ficha_j2) {
         canvas.addEventListener('mousedown', mouseDown);
         canvas.addEventListener('mouseup', mouseUp);
@@ -212,6 +220,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let isMouseDown = false; //Click izquierdo presionado
         let interval_id;
 
+        //Inicia el ciclo de reDraw luego de cargar la imagen de fondo
         fondo.onload = function() {
             interval_id = setInterval(() => {
                 clearCanvas();                
@@ -223,6 +232,8 @@ window.addEventListener('DOMContentLoaded', () => {
             }, 1    );
         }
 
+        //Evento mouseDown para seleccionar fichas y botones
+        //Checkea que la partida no haya terminado y selecciona y guarda la pos original de la ficha clickeada
         function mouseDown(e) {
             let x = e.layerX - e.target.offsetLeft;
             let y = e.layerY - e.target.offsetTop;
@@ -244,6 +255,8 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        //evento mouseUp que se encarga de checkear que las fichas se suelten en el lugar indicado
+        //de lo contrario las devuelve a su lugar original
         function mouseUp(e) {
             isMouseDown = false;
             if (fichaClickeada != null) {
@@ -266,6 +279,8 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        //evento mouseMove que se encarga de habilitar el draggeo de fichas
+        //si la ficha se trata de sacar del canvas, la devuelve a su posicion original
         function mouseMove(e) {   
             if (isMouseDown && fichaClickeada != null) {               
                 let x = e.layerX - e.target.offsetLeft;
@@ -278,24 +293,29 @@ window.addEventListener('DOMContentLoaded', () => {
             }        
         }
             
+        //vuelve al menu principal
         function irAlMenu() {
             clearInterval(interval_id);
             limpiarEventos();
             mostrarMenuInicio();
         }
 
+        //reinicia con el tamaño de tablero actual
         function reiniciarJuego() {
             clearInterval(interval_id);
             limpiarEventos();
             initGame(new Tablero(tablero.ancho, tablero.alto, tablero.fichas_en_linea, tablero.cW, tablero.cH), ficha_j1, ficha_j2);
         }
 
+        //elimina los eventListeners luego de reiniciar o ir al menu para que no se pueda interactuar con el viejo estado
+        //del canvas
         function limpiarEventos() {
             canvas.removeEventListener('mousedown', mouseDown);
             canvas.removeEventListener('mouseup', mouseUp);
             canvas.removeEventListener('mousemove', mouseMove);
         }
 
+        //llama a las funciones draw del tablero, de los jugadores y de los botones
         function reDraw() {
             tablero.draw(ctx);
             tablero.jugadores[0].draw();
@@ -305,7 +325,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-
+        //muestra la pantalla de fin de juego cuando se cumplen las condiciones
         function gameOverScreen() {
             if (!tablero.juegoEnCurso || tablero.jugadorActual.tiempo == 0) {
                 clearInterval(interval_id);
@@ -313,7 +333,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 ctx.filter = 'blur(6px)';
                 ctx.drawImage(fondo_gameover, 0, 0, canvas.width, canvas.height);
                 ctx.filter = 'none';
-                textoGameOver();
+                mostrarTextoGameOver();
                 
                 for(let i = 0; i < botones.length; i++) {
                     if (i == 0)
@@ -327,7 +347,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
         }
 
-        function textoGameOver() {
+        //muestra el texto correspondiente segun el jugador ganador
+        function mostrarTextoGameOver() {
             ctx.lineWidth = 8;
             ctx.fillStyle = "black";
             ctx.textAlign = "center";
@@ -348,6 +369,7 @@ window.addEventListener('DOMContentLoaded', () => {
             ctx.fillText("Ganador: " + tablero.jugadorActual.nombre, canvas.width / 2, canvas.height / 2);
         }
 
+        //borra el canvas
         function clearCanvas() {
             ctx.fillStyle = "white";
             ctx.fillRect(0, 0, canvas.width, canvas.height);

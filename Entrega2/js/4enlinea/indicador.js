@@ -20,6 +20,7 @@ class Indicador {
         ctx.closePath();
     }
 
+    //indican si las coords x e y estan dentro del indicador, se usa para saber si se solto una ficha dentro del indicador
     isPointInside(x, y) {
         return x < this.posX + this.size + this.offsetX && x > this.posX + this.offsetX 
             && y < this.posY + this.size + this.offsetY && y > this.posY + this.offsetY;

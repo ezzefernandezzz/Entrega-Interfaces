@@ -10,6 +10,7 @@ class Boton {
         this.imagen;
     }
 
+    //dibuja el boton, si no se indica fill, se asigna por defecto el fill que se asignó en el constructor
     draw(ctx, fill = this.fill) {
         ctx.strokeStyle = "black";
         if (this.imagen) {
@@ -34,16 +35,19 @@ class Boton {
 
     }
 
+    //indica si las coords x e y estan dentro del boton, usado para saber si se clickeo el boton o no
     isPointInside(x, y) {
         return x < this.posX + this.ancho && x > this.posX 
             && y < this.posY + this.alto && y > this.posY;
     }
 
+    //limpia el estado de clickeado de un boton
     unclickButton(ctx) {
         this.isClicked = false;
         this.draw(ctx);
     }
 
+    //settea isclicked a true y dibuja el boton con un nuevo fill para distinguirlo
     clickButton(ctx, fill) {
         this.isClicked = true;
         this.draw(ctx, fill);

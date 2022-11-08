@@ -33,6 +33,8 @@ class Tablero {
         return this.sizeFicha/2;
     }
 
+    //Coloca una nueva ficha en el tablero, checkeando donde debe caer teniendo en cuenta las fichas debajo de la ficha
+    //a colocar
     colocarFicha(nueva, columna) {
         //Compruebo que el primer lugar de la columna no este ocupado
         if (this.tablero[0][columna].ficha == null) {
@@ -45,6 +47,9 @@ class Tablero {
         }
     }
 
+    //Checkea si una jugada es una jugada ganadora o no
+    //en caso de serlo settea la variable juegoEnCurso en false para que desde juego.js se pueda avanzar a la pantalla
+    //de gameOver. Caso contrario cambia de jugador y continua el juego
     jugadaGanadora(fila, columna) {
         if (this.checkHorizontal(fila, columna) || this.checkVertical(fila, columna) 
             || this.checkDiagonales(fila, columna)) {
@@ -57,6 +62,7 @@ class Tablero {
         return false;
     }
 
+    //Cambia el jugadorActual e inicia su reloj
     cambiarTurnoJugador() {
         this.jugadorActual.detenerReloj();
         if (this.jugadorActual == this.jugadores[0]) 
@@ -67,6 +73,7 @@ class Tablero {
         this.jugadorActual.iniciarReloj();
     }
 
+    //Checkeo horizontal de fichas
     checkHorizontal(fila, columna) {
         let pos = columna - 1;
         let sumaFichas = 1;
@@ -92,6 +99,7 @@ class Tablero {
         return sumaFichas >= this.fichas_en_linea;
     }
 
+    //Checkeo vertical de fichas
     checkVertical(fila, columna) {
         let pos = fila - 1;
         let sumaFichas = 1;
@@ -117,6 +125,7 @@ class Tablero {
         return sumaFichas >= this.fichas_en_linea;
     }
 
+    //Se utiliza junto con los checkeos direccionales para saber si la casilla contiene una ficha del jugador actual o no
     casillaTieneFichaJugadorAct(fila, columna) {
         let tipo_ficha = this.jugadorActual.imgFicha;
         /* console.log(tipo_ficha); */
@@ -129,6 +138,7 @@ class Tablero {
         return false;
     }
 
+    //Retorna true si algunas de las diagonales dio true
     checkDiagonales(fila, columna) {
         return (this.checkDiagonalIzq(fila, columna) || this.checkDiagonalDer(fila, columna));
 
