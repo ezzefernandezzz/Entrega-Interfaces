@@ -9,7 +9,7 @@ class Boton {
         this.isClicked = false;
     }
 
-    draw(ctx, fill = this.fill) {
+    draw(ctx, fill = this.fill, imagen = null) {
         ctx.beginPath();
         ctx.roundRect(this.posX, this.posY, this.ancho, this.alto, 20);
         ctx.fillStyle = fill;

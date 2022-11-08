@@ -950,7 +950,6 @@ footer li, .over-personaje li{
     }
 
     .contenedor-vid .vid{
-        /* filter: blur(3px); */
         filter: brightness(0.5);
     }
 
