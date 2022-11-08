@@ -14,22 +14,15 @@ window.addEventListener('DOMContentLoaded', () => {
         let boton_fill_clicked ="#DD3333";
         let boton_jugar;
         let modo_seleccionado;
+        let fichas_j1 = [];
+        let fichas_j2 = [];
         crearBotones();
-        drawSeleccionFichas();
+        dibujarTexto()
+        dibujarSeleccionFichas();
+        let ficha_j1_seleccionada = fichas_j1[0].imagen;
+        let ficha_j2_seleccionada = fichas_j2[0].imagen;
 
-        function drawSeleccionFichas() {
-            ctx.textAlign = "center";
-            ctx.font = "48px monospace";
-            ctx.fillText("Harry Potter vs Voldemort", canvas.width / 2, canvas.offsetTop + 36);
-            ctx.fillText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
-
-            ctx.textAlign = "left";
-            ctx.font = "36px monospace";
-            ctx.fillText("Jugador 1", 80, canvas.offsetTop + 48 * 3);
-
-            ctx.textAlign = "right";
-            ctx.fillText("Jugador 2", canvas.width - 80, canvas.offsetTop + 48 * 3);
-
+        function dibujarSeleccionFichas() {
             let hechizo_aparecium = new Image();
             hechizo_aparecium.src = "img/4enlinea/fichaaparecium.png";
             let hechizo_silencio = new Image();
@@ -55,8 +48,23 @@ window.addEventListener('DOMContentLoaded', () => {
             hechizo_ascendio.onload = function() {ficha_muestra5.draw(ctx);}
             hechizo_aguamenti.onload = function() {ficha_muestra6.draw(ctx);}
 
-            console.log(ficha_muestra3);
+            fichas_j1.push(ficha_muestra1); fichas_j1.push(ficha_muestra2); fichas_j1.push(ficha_muestra3);
+            fichas_j2.push(ficha_muestra4); fichas_j2.push(ficha_muestra5); fichas_j2.push(ficha_muestra6);
 
+        }
+
+        function dibujarTexto() {
+            ctx.textAlign = "center";
+            ctx.font = "48px monospace";
+            ctx.fillText("Harry Potter vs Voldemort", canvas.width / 2, canvas.offsetTop + 36);
+            ctx.fillText("4 en linea", canvas.width / 2, canvas.offsetTop + 48 + 36);
+
+            ctx.textAlign = "left";
+            ctx.font = "36px monospace";
+            ctx.fillText("Jugador 1", 80, canvas.offsetTop + 48 * 3);
+
+            ctx.textAlign = "right";
+            ctx.fillText("Jugador 2", canvas.width - 80, canvas.offsetTop + 48 * 3);
         }
 
         function crearBotones() { 
@@ -106,7 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
             let y = e.layerY - e.target.offsetTop;     
             if (boton_jugar.isPointInside(x,y) && modo_seleccionado) {
                 canvas.removeEventListener('mousedown', mouseDown);
-                initGame(crearTablero());
+                initGame(crearTablero(), ficha_j1_seleccionada, ficha_j2_seleccionada);
             }
             for (let i = 0; i < botones.length; i++) {
                 if (botones[i].isPointInside(x,y)) {
@@ -118,6 +126,14 @@ window.addEventListener('DOMContentLoaded', () => {
                 else 
                     botones[i].unclickButton(ctx);
             }
+            for (let f_j1 of fichas_j1) {
+                if(f_j1.isSelected(x,y))
+                    ficha_j1_seleccionada = f_j1.imagen;
+            }
+            for (let f_j2 of fichas_j2) {
+                if(f_j2.isSelected(x,y))
+                    ficha_j2_seleccionada = f_j2.imagen;
+            }
         }
 
         function clearCanvas() {
@@ -126,7 +142,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function initGame(tablero) {
+    function initGame(tablero, ficha_j1, ficha_j2) {
         canvas.addEventListener('mousedown', mouseDown);
         canvas.addEventListener('mouseup', mouseUp);
         canvas.addEventListener('mousemove', mouseMove);
@@ -155,17 +171,8 @@ window.addEventListener('DOMContentLoaded', () => {
         ctx.drawImage(img, 10, 10);
         console.log(img); */
 
-
-        let fichaJ1 = new Image();
-        /* fichaJ1.src = "img/4enlinea/fichaaparecium.png"; */
-        fichaJ1.src = "img/4enlinea/ficha-harry.png";
-
-        let fichaJ2 = new Image();
-        /* fichaJ2.src = "img/4enlinea/fichaincendio.png"; */
-        fichaJ2.src = "img/4enlinea/ficha-voldemort.png";
-
-        let jugador1 = new Jugador("Alfonso", fichaJ1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight, sizeFichas);
-        let jugador2 = new Jugador("Carlos", fichaJ2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight, sizeFichas);
+        let jugador1 = new Jugador("Alfonso", ficha_j1, cantFichas / 2, ctx, "red", 0, canvas.offsetHeight, sizeFichas);
+        let jugador2 = new Jugador("Carlos", ficha_j2, cantFichas / 2, ctx, "blue", canvas.offsetWidth - 150, canvas.offsetHeight, sizeFichas);
 
         tablero.jugadores.push(jugador1);
         tablero.jugadores.push(jugador2);
