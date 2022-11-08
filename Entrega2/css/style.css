@@ -913,8 +913,8 @@ footer li, .over-personaje li{
     }
 
     .contenedor-vid img {
-        width: 50%;
-        height: 50%;
+        width: 35%;
+        height: 35%;
     }
 
     .zoom {
@@ -935,10 +935,9 @@ footer li, .over-personaje li{
 
     .contenedor-vid .boton-play-video {
         position: absolute;
-        left: 43%;
-        top: 37%;
-        width: 13%;
-        height: 26%;
+        top: 33%;
+        left: 47%;
+        width: 6%;
 
         cursor: pointer;
 
@@ -956,10 +955,9 @@ footer li, .over-personaje li{
     }
 
     .contenedor-vid{
+        display: flex;
+        justify-content: center;
         position: relative;
-        width: 900px;
-        height: 400px;
-
         margin: 10px;
     }
 
@@ -977,7 +975,7 @@ footer li, .over-personaje li{
 
         position: absolute;
         bottom: 3%;
-        left: 3%;
+        left: 47%;
     }
 
     .galeria-imagenes {
