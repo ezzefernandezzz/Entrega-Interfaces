@@ -10,7 +10,7 @@ class Jugador {
         this.ctx = ctx;
         this.fill = fill;
         this.cantidadFichas = cantidadFichas;
-        this.tiempo = 30;
+        this.tiempo = 5;
         this.interval_id;
 
         this.sizeFicha = sizeFicha;

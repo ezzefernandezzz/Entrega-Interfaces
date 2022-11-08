@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         function dibujarFondo() {
             let fondo = new Image();
-            fondo.src = "img/4enlinea/fondotablero.jpeg";
+            fondo.src = "img/4enlinea/fondo.jpg";
             fondo.onload = function() {
                 ctx.filter = 'blur(6px)';
                 ctx.drawImage(fondo, 0, 0, canvas.width, canvas.height);
@@ -169,6 +169,13 @@ window.addEventListener('DOMContentLoaded', () => {
         canvas.addEventListener('mouseup', mouseUp);
         canvas.addEventListener('mousemove', mouseMove);
 
+        let img_reiniciar = new Image();
+        img_reiniciar.src = "img/4enlinea/boton_reiniciar.png";
+        let img_menu = new Image();
+        img_menu.src = "img/4enlinea/boton_menu.png";
+        let fondo = new Image();
+        fondo.src = "img/4enlinea/fondotablero.jpeg";
+
         let boton_reiniciar = new Boton(canvas.width - 50, canvas.height - 50, 50, 50, "R", "#11FF11");
         let boton_menu = new Boton(canvas.width - 100, canvas.height - 50, 50, 50, "M", "#FF1111");
 
@@ -176,10 +183,6 @@ window.addEventListener('DOMContentLoaded', () => {
         botones.push(boton_reiniciar);
         botones.push(boton_menu);
 
-        //Habria que ver de pasarle el canvas al tablero para que pueda pasarselo a las otras clases
-        //Para que puedan realizar sus calculos
-        //Ej: Posicion de las fichas de los jugadores
-        //fichasTotales
         let cantFichas = (tablero.ancho * tablero.alto);
 
         let sizeFichas = tablero.getSizeFichas();
@@ -193,11 +196,23 @@ window.addEventListener('DOMContentLoaded', () => {
         //Selecciono el jugador actual como el 1ero en el arreglo
         tablero.jugadorActual = tablero.jugadores[0];
         tablero.jugadorActual.iniciarReloj();
-
+        
         let fichaClickeada = null;
         let coordOriginalFichaX;
         let coordOriginalFichaY;
         let isMouseDown = false; //Click izquierdo presionado
+        let interval_id;
+
+        fondo.onload = function() {
+            interval_id = setInterval(() => {
+                clearCanvas();                
+                ctx.filter = 'blur(6px)';
+                ctx.drawImage(fondo, 0, 0, canvas.width, canvas.height);
+                ctx.filter = 'none';
+                reDraw();
+                checkJuegoEnCurso();
+            }, 1    );
+        }
 
         function mouseDown(e) {
             let x = e.layerX - e.target.offsetLeft;
@@ -253,13 +268,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             }        
         }
-
-        let interval_id;
-        interval_id = setInterval(() => {
-            clearCanvas();
-            reDraw();
-            checkJuegoEnCurso();
-        }, 1    );
             
         function irAlMenu() {
             clearInterval(interval_id);
@@ -296,8 +304,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 ctx.fillStyle = "black";
                 ctx.textAlign = "center";
                 ctx.font = "48px monospace";
-                if (tablero.jugadorActual.tiempo == 0)
+                if (tablero.jugadorActual.tiempo == 0) {
+                    ctx.fillText("¡Se termino el tiempo " + tablero.jugadorActual.nombre + "!"
+                        , canvas.width / 2, canvas.height / 2 - canvas.height / 10);
                     tablero.cambiarTurnoJugador();
+                }
                 ctx.fillText("Ganador: " + tablero.jugadorActual.nombre, canvas.width / 2, canvas.height / 2);
                 for(let i = 0; i < botones.length; i++) {
                     if (i == 0)
