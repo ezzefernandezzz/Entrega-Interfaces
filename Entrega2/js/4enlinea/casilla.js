@@ -17,6 +17,8 @@ class Casilla {
         let posYrect = y + (this.size / 2) + ((canvasHeight - fila) / 2);
         ctx.rect(posXrect, posYrect, this.size, this.size);
         ctx.fillStyle = "#FF9D5C"
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = "black";
         ctx.fill();
         ctx.stroke();
         ctx.closePath();
@@ -28,6 +30,7 @@ class Casilla {
         let posXcirc = posXrect + this.size / 2;
         let posYcirc = posYrect + this.size / 2;
         ctx.arc(posXcirc, posYcirc, this.size/2, 0, 2 * Math.PI);   
+        
         if (this.ficha == null) {
             ctx.fillStyle = "white";
             ctx.fill();
