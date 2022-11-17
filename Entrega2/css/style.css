@@ -659,7 +659,7 @@ footer li, .over-personaje li{
     line-height: 21px;
 }
 
-@media (min-width: 790px) {
+@media (min-width: 1100px) {
 
     .hambMenu:hover {
         cursor: pointer;
@@ -684,6 +684,7 @@ footer li, .over-personaje li{
         border-radius: 30px;
         border: none;
         height: 76.169%;
+        font-size: 18px;
     }
 
     .btn-creditos {
@@ -1788,7 +1789,11 @@ footer li, .over-personaje li{
 
 }
 
+/* ---------------------------  1440PX RES ---------------------------  */
 @media (min-width: 1400px) {
+    .btn-header button {
+        font-size: 24px;
+    }
     .contenedores{
         flex-flow: row wrap;
         justify-content: space-between;
