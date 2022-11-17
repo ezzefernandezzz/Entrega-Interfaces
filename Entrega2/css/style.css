@@ -659,6 +659,47 @@ footer li, .over-personaje li{
     line-height: 21px;
 }
 
+.btn-burger{
+	display: inline-block;
+	width:40px;
+	height: 30px;
+	position: relative;
+	z-index: 2;
+    top: 30%;
+    cursor: pointer;
+}
+
+.btn-burger span{
+	width: 100%;
+	height: 4px;
+	border-radius: 4px;
+	display: block;
+	position: absolute;
+	background: #fff;
+	transition: all 0.5s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
+	transform-origin : 0px 100%;
+}
+ 
+.btn-burger span:nth-child(2){
+	top: calc(50% - 2px);
+}
+ 
+.btn-burger span:nth-child(3){
+bottom: 0;
+}
+
+.visible_menu span:nth-child(1){
+	transform: rotate(45deg) translate(-2px, 1px); 
+}
+ 
+.visible_menu span:nth-child(2){
+	opacity: 0;
+}
+ 
+.visible_menu span:nth-child(3){
+	transform: rotate(-45deg) translate(-2px, 1px); 
+}
+
 @media (min-width: 790px) {
 
     .hambMenu:hover {
@@ -673,7 +714,8 @@ footer li, .over-personaje li{
     }
 
     .menu-hamburguesa {
-        top: 100px;
+        top: 101px;
+        padding-top: 1%;
     }
 
     .btn-header button{

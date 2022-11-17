@@ -1,14 +1,15 @@
 window.addEventListener('DOMContentLoaded', () => {
     /* Menu-hamburguesa */
-    const hambmenu = document.querySelector('.hambMenu')
+    const hambmenu = document.querySelector('.btn-burger')
     hambmenu.addEventListener('click', mostrarMenu);
 
-    const btn_salir = document.querySelector('.btn-salir')
-    btn_salir.addEventListener('click', mostrarMenu)
+    /* const btn_salir = document.querySelector('.btn-salir')
+    btn_salir.addEventListener('click', mostrarMenu) */
 
     let contador = 0;
 
     function mostrarMenu() {
+        document.querySelector(".btn-burger").classList.toggle("visible_menu");
         /* Es posible acortar el code ya que debido al z-index no lo puede cerrar tocando de nuevo el menu */
         if (contador == 0){
             if(document.getElementById("menuDesplegable").classList.contains("ocultar")){
@@ -31,5 +32,6 @@ window.addEventListener('DOMContentLoaded', () => {
             document.getElementById("overlay").style.display = "none";
             document.body.style.overflow = "visible";
         }
+        
     }
 })
