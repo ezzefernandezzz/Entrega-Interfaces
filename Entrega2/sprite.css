@@ -14,7 +14,7 @@
     width: 125px;
     height: 145px;
     background-position: 0px 0;
-    animation: move 2s steps(3) infinite;
+    /* animation: move 2s steps(3) infinite; */
 }
 
 @keyframes move {
