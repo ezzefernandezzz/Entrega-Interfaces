@@ -1,0 +1,24 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.sprite{
+    display: inline-block;
+    background: url("a.jpg") no-repeat;
+    width: 125px;
+    height: 145px;
+    background-position: 0px 0;
+    animation: move 2s steps(3) infinite;
+}
+
+@keyframes move {
+    to {
+        background-position: -375px 0;
+    }
+}
