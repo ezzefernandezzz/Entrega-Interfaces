@@ -1860,6 +1860,22 @@ bottom: 0;
             background-position: -760px;
         }
     }
+
+    .sprite-image-2 {
+        height: 145px;
+        width: 190px;
+        background: url(../img/lanzamiento/full-sprite.png);
+        animation: sprite-move-2 0.5s steps(3) infinite;
+    }
+
+    @keyframes sprite-move-2 {
+        from {
+            background-position: 0px -770px;
+        }
+        to {
+            background-position: -570px -770px;
+        }
+    }
     /* --------------------------- Body y elementos internos --------------------------------- */
 
 }
