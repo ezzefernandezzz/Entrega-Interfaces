@@ -10,15 +10,15 @@
 
 .sprite{
     display: inline-block;
-    background: url("a.jpg") no-repeat;
-    width: 125px;
-    height: 145px;
-    background-position: 0px 0;
-    /* animation: move 2s steps(3) infinite; */
+    background: url("stp.png") no-repeat;
+    width: 35px;
+    height: 55px;
+    background-position: 0px -55px;
+    animation: move 1s steps(4) infinite;
 }
 
 @keyframes move {
     to {
-        background-position: -375px 0;
+        background-position: -140px -55px;
     }
 }
