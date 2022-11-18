@@ -1844,6 +1844,22 @@ bottom: 0;
     .footer-lanzamiento {
         background-color: #000000;
     }
+
+    .sprite-image {
+        height: 118px;
+        width: 190px;
+        background: url(../img/lanzamiento/spriteTest1.png);
+        animation: sprite-move 0.5s steps(4) infinite;
+    }
+
+    @keyframes sprite-move {
+        from {
+            background-position: 0px;
+        }
+        to {
+            background-position: -760px;
+        }
+    }
     /* --------------------------- Body y elementos internos --------------------------------- */
 
 }
