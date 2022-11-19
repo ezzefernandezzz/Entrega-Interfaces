@@ -1,3 +1,7 @@
+.parallax-container {
+    overflow: hidden;
+}
+
 .parallax-container img {
     position: absolute;
     width: 100%;
