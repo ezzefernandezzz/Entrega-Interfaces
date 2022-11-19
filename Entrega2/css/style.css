@@ -1865,7 +1865,7 @@ bottom: 0;
         height: 145px;
         width: 190px;
         background: url(../img/lanzamiento/full-sprite.png);
-        animation: sprite-move-2 0.5s steps(3) infinite;
+        animation: sprite-move-2 0.1s steps(3) infinite;
     }
 
     @keyframes sprite-move-2 {
