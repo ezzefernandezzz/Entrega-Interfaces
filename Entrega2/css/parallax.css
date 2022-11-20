@@ -11,7 +11,10 @@
     position: absolute;
     width: 100%;
     left: 0px;
+    top: 0px;
+    transition: all 0.05s linear;
 }
 
-.parallax-planet {
+.parallax-container .parallax-sun {
+    top: -50px;
 }
