@@ -2075,6 +2075,8 @@ bottom: 0;
     width: 100%;
     height: 7%;
     border-bottom: 1px solid white;
+
+    overflow: hidden; /* Se podia clickear el logo "invisible" ya que es mas grande de lo que se ve */
 }
 
 .logo-container.stick{

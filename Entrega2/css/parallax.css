@@ -18,3 +18,9 @@
 .parallax-container .parallax-sun {
     top: -50px;
 }
+
+#text{
+    position: relative;
+    color: white;
+    font-size: 10em;
+}

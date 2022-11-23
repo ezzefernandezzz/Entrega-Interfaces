@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let x = window.scrollY;
         let headerHeight = document.getElementById('head').clientHeight;
+        console.log(headerHeight);
         document.getElementById("menuDesplegable").style.top= x + headerHeight + "px";
 
         /* Es posible acortar el code ya que debido al z-index no lo puede cerrar tocando de nuevo el menu */

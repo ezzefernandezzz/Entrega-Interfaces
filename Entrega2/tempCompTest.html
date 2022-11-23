@@ -19,6 +19,7 @@
         </div>
     </div>
     <div id="parallax-container" class="parallax-container">
+        <h2 id="text">Parallax</h2>
         <img src="img/lanzamiento/parallax/Stars.png">
         <img src="img/lanzamiento/parallax/Stars 2.png">
         <img class="parallax-sun" src="img/lanzamiento/parallax/Sun.png">
@@ -29,5 +30,14 @@
     </div>
     <script src="js/parallax.js"></script>
     <script src="js/home-card-hover.js"></script>
+    <script type="text/javascript">
+        let text = document.getElementById("text");
+
+        window.addEventListener('scroll', function(){
+            var value = window.scrollY;
+            text.style.top = value * 0.55 + 'px';
+            console.log("por");
+        })
+    </script>
 </body>
 </html>
