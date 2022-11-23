@@ -1,4 +1,9 @@
+
 .parallax-container {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background: #0E151FFF;
     overflow: hidden;
 }
 
@@ -6,7 +11,10 @@
     position: absolute;
     width: 100%;
     left: 0px;
+    top: 0px;
+    transition: all 0.05s linear;
 }
 
-.parallax-planet {
+.parallax-container .parallax-sun {
+    top: -50px;
 }
