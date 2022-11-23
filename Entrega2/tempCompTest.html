@@ -19,24 +19,32 @@
         </div>
     </div> -->
     <div id="parallax-container" class="parallax-container">
-        <h2 id="text">Parallax</h2>
-        <img src="img/lanzamiento/parallax/Stars.png">
-        <img src="img/lanzamiento/parallax/Stars 2.png">
-        <img class="parallax-sun" src="img/lanzamiento/parallax/Sun.png">
-        <img class="parallax-planet" src="img/lanzamiento/parallax/Planet left-shifted.png">
-        <img src="img/lanzamiento/parallax/Debris back.png">
-        <img src="img/lanzamiento/parallax/Debris front.png">
-        <img src="img/lanzamiento/parallax/X-Wing.png">
+        <!-- <h2 id="text">Parallax</h2> -->
+        <img class="game-logo" id="game-logo" src="img/lanzamiento/hero/starwarsbf2logo.svg" alt="Star Wars Battlefront 2 Logo">
+
+        <img class="prx" src="img/lanzamiento/parallax/Stars.png">
+        <img class="prx"src="img/lanzamiento/parallax/Stars 2.png">
+        <img class="prx parallax-sun" src="img/lanzamiento/parallax/Sun.png">
+        <img class="prx parallax-planet" src="img/lanzamiento/parallax/Planet left-shifted.png">
+        <img class="prx" src="img/lanzamiento/parallax/Debris back.png">
+        <img class="prx" src="img/lanzamiento/parallax/Debris front.png">
+        <img class="prx" src="img/lanzamiento/parallax/X-Wing.png">
     </div>
+    <div class="cuadrado">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum error voluptate voluptates provident debitis quaerat tempore pariatur autem animi incidunt aperiam perferendis nam, accusantium in quisquam fuga saepe quos reprehenderit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptas qui magni temporibus delectus, vitae provident impedit assumenda officiis quidem dignissimos libero distinctio quae repudiandae suscipit dolorum veritatis! Mollitia, earum! Lorem ipsum dolor sit amet consectetur adipisicing elit. At libero quisquam accusamus cupiditate illo provident quia officiis ullam laborum nulla quam alias optio distinctio sequi magnam, explicabo, aliquam non incidunt.</div>
+
     <script src="js/parallax.js"></script>
     <script src="js/home-card-hover.js"></script>
     <script type="text/javascript">
-        let text = document.getElementById("text");
+        let logo = document.getElementById("game-logo");
+        
+        inicialY = logo.offsetTop;
+        inicialX = logo.offsetLeft;
+        /* console.log(inicial); */
 
         window.addEventListener('scroll', function(){
             var value = window.scrollY;
-            text.style.top = value * 0.55 + 'px';
-            console.log("por");
+            logo.style.top = inicialY + value * 0.7 + 'px';
+            logo.style.left = inicialX + value * 0.2 + 'px'; //opcional
         })
     </script>
 </body>
