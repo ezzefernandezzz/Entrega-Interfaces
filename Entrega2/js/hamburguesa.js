@@ -11,6 +11,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function mostrarMenu() {
         document.querySelector(".btn-burger").classList.toggle("visible_menu");
+
+        let x = window.scrollY;
+        let headerHeight = document.getElementById('head').clientHeight;
+        document.getElementById("menuDesplegable").style.top= x + headerHeight + "px";
+
         /* Es posible acortar el code ya que debido al z-index no lo puede cerrar tocando de nuevo el menu */
         if (!isVisible){
             if(document.getElementById("menuDesplegable").classList.contains("ocultar")){

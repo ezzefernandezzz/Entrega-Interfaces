@@ -1,4 +1,5 @@
 const ventana_carga = document.querySelector('.prueba')
+document.body.style.overflow = "hidden";  //Para que no se pueda scrollear mientras esta la pantalla de carga
 
 CSS.registerProperty({
     name: "--p",
@@ -9,4 +10,6 @@ CSS.registerProperty({
 
 setTimeout(function(){
     ventana_carga.style.visibility = "hidden";
-}, 10);
+    window.onscroll = function() {myFunction()};
+    document.body.style.overflow = "visible";
+}, 5000); //correcto 5000
