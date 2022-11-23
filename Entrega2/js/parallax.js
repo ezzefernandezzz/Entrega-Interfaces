@@ -22,8 +22,8 @@ function mouseMove(event) {
     let y = event.layerY;
     for(let i = 0; i < imagenes.length; i++) {
         imagenes[i].style.setProperty('transition', 'left 0.1s linear, top 0.1s linear');
-        let offsetX = Math.log(i + 1)  * x / 30;
-        let offsetY = Math.log(i + 1) * y / 60;
+        let offsetX = x * Math.pow(i, 1.5) / 300;
+        let offsetY = y * Math.pow(i, 1.5) / 600;
         imagenes[i].style.left = offsetX + "px";
         imagenes[i].style.top =  (offsetY + posYOriginales[i]) + "px";
     }
