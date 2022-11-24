@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.punto7{
+    position: block;
+    display: flex;
+}
+
+.col1, .col2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50vw;
+    /* height: 500px; */
+}
+
+.col1, .col3{
+    background-color: aquamarine;
+}
+
+.col2{
+    background-color: brown;
+}
+
+img{
+    width: 80%;
+}
+
+.cuadrado{
+    width: 100px;
+    height: 100px;
+}
+
+#contenido{
+    position: absolute;
+}
