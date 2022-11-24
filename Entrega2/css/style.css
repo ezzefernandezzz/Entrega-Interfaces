@@ -1465,11 +1465,17 @@ bottom: 0;
     }
 
     .game-logo {
-        position: absolute;
+        /* position: absolute;
         left: 49.791%;
         top: 13.23%;
         width: 40.416%;
-        z-index: 2;
+        z-index: 2; */
+
+        position: relative;
+        left: 5%;
+        top: 20%;
+        width: 50%;
+        /* z-index: 1;  */
     }
 
     .texto-y-boton h3{
@@ -2107,6 +2113,8 @@ bottom: 0;
     width: 100%;
     height: 7%;
     border-bottom: 1px solid white;
+
+    overflow: hidden; /* Se podia clickear el logo "invisible" ya que es mas grande de lo que se ve */
 }
 
 .logo-container.stick{

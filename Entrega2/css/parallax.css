@@ -9,9 +9,13 @@ body {
     height: 100%;
     background: #0E151F;
     overflow: hidden;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-start; */
 }
 
-.parallax-container img {
+img.prx {
     position: absolute;
     width: 100%;
     left: 0px;
@@ -22,3 +26,16 @@ body {
 .parallax-container .parallax-sun {
     top: -50px;
 }
+
+#text{
+    position: relative;
+    color: white;
+    font-size: 10em;
+}
+
+.cuadrado{
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+}
+

@@ -1,5 +1,7 @@
 let parallax = document.getElementById('parallax-container');
-let imagenes = parallax.getElementsByTagName('img');
+/* let imagenes = parallax.getElementsByTagName('img'); */
+
+let imagenes = parallax.getElementsByClassName('prx');
 
 parallax.addEventListener('mouseenter', smoothEnter);
 parallax.addEventListener('mousemove', mouseMove);
