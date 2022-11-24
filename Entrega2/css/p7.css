@@ -17,9 +17,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     width: 50vw;
-    /* height: 500px; */
+    height: 1000px;
 }
 
 .col1, .col3{
@@ -30,8 +31,18 @@
     background-color: brown;
 }
 
-img{
-    width: 80%;
+.sec-img{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+    margin-top: 100px;
+    align-items: center;
+}
+
+.sec-img img{
+    /* width: 80%; */
+    width: 40%;
+    position: fixed;
 }
 
 .cuadrado{

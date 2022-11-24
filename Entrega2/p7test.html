@@ -10,15 +10,16 @@
 <body>
     <div class="punto7">
         <div class="col1">
-            <section>
+            <section class="sec-img">
                 <img src="img/4enlinea/fondotablero.jpeg" alt="">
             </section>
-            <section>
+            <!-- <section class="sec-img">
                 <img src="img/4enlinea/fondo.jpg" alt="">
-            </section>
+            </section> -->
         </div>
         <div class="col2">
             <section id="contenido"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, minima atque. Unde porro vero, ipsam ratione ut itaque quos numquam earum quaerat inventore id qui tenetur dolorum quia exercitationem explicabo!</section>
+            
         </div>
     </div>
 
@@ -36,7 +37,7 @@
 
         window.addEventListener('scroll', function(){
             var value = window.scrollY;
-            logo.style.top = inicialY - value * 0.10 + 'px';
+            logo.style.top = inicialY - value * 0.6 + 'px';
             //logo.style.left = inicialX + value * 0.2 + 'px'; //opcional
         })
     </script>
