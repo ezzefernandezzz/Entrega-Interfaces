@@ -327,6 +327,38 @@ main {
 
 .container-scroll-personajes .slider{
     width: 1375px;
+}
+
+@keyframes carousel-shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }    
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@keyframes carousel-bounce {
+    25% {
+        transform: scale(0.7, 0.8);
+    }
+    50% {
+        transform: scale(0.8, 0.9);
+    }
+    75% {
+        transform: scale(1.05, 1.05);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
 
 }
 
