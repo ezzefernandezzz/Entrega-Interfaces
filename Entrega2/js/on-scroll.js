@@ -1,16 +1,16 @@
 window.addEventListener('DOMContentLoaded', () => {
     
     let sections = document.getElementsByClassName('section');
-    let container = document.querySelector('.on-scroll-content');
-
+    /* let container = document.querySelector('.on-scroll-content'); */
     /* container.addEventListener('wheel', isBeingScrolled); */
+
     document.addEventListener("scroll", isBeingScrolled);
+
+    isBeingScrolled(); //para cargar la primer img sin scrollear y que no aparezcan todas juntas
 
     function isBeingScrolled(event) {
         /* let y = event.pageY; */
-        let y = document.documentElement.scrollTop + 8; //el +8 es pq sino empieza en 0 arriba del todo, y la primer section
-        //esta a los 8, entonces si scrolleas hasta arriba queda en blanco
-        console.log(y);
+        let y = document.documentElement.scrollTop + 300; 
         
         for (let section of sections) {
             isOnScreen(y, section);
@@ -18,13 +18,22 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function isOnScreen(y, section) {
-        console.log(section.offsetTop + " ------ "+ y)
         if (y >= section.offsetTop && y < section.clientHeight + section.offsetTop) {
-            console.log("entra?");
-            section.style.setProperty("opacity", 1);
+            /* section.style.setProperty("opacity", 1); */
+            /* console.log(section.children) */
+            for (const item of section.children) {
+                item.style.setProperty("opacity", 1);   //se los pongo por separado al IMG y al P porque si se lo hago al SECTION
+                //no puedo agregarle transicion al P
+            }
+            //tuve que agregarle un padding-top: 300px; al P para que se llegue a ver cuando se disolvia.
+            //El problema es que no arranca "centrado"
         }
-        else
-            section.style.setProperty("opacity", 0);
+        else{
+            for (const item of section.children) {
+                item.style.setProperty("opacity", 0);
+            }
+        }
+            /* section.style.setProperty("opacity", 0); */
     }
 
 });

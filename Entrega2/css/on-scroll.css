@@ -12,11 +12,17 @@ body {
     height: 97vh;
     width: 98vw;
 
-    border: 2px solid black;
-    margin-bottom: 20px;
+    /* border: 2px solid black;
+    margin-bottom: 20px; */
+
+    /* opacity: 0; */
+
+    /* transition: opacity 1s ease 0s; */
 }
 
 .section p {
+    transition: opacity 1s ease 0s;
+    padding-top: 300px;
     width: 60%;
 }
 
@@ -26,6 +32,8 @@ body {
     top: calc(50% - 75px);
     width: 150px;
     height: 150px;
+
+    opacity: 0; /* para que no aparezcan todas las img juntas */
 }
 .col-1 {
     grid-column: 1 / 2;
