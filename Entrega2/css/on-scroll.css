@@ -9,8 +9,6 @@ body {
     justify-items: center;
     align-items: center;
     grid-template-columns: 1fr 1fr;
-    border: 2px solid black;
-    margin-bottom: 20px;
     height: 97vh;
     width: 98vw;
 }
@@ -20,14 +18,12 @@ body {
 }
 
 .section img {
+    position: fixed;
+    left: calc(25% - 75px);
+    top: calc(50% - 75px);
     width: 150px;
     height: 150px;
 }
-
-.section-1 {
-    position: sticky;
-}
-
 .col-1 {
     grid-column: 1 / 2;
 }
