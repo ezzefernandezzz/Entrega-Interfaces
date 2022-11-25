@@ -11,6 +11,9 @@ body {
     grid-template-columns: 1fr 1fr;
     height: 97vh;
     width: 98vw;
+
+    border: 2px solid black;
+    margin-bottom: 20px;
 }
 
 .section p {
