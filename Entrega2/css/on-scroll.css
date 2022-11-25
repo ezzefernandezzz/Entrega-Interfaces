@@ -1,7 +1,4 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .section{
@@ -9,7 +6,7 @@ body {
     justify-items: center;
     align-items: center;
     grid-template-columns: 1fr 1fr;
-    height: 97vh;
+    height: 70vh;
     width: 98vw;
 
     /* border: 2px solid black;
@@ -22,14 +19,13 @@ body {
 
 .section p {
     transition: opacity 1s ease 0s;
-    padding-top: 300px;
     width: 60%;
 }
 
 .section img {
     position: fixed;
     left: calc(25% - 75px);
-    top: calc(50% - 75px);
+    top: calc(30vh - 75px);
     width: 150px;
     height: 150px;
 
@@ -41,4 +37,9 @@ body {
 
 .col-2 {
     grid-column: 2 / 3;
+}
+
+.filler-content {
+    background: teal;
+    height: 100vh;
 }

@@ -18,6 +18,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function isOnScreen(y, section) {
+        let p = section.querySelector('.col-2');
+        console.log(p);
         if (y >= section.offsetTop && y < section.clientHeight + section.offsetTop) {
             /* section.style.setProperty("opacity", 1); */
             /* console.log(section.children) */
