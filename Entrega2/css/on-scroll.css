@@ -1,4 +1,5 @@
-body {
+.on-scroll-content {
+    margin-bottom: 200px;
 }
 
 .section{
@@ -6,15 +7,8 @@ body {
     justify-items: center;
     align-items: center;
     grid-template-columns: 1fr 1fr;
-    height: 70vh;
+    height: 40vh;
     width: 98vw;
-
-    /* border: 2px solid black;
-    margin-bottom: 20px; */
-
-    /* opacity: 0; */
-
-    /* transition: opacity 1s ease 0s; */
 }
 
 .section p {
@@ -30,7 +24,9 @@ body {
     height: 150px;
 
     opacity: 0; /* para que no aparezcan todas las img juntas */
+    transition: opacity 0.3ms ease 0s;
 }
+
 .col-1 {
     grid-column: 1 / 2;
 }
@@ -40,6 +36,98 @@ body {
 }
 
 .filler-content {
-    background: teal;
-    height: 100vh;
+    background: #ffeeac;
+    height: 50vh;
+}
+
+.titulo-seccion {
+    position: relative;
+    top: -30px;
+    text-align: center;
+    font-size: 98px;
+}
+
+.historia {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+
+.container-historia {
+    display: grid;
+    justify-items: center;
+    align-items:flex-start;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 2 / 1 / 3 / 2; }
+.div3 { grid-area: 3 / 1 / 4 / 2; }
+.div4 { grid-area: 1 / 2 / 4 / 3; }
+
+.container-historia img {
+    width: 50%;
+}
+
+.col-1 {
+    grid-column: 1 / 2;
+}
+
+.col-2 {
+    grid-column: 2 / 3;
+}
+
+.texto-historia {
+    position: relative;
+    width: 40%;
+    transform: perspective(300px) rotateX(30deg);
+    height: 50vh;
+    padding-right: 10px;
+    overflow-y: hidden;
+
+}
+
+.texto-historia p {
+    text-align: justify;
+    font-family: Steelfish;
+    font-size: 48px;
+}
+
+.titulo-texto {
+    font-family: Steelfish;
+    font-size: 48px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.texto-historia::-webkit-scrollbar {
+    display: none;
+    transform: perspective(-230px) rotateX(-30deg);
+    width: 10px;
+}
+
+.texto-historia::-webkit-scrollbar-button {
+    display: none;
+    background: #FFCC00;
+}
+
+.texto-historia::-webkit-scrollbar-thumb {
+    display: none;
+    border-radius: 1px;
+    background-color: #FFCC00;
+}
+
+.texto-historia::-webkit-scrollbar-track {
+    display: none;
+    background: black;
+}
+
+p, h2 {
+    color: black;
 }
