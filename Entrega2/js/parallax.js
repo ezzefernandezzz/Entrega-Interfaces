@@ -1,4 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
+
+    //Parallax
     let parallax = document.getElementById('parallax-container');
     let imagenes = parallax.getElementsByClassName('prx');
     
@@ -46,5 +48,16 @@ window.addEventListener('DOMContentLoaded', () => {
             imagenes[i].style.top = posYOriginales[i] + "px";
         }
     }
+    //Fin Parallax
+
+    //Ojo Inferno Trooper
+    let boton_preordenar = document.querySelector('.boton-pre-ordenar');
+    let inferno_trooper = document.querySelector('.inferno-trooper');
+    boton_preordenar.addEventListener('mouseenter', () => {
+        inferno_trooper.style.setProperty('opacity', 0);
+    });
+    boton_preordenar.addEventListener('mouseleave', () => {
+        inferno_trooper.style.setProperty('opacity', 1);
+    });
     
 });

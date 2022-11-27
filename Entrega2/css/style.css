@@ -1478,39 +1478,6 @@ bottom: 0;
         /* z-index: 1;  */
     }
 
-    .texto-y-boton h3{
-        position: absolute;
-        z-index: 2;
-        left: 49%;
-        top: 36.5%;
-        width: 42%;
-        font-weight: 400;
-        font-size: 50px;
-        line-height: 77px;
-        text-align: center;
-    }
-
-    .texto-y-boton button {
-        position: absolute;
-        z-index: 2;
-        top: 64.08%;
-        left: 56.527%;
-        width: 27.08%;
-        height: 13.50%;
-        background-color: #FFC700;
-        color: black;
-        border-radius: 10px;
-        font-size: 36px;
-        overflow: hidden;
-        transition: filter 400ms linear;
-        
-        cursor: pointer;
-    }
-
-    .texto-y-boton button:hover{
-        animation: glow-pulse-alt 1500ms infinite linear;
-    }
-
     @keyframes glow-pulse {
         25% {
             filter: drop-shadow(0 0 10px #FFC700);
@@ -1524,39 +1491,7 @@ bottom: 0;
         100% {
             filter: drop-shadow(0 0 0px #FFC700);
         }        
-    }
-
-    @keyframes glow-pulse-alt {
-        0%{
-            filter: drop-shadow(0 0 10px #FFc700)
-        }
-        50%{
-            filter: drop-shadow(0 0 20px #FFc700)
-        }
-        100%{
-            filter: drop-shadow(0 0 10px #FFc700)
-        }
-    }
-
-    .inferno-trooper {
-        position: relative;
-        left: -6.666%;
-        top: 4px;
-        z-index: 4;
-        width: 46.75%;
-        filter: blur(0.45px);
-        transition: opacity 500ms linear;
-    }
-
-    .inferno-trooper:hover {
-        opacity: 0;
-    }
-
-    .inferno-trooper.if-eye {
-        position: absolute;
-        left: -6.666%;
-        z-index: 3;
-    }
+    }    
 
     .bg-overlay {
         position: absolute;
@@ -1998,9 +1933,6 @@ bottom: 0;
         flex-flow: column;
         align-items: center;
         position: relative;
-
-        /* width: 378px;
-        height: 576px; */
     }
 
     .card-personaje h3{
@@ -2009,25 +1941,78 @@ bottom: 0;
 
     .pre-ordenar {
         position: relative;
+        display: flex;
+        flex-flow: row-reverse;
         margin-top: 5%;
         padding-bottom: 5%;
     }
 
+    .inferno-trooper {
+        position: relative;
+        left: -6.666%;
+        top: 4px;
+        z-index: 4;
+        width: 50%;
+        filter: blur(0.45px);
+        transition: opacity 500ms linear;
+    }
+
+    .inferno-trooper:hover {
+        opacity: 0;
+    }
+
+    .inferno-trooper.if-eye {
+        position: absolute;
+        left: -6.666%;
+        z-index: 3;
+    }
+
     .pre-ordenar h2 {
         text-align: center;
-        font-size: 64px;
+        font-size: 50px;
         margin-bottom: 3%;
+        width: 90%;
     }
 
-    .pre-ordenar .texto-y-boton {
-        display: flex;
-        justify-content: center;
-    }
-
-    .pre-ordenar .texto-y-boton button {
+    .pre-ordenar .boton-pre-ordenar {
         position: static;
         padding: 20px;
+    }
 
+
+    .texto-y-boton {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        padding-top: 5%;
+    }
+
+    .texto-y-boton h3{
+        position: absolute;
+        z-index: 2;
+        left: 49%;
+        top: 36.5%;
+        width: 42%;
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 77px;
+        text-align: center;
+    }
+
+    .boton-pre-ordenar {
+        z-index: 2;
+        background-color: #FFC700;
+        color: black;
+        border-radius: 10px;
+        font-size: 36px;
+        overflow: hidden;
+        transition: filter 400ms linear;
+        
+        cursor: pointer;
+    }
+
+    .boton-pre-ordenar:hover{
+        animation: glow-pulse 2500ms infinite linear;
     }
 
     .footer-lanzamiento {
