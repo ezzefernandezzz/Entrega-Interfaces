@@ -1616,6 +1616,81 @@ bottom: 0;
         background-color: aquamarine;
     }    
 
+    .movement-indicador {
+    }
+
+    .mouse-icon {
+        position: absolute;
+        right: 4%;
+        top: 8%;
+        border: 2px solid white;
+        border-radius: 15px;
+        width: 30px;
+        height: 50px;
+        animation: mouse-move-icon 5s ease infinite;
+    }
+
+    .mouse-line {
+        position: absolute;
+        height: 30%;
+        border: 1px solid gray;
+        left: 45%;
+    }
+
+    .arrow {
+        position: absolute;
+        height: 40%;
+        width: 8px;
+        height: 8px;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+
+    .arrow-1 {
+        left: -65%;
+        top: 40%;
+        transform: rotate(135deg);
+    }
+
+    .arrow-2 {
+        left: 135%;
+        top: 40%;
+        transform: rotate(-45deg);
+    }
+
+    .arrow-3 {
+        left: 35%;
+        top: 120%;
+        transform: rotate(45deg);
+    }
+
+    .arrow-4 {
+        left: 35%;
+        top: -35%;
+        transform: rotate(-135deg);
+    }
+
+    @keyframes mouse-move-icon {
+        16% {
+            transform: translate(0, -50%);
+        }
+        32% {
+            transform: translate(50%, 0);
+        }
+        48% {
+            transform: translate(0, 50%);
+        }
+        64% {
+            transform: translate(-50%, 0);
+        }
+        80%{
+            transform: translate(0, -50%);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
     .fade {
         position: absolute;
         /* top: 84.5%; */
