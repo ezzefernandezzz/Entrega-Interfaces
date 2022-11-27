@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
     cont_texto.style.height = full_text_height + "px";
 
     let imagenes = cont_texto.getElementsByTagName('img');
+    let img_height = imagenes[0].clientHeight;
 
     document.addEventListener('scroll', scrollText);
 
@@ -16,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function scrollText() {
         let posScroll_in_section =  document.documentElement.scrollTop - section.offsetTop;
-        if (posScroll_in_section > 0 && posScroll_in_section <= cont_texto.clientHeight - imagenes[0].clientHeight) {
+        if (posScroll_in_section > 0 && posScroll_in_section <= cont_texto.clientHeight - img_height) {
             let cont_texto_percentage_px = cont_texto.clientHeight / 100;
             let text_percentage_px = div_texto.scrollHeight / 100;
             let scroll_percentage = posScroll_in_section / cont_texto_percentage_px;
@@ -43,13 +44,16 @@ window.addEventListener('DOMContentLoaded', () => {
         for (let img of imagenes) {
             img.style.setProperty("opacity", 0);
         }
-        if (index != undefined)
+        if (index != undefined) {
+            imagenes[index].style.setProperty("position", "fixed");
             imagenes[index].style.setProperty("opacity", 1);
+        }
     }
 
     function hideAllImages() {
         for (let img of imagenes) {
             img.style.setProperty("opacity", 0);
+            img.style.setProperty("position", "absolute");
         }
     }
 
