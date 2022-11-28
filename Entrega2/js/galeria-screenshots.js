@@ -14,6 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let tenth_of_container = container_scr.clientWidth / 10;
 
     let scroll_act = container_scr.scrollLeft;
+
+    let delay = 40;
     
     show_markers();
 
@@ -21,6 +23,8 @@ window.addEventListener('DOMContentLoaded', () => {
         let left_scroll = -1 * tenth_of_container * 4;
         container_scr.scrollBy(left_scroll, 0);
         scroll_act += left_scroll;
+        set_anim();
+        remove_anim();
         show_markers();
 
     });
@@ -29,6 +33,8 @@ window.addEventListener('DOMContentLoaded', () => {
         let right_scroll = tenth_of_container * 4;
         container_scr.scrollBy(right_scroll, 0);
         scroll_act += right_scroll;
+        set_anim();
+        remove_anim();
         show_markers();
     });
 
@@ -90,14 +96,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function start_auto_scroll() {
         return setInterval(() => {
-            for (let img of imagenes) {
-                img.style.setProperty("animation", "carousel-bounce 0.7s forwards ease-in-out");
-            }
-            setTimeout(() => {
-                for (let img of imagenes) {
-                    img.style.removeProperty("animation");
-                }
-            }, 700);
+            set_anim();
+            remove_anim();
             scroll_act += tenth_of_container * 4;
             container_scr.scrollBy(tenth_of_container * 4, 0);
             if (container_scr.scrollLeft >= container_scr.scrollWidth - container_scr.clientWidth) {
@@ -111,6 +111,23 @@ window.addEventListener('DOMContentLoaded', () => {
     function stop_auto_scroll(id) {
         clearInterval(id);
     };
+
+    function set_anim() {
+        for (let i = 0; i < imagenes.length; i++) {
+            setTimeout(() => {
+                imagenes[i].style.setProperty("animation", "screenshot-transform 0.5s forwards linear");                    
+            }, i * delay);
+        }
+    }
+
+    function remove_anim() {
+        for (let i = 0; i < imagenes.length; i++) {
+            setTimeout(() => {
+                imagenes[i].style.removeProperty('animation');
+            }, i * delay + 500);
+        }
+    }
     //End auto-anim
+
 
 });
