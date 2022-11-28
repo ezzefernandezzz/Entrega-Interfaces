@@ -34,7 +34,6 @@ window.addEventListener('DOMContentLoaded', () => {
         let cards = element.getElementsByClassName('gamecard');
         console.log(cards);
         return interval = setInterval(() => {
-            //element.style.setProperty("animation", "carousel-bounce 0.7s forwards ease-in-out");
             for (let card of cards) {
                 card.style.setProperty("animation", "carousel-bounce 0.7s forwards ease-in-out");
             }
@@ -42,7 +41,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 for (let card of cards) {
                     card.style.removeProperty("animation");
                 }
-                //element.style.removeProperty("animation");
             }, 700);
             element.scrollLeft += 400;
             if (element.scrollLeft == element.scrollWidth - element.clientWidth) {

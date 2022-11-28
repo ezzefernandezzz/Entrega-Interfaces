@@ -1,4 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
+
+    //Obtengo el body para settear su overflow en hidden y evitar que se pueda scrollear mientras este
+    //el overlay abierto
+    let body = document.querySelector('body');
+
     let main_container = document.querySelector('.galeria-screenshots');
     let container_scr = main_container.querySelector('.container-screenshots');
     let imagenes = container_scr.getElementsByTagName('img');
@@ -28,14 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     for (let img of imagenes) {
-        img.addEventListener('click', () => {
-            //enviar a expand_img el img src
-            //y hacer un div flotante con la imagen
-            //para crear la ilusion de que se agrandó
-            //mover el div de la galeria no sirve porque lo quita del flujo
-            //y desaparece al clickearlo
-            console.log(img.src);
-        });
+        img.addEventListener('click', expand_image);
     }
 
     function show_markers(scroll_pos) {
@@ -51,8 +49,33 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function expand_image() {
+    let overlay = main_container.querySelector('#overlay');
+    let big_img_container = main_container.querySelector('.big-img-container');
 
+    overlay.style.setProperty('background-color', 'rgba(0,0,0,0.75)');
+    overlay.style.setProperty('transition', 'opacity 0.3s ease');
+    overlay.style.setProperty('opacity', 0);
+    overlay.style.setProperty('z-index', 4);
+
+    overlay.addEventListener('click', () => {
+        overlay.style.setProperty('opacity', 0);        
+        big_img_container.style.setProperty('opacity', 0);
+        body.style.setProperty('overflow-y', 'auto');
+        setTimeout(() => {
+            overlay.style.setProperty('display', 'none');
+            big_img_container.style.setProperty('display', 'none');
+        }, 300);
+    });
+
+    function expand_image(event) {
+        big_img_container.src = this.src;
+        setTimeout(() => {
+            overlay.style.setProperty('opacity', 1);
+            big_img_container.style.setProperty('opacity', 1);
+        }, 0);
+        overlay.style.setProperty('display', 'block');
+        big_img_container.style.setProperty('display', 'block');
+        body.style.setProperty('overflow-y', 'hidden');
     }
 
     //Auto-anim
@@ -79,7 +102,9 @@ window.addEventListener('DOMContentLoaded', () => {
             container_scr.scrollBy(tenth_of_container * 4, 0);
             if (container_scr.scrollLeft >= container_scr.scrollWidth - container_scr.clientWidth) {
                 container_scr.scrollLeft = 0;
+                scroll_act = 0;
             };
+            show_markers();
         }, 4000);
     };
 
