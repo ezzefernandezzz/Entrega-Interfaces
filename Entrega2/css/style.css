@@ -1742,7 +1742,7 @@ bottom: 0;
         transform: perspective(300px) rotateX(30deg);
         height: 50vh;
         padding-right: 10px;
-        overflow-y: hidden;    
+        overflow-y: hidden;
     }
     
     .texto-historia p {

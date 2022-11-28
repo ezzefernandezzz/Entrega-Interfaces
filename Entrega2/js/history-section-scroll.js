@@ -10,7 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
     cont_texto.style.height = full_text_height*3 + "px";
 
     let imagenes = cont_texto.getElementsByTagName('img');
-    let img_height = imagenes[0].clientHeight;
 
     let mouse_icon = cont_texto.querySelector('.mouse-icon');
 
@@ -20,13 +19,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function scrollText(event) {
         let posScroll_in_section =  document.documentElement.scrollTop - section.offsetTop;
-        if (posScroll_in_section > img_height / 2 && posScroll_in_section <= cont_texto.clientHeight - img_height) {
-            let cont_texto_percentage_px = (cont_texto.clientHeight ) / 100;
+        // posScroll >= X
+        // scroll_percentage = (posScroll - X)
+        let scr_height = window.screen.availHeight;
+        if (posScroll_in_section >= scr_height/2
+        && posScroll_in_section <= cont_texto.clientHeight - scr_height/2 - div_texto.clientHeight/2) {
+            
+            let cont_texto_percentage_px = (cont_texto.clientHeight) / 100;
             let text_percentage_px = div_texto.scrollHeight / 100;
-            let scroll_percentage = (posScroll_in_section - img_height) / cont_texto_percentage_px;
+            let scroll_percentage = (posScroll_in_section - scr_height/2) / cont_texto_percentage_px;
             let text_scroll_px = scroll_percentage * text_percentage_px;
             let visible_img_index;
-            console.log(scroll_percentage);
 
             div_texto.style.setProperty('position', 'fixed');
             div_texto.style.setProperty('top', 20 + '%');
@@ -34,24 +37,29 @@ window.addEventListener('DOMContentLoaded', () => {
             mouse_icon.style.setProperty('position', 'fixed');
             mouse_icon.style.setProperty('top', 8 + '%');
 
-            if (scroll_percentage < 33.3) {
+            if (scroll_percentage <= 33.3) {
                 visible_img_index = 0;
-            } else if (scroll_percentage < 66.6) {
+            } else if (scroll_percentage <= 66.6) {
                 visible_img_index = 1;
             } else {
                 visible_img_index = 2;
             }
             hideAllImagesExcept(visible_img_index);
             div_texto.scrollTo(0, text_scroll_px);
-        } else {
+        } else {     
+            let container_percentage = section.clientHeight / 100;
+            let text_top_pos = (scr_height/2 + div_texto.clientHeight/2) / container_percentage;
+            let text_bot_pos = 100 - text_top_pos;
+            let mouse_top_pos = (scr_height/2 + mouse_icon.clientHeight) / container_percentage;
+            let mouse_bot_pos = 100 - mouse_top_pos*1.5;
             div_texto.style.setProperty('position', 'absolute');
             mouse_icon.style.setProperty('position', 'absolute');
-            if (posScroll_in_section < img_height) {
-                mouse_icon.style.setProperty('top', 2.5 + '%');
-                div_texto.style.setProperty('top', 3.5 + "%");
-            } else if (posScroll_in_section > cont_texto.clientHeight - img_height) {
-                mouse_icon.style.setProperty('top', 95 + '%');
-                div_texto.style.setProperty('top', 96 + "%");
+            if (posScroll_in_section < scr_height/2) {
+                mouse_icon.style.setProperty('top', mouse_top_pos + '%');
+                div_texto.style.setProperty('top', text_top_pos + "%");
+            } else if (posScroll_in_section > cont_texto.clientHeight - scr_height/2 - div_texto.clientHeight/2) {
+                mouse_icon.style.setProperty('top', mouse_bot_pos + '%');
+                div_texto.style.setProperty('top', text_bot_pos + "%");
             }
             hideAllImages();
         }
@@ -62,17 +70,15 @@ window.addEventListener('DOMContentLoaded', () => {
             img.style.setProperty("opacity", 0);
         }
         if (index != undefined) {
-            imagenes[index].style.setProperty("position", "fixed");
             imagenes[index].style.setProperty("opacity", 1);
+            imagenes[index].style.setProperty("position", "fixed");
         }
     }
 
     function hideAllImages() {
         for (let img of imagenes) {            
+            img.style.setProperty("position", "absolute");                
             img.style.setProperty("opacity", 0);
-            setTimeout(() => {
-                img.style.setProperty("position", "absolute");                
-            }, 300);
         }
     }
 
