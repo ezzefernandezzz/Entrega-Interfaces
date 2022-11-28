@@ -321,7 +321,8 @@ main {
     
     /* width: 600px;
     height: 150px; */
-    overflow: hidden;
+    overflow-y: visible;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -2295,7 +2296,7 @@ bottom: 0;
     height: 0px;
 
     background: url(../img/lanzamiento/fondo_overPersonaje.png);
-    border: 1px solid rgba(250, 0, 0, 0.5);
+    /* border: 1px solid rgba(250, 0, 0, 0.5); */
     border-radius: 30px;
 
     overflow: hidden;
@@ -2305,6 +2306,7 @@ bottom: 0;
 .card-personaje:hover .over-personaje{
     height: 100%;
     width: 378px;
+    border: 1px solid rgba(250, 0, 0, 0.5);
 }
 
 .over-personaje ul{
@@ -2382,4 +2384,14 @@ bottom: 0;
 
 main.stick{
     padding-top: 8%;
+}
+
+.card-personaje h3{
+    position: relative;
+    /* top: 50px; */
+    /* top: calc(5%); */
+}
+
+.skale{
+    scale: 1.5;
 }
