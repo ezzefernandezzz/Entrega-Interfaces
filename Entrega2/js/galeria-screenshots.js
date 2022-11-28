@@ -19,6 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     show_markers();
 
+
     left_marker.addEventListener('click', () => {
         let left_scroll = -1 * tenth_of_container * 4;
         container_scr.scrollBy(left_scroll, 0);
@@ -26,7 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
         set_anim();
         remove_anim();
         show_markers();
-
     });
     
     right_marker.addEventListener('click', () => {
@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
         img.addEventListener('click', expand_image);
     }
 
-    function show_markers(scroll_pos) {
+    function show_markers() {
         if (scroll_act <= 0) {
             left_marker.style.setProperty('display',  'none');
             right_marker.style.setProperty('display', 'block');
@@ -86,13 +86,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Auto-anim
     let interval_id = start_auto_scroll();
+    
+    container_scr.addEventListener('mouseenter', stop_interval);
+    left_marker.addEventListener('mouseenter', stop_interval);
+    right_marker.addEventListener('mouseenter', stop_interval);
+    
+    container_scr.addEventListener('mouseleave', restart_interval);
+    left_marker.addEventListener('mouseleave', restart_interval);
+    right_marker.addEventListener('mouseleave', restart_interval);
 
-    container_scr.addEventListener('mouseleave', () => {
+    function restart_interval() {
         interval_id = start_auto_scroll();
-    });
-    container_scr.addEventListener('mouseenter', () => {
-        stop_auto_scroll(interval_id);
-    });
+    }
+
+    function stop_interval() {
+        clearInterval(interval_id);
+    }
 
     function start_auto_scroll() {
         return setInterval(() => {

@@ -363,7 +363,7 @@ main {
 
 }
 
-.h-scrollable-container .control, .container-scroll-personajes .control{
+.control {
     position: absolute;
     width: 50px;
     height: 50px;
@@ -372,6 +372,7 @@ main {
     cursor: pointer;
     object-fit: contain;
     padding: 10px;
+    z-index: 1;
 }
 
 .h-scrollable-container .prev, .h-scrollable-container .prev2, .container-scroll-personajes .prev{
@@ -1965,6 +1966,19 @@ bottom: 0;
         position: relative;
         width: 93%;
     }
+
+    .galeria-screenshots .control {
+        top: 45%;
+        transform: translate(0, -50%);
+    }  
+
+    .left-marker {
+        left: -1%;        
+    }
+
+    .right-marker {
+        right: -1%;
+    }
     
     .container-screenshots {
         display: flex;
@@ -1981,15 +1995,6 @@ bottom: 0;
         border-radius: 10px;
     }
 
-    /*@keyframes screenshot-transform {
-        30%{
-            transform: perspective(200px) rotateY(20deg) scale(0.7, 0.7);
-        }
-        100% {
-            transform: none;
-        }
-    }*/
-
     @keyframes screenshot-transform {
         30% {
             transform: scale(0.5, 0.5);
@@ -1997,43 +2002,6 @@ bottom: 0;
         100% {
             transform: none;
         }
-    }
-
-    .marker {
-        position: absolute;
-        cursor: pointer;
-        top: 0%;
-        background-color: rgba(0, 0, 0, 0.50);
-        height: 100%;
-        width: 10%;
-        z-index: 1;
-    }
-
-    .marker span {
-        position: absolute;
-        top: 47%;
-        width: 1.5vw;
-        height: 1.5vw;
-    }
-
-    .left-marker {
-        left: 0%;        
-    }
-    
-    .left-marker span {
-        border-left: 5px solid white;
-        border-bottom: 5px solid white;
-        transform: rotate(45deg);
-    }
-
-    .right-marker {
-        left: 90%;
-    }
-    
-    .right-marker span {
-        border-right: 5px solid white;
-        border-top: 5px solid white;
-        transform: rotate(45deg);
     }
 
     .big-img-container {
