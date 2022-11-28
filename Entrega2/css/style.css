@@ -2418,3 +2418,7 @@ main.stick{
 .skale{
     scale: 1.5;
 }
+
+.header-lanzamiento.sticky .logo-sw img{
+    height: 50%;
+}

@@ -10,6 +10,6 @@ CSS.registerProperty({
 
 setTimeout(function(){
     ventana_carga.style.visibility = "hidden";
-    window.onscroll = function() {myFunction()};
+    /* window.onscroll = function() {myFunction()}; */
     document.body.style.overflow = "visible";
 }, 50); //correcto 5000
