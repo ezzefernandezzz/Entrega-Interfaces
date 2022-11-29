@@ -2068,7 +2068,7 @@ bottom: 0;
 
     .pre-ordenar h2 {
         text-align: center;
-        font-size: 50px;
+        font-size: 40px;
         margin-bottom: 3%;
         width: 100%;
     }
@@ -2079,7 +2079,7 @@ bottom: 0;
     }
 
     .sprite {
-        background: url("img/lanzamiento/full-sprite.png");
+        background: url("../img/lanzamiento/full-sprite.png");
         height: 118px;
         width: 190px;
         background-position: -1200px -822px;
@@ -2092,6 +2092,11 @@ bottom: 0;
         }
     }
 
+    .div-boton {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
 
     .texto-y-boton {
         display: flex;
