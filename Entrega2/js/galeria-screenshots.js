@@ -109,8 +109,8 @@ window.addEventListener('DOMContentLoaded', () => {
             remove_anim();
             scroll_act += tenth_of_container * 4;
             container_scr.scrollBy(tenth_of_container * 4, 0);
-            if (container_scr.scrollLeft >= container_scr.scrollWidth - container_scr.clientWidth) {
-                container_scr.scrollLeft = 0;
+            if (scroll_act >= container_scr.scrollWidth - container_scr.offsetWidth/2) {
+                container_scr.scrollTo(0, 0);
                 scroll_act = 0;
             };
             show_markers();
