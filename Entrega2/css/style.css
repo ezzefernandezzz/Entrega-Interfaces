@@ -50,7 +50,6 @@ header{
     background-color: #FC3939;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0.278% 1.6%;
-
     z-index: 5;
 }
 
@@ -2070,7 +2069,7 @@ bottom: 0;
 
     .pre-ordenar h2 {
         text-align: center;
-        font-size: 50px;
+        font-size: 40px;
         margin-bottom: 3%;
         width: 100%;
     }
@@ -2080,6 +2079,25 @@ bottom: 0;
         padding: 20px;
     }
 
+    .sprite {
+        background: url("../img/lanzamiento/full-sprite.png");
+        height: 118px;
+        width: 190px;
+        background-position: -1200px -822px;
+        animation: move 1s steps(9) infinite;
+    }
+    
+    @keyframes move {
+        to {
+            background-position: -2560px -822px;
+        }
+    }
+
+    .div-boton {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
 
     .texto-y-boton {
         display: flex;

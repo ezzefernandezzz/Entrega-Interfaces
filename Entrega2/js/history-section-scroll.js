@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
             div_texto.style.setProperty('top', 20 + '%');
 
             mouse_icon.style.setProperty('position', 'fixed');
-            mouse_icon.style.setProperty('top', 8 + '%');
+            mouse_icon.style.setProperty('top', 12 + '%');
 
             if (scroll_percentage <= 33.3) {
                 visible_img_index = 0;
