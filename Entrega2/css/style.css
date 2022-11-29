@@ -322,7 +322,7 @@ main {
     height: 150px; */
 
     /* overflow-x: hidden; */
-    overflow: visible;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
