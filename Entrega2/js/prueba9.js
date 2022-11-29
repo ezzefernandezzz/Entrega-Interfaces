@@ -9,12 +9,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function prueba2(){
         const scrolled = window.pageYOffset; 
-        if (scrolled >= sect.offsetTop && scrolled < sect.clientHeight + sect.offsetTop){ 
-            const val = (scrolled - sect.offsetTop) * 0.1;
+        if (scrolled >= sect.offsetTop - 700 && scrolled < sect.clientHeight + sect.offsetTop){ 
+            const val = (scrolled - sect.offsetTop) * 0.4;
 
             nombresPersonajes.forEach(personaje => {
-                personaje.style.top = original + val + 'px';
+                valor = Math.floor(30 - val);
+                if(valor > -30)
+                    personaje.style.top = valor + 'px';
+                else
+                    personaje.style.top = -30 + 'px';
             });
+
+            console.log(val)
 
         }
         

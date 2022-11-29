@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     for (const seccion of secciones) {
         seccion.addEventListener('mouseenter', () => {
             mover(0, 0, seccion.querySelector('h3'), seccion.querySelector('p'));
-            console.log("ENTRO")
+            //console.log("ENTRO")
         });
     }
 

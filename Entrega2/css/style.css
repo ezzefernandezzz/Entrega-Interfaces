@@ -321,8 +321,9 @@ main {
     
     /* width: 600px;
     height: 150px; */
-    overflow-y: visible;
-    overflow-x: hidden;
+
+    /* overflow-x: hidden; */
+    overflow: visible;
     scroll-behavior: smooth;
 }
 
@@ -2383,6 +2384,7 @@ main.stick{
 
 .card-personaje h3{
     position: relative;
+    top: 20%;
     /* top: 50px; */
     /* top: calc(5%); */
 }
