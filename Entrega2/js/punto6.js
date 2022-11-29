@@ -32,8 +32,8 @@ window.addEventListener('DOMContentLoaded', () => {
             parrafos[i].style.setProperty('transition', `0s ease-in-out`);
             titulos[i].style.setProperty('transform', `translateX(${direccionMovP}300%)`);
             parrafos[i].style.setProperty('transform', `translateX(${direccionMovT}300%)`);
-            titulos[i].style.setProperty('transition', `1s ease-in-out`);
-            parrafos[i].style.setProperty('transition', `1s ease-in-out`);
+            titulos[i].style.setProperty('transition', `0.8s ease-in-out`);
+            parrafos[i].style.setProperty('transition', `0.8s ease-in-out`);
         }
     }
 });

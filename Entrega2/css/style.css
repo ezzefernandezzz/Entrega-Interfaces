@@ -2394,30 +2394,3 @@ main.stick{
 .header-lanzamiento.sticky .logo-sw img{
     height: 50%;
 }
-
-@keyframes card-in-left {
-    0% {
-        left: -1500px;
-    }
-    100% {
-        left: 43.33%;
-    }
-}
-
-@keyframes card-in-right {
-    0% {
-        left: 1500px;
-    }
-    100% {
-        left: 0px;
-    }
-}
-
-/* .features .class-f h3, .features .class-f p{
-    transition: 0s ease-in-out;
-} */
-
-/* .move-right {
-    transform: translateX(-200%);
-    -webkit-transform:translateX(-50%);
-} */
