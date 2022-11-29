@@ -2078,6 +2078,20 @@ bottom: 0;
         padding: 20px;
     }
 
+    .sprite {
+        background: url("img/lanzamiento/full-sprite.png");
+        height: 118px;
+        width: 190px;
+        background-position: -1200px -822px;
+        animation: move 1s steps(9) infinite;
+    }
+    
+    @keyframes move {
+        to {
+            background-position: -2560px -822px;
+        }
+    }
+
 
     .texto-y-boton {
         display: flex;
