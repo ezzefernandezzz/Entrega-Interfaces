@@ -1697,6 +1697,10 @@ bottom: 0;
         animation: up-arrow-anim 1s ease infinite;
     }
 
+    .container-historia img{
+        border: 1px solid/*  grey */;
+    }
+
     @keyframes up-arrow-anim {
         50% {
             transform: translate(0, -25%) rotate(-135deg);

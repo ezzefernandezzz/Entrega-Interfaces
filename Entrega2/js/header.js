@@ -14,13 +14,12 @@ let main = document.querySelector("main");
 // Get the offset position of the navbar
 var sticky = header.offsetTop;
 
-console.log(main)
+/* console.log(main) */
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
   /* console.log("ta escondido"); */
   if (window.pageYOffset > sticky) {
-    console.log("DHAJSINDSAJK")
     header.classList.add("sticky");
     contenedorLogo.classList.add("stick");
     btn_burger.classList.add("stick");
