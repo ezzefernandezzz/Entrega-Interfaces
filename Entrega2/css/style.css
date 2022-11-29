@@ -1697,6 +1697,10 @@ bottom: 0;
         animation: up-arrow-anim 1s ease infinite;
     }
 
+    .container-historia img{
+        border: 1px solid/*  grey */;
+    }
+
     @keyframes up-arrow-anim {
         50% {
             transform: translate(0, -25%) rotate(-135deg);
@@ -2422,3 +2426,30 @@ main.stick{
 .header-lanzamiento.sticky .logo-sw img{
     height: 50%;
 }
+
+@keyframes card-in-left {
+    0% {
+        left: -1500px;
+    }
+    100% {
+        left: 43.33%;
+    }
+}
+
+@keyframes card-in-right {
+    0% {
+        left: 1500px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+/* .features .class-f h3, .features .class-f p{
+    transition: 0s ease-in-out;
+} */
+
+/* .move-right {
+    transform: translateX(-200%);
+    -webkit-transform:translateX(-50%);
+} */
